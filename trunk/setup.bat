@@ -97,3 +97,6 @@ set MODREOBDIR=%MCPTEMPDIR%\mods
 set MODSOURCEBASE=mods\MCP
 set MODCP=%MCPMODDIR%\mcp_v1.jar;%MCTESTCP%
 set MODJAR=%MCPOUTDIR%\mcp_12_02.jar
+
+if not exist "%MCPLOGDIR%" mkdir "%MCPLOGDIR%"
+if not exist "%MCPLOGDIR%" mkdir "%MCPLOGDIR%"
