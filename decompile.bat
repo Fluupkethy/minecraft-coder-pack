@@ -12,6 +12,8 @@ if errorlevel 1 (
 
 if not exist "%MCPTEMPDIR%" mkdir "%MCPTEMPDIR%"
 if not exist "%MCPSOURCESDIR%" mkdir "%MCPSOURCESDIR%"
+if not exist "%MCJADOUT%" mkdir "%MCJADOUT%"
+if not exist "%MCSJADOUT%" mkdir "%MCSJADOUT%"
 
 echo === Minecraft Coder Pack %MCPVERSION% === >"%MCPLOG%"
 
