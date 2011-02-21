@@ -1,0 +1,18 @@
+Things required to run:
+
+- The shell scripts in the scripts directory need to be moved into the root
+  directory of MCP before using them:
+  mv scripts/*.sh .
+- python to run some of the tools
+- minecraft.jar, lwjgl jars, and the OSX version of the natives, these can be
+  found in your home folder under "Library/Application Support/minecraft/bin",
+  the entire bin folder itself should be copied into the jars folder
+
+  After moving the scripts and confirming that python are available run the
+following command in the MCP root directory:
+  bash ./cleanup.sh
+
+  On the first run this will confirm the correct permissions for all scripts,
+and check that all required directories are created.
+  After this has been done you can run any commands by using ./cleanup.sh
+./decompile.sh etc

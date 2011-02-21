@@ -1,0 +1,3946 @@
+.option Application
+
+#
+#
+# Names reserved from obfuscation:
+#
+.class net/minecraft/server/MinecraftServer
+.method net/minecraft/server/MinecraftServer/main ([Ljava/lang/String;)V
+.method ma/valueOf (Ljava/lang/String;)Lma;
+.method ma/values ()[Lma;
+.method jr/valueOf (Ljava/lang/String;)Ljr;
+.method jr/values ()[Ljr;
+.method jc/values ()[Ljc;
+.method jc/valueOf (Ljava/lang/String;)Ljc;
+.method eo/values ()[Leo;
+.method eo/valueOf (Ljava/lang/String;)Leo;
+.method ee/values ()[Lee;
+.method ee/valueOf (Ljava/lang/String;)Lee;
+.method bv/values ()[Lbv;
+.method bv/valueOf (Ljava/lang/String;)Lbv;
+#
+#
+# Obfuscated name mappings (some of these may be unchanged due to polymorphism constraints):
+#
+.field_map net/minecraft/server/MinecraftServer/q field_6023_p
+.field_map net/minecraft/server/MinecraftServer/p field_9010_p
+.field_map net/minecraft/server/MinecraftServer/o field_6025_n
+.field_map net/minecraft/server/MinecraftServer/n field_9011_n
+.field_map net/minecraft/server/MinecraftServer/m field_6026_m
+.field_map net/minecraft/server/MinecraftServer/l field_6027_l
+.field_map net/minecraft/server/MinecraftServer/k field_6028_k
+.field_map net/minecraft/server/MinecraftServer/j field_9012_j
+.field_map net/minecraft/server/MinecraftServer/i field_9013_i
+.field_map net/minecraft/server/MinecraftServer/h field_9014_h
+.field_map net/minecraft/server/MinecraftServer/g field_6032_g
+.field_map net/minecraft/server/MinecraftServer/f field_6033_f
+.field_map net/minecraft/server/MinecraftServer/e field_6034_e
+.field_map net/minecraft/server/MinecraftServer/d field_6035_d
+.field_map net/minecraft/server/MinecraftServer/c field_6036_c
+.field_map net/minecraft/server/MinecraftServer/b field_6037_b
+.field_map net/minecraft/server/MinecraftServer/a field_6038_a
+.method_map net/minecraft/server/MinecraftServer/d ()Z func_6008_d
+.method_map net/minecraft/server/MinecraftServer/a (Ljava/lang/String;)Ljava/io/File; func_6009_a
+.method_map net/minecraft/server/MinecraftServer/e ()V func_6011_e
+.method_map net/minecraft/server/MinecraftServer/b (Ljava/lang/String;)V func_2_b
+.method_map net/minecraft/server/MinecraftServer/f ()V func_6012_f
+.method_map net/minecraft/server/MinecraftServer/g ()V func_6013_g
+.method_map net/minecraft/server/MinecraftServer/a (Ljava/lang/String;Ljava/lang/String;)V func_6014_a
+.method_map net/minecraft/server/MinecraftServer/a (Lnet/minecraft/server/MinecraftServer;)Z func_6015_a
+.method_map net/minecraft/server/MinecraftServer/c ()Ljava/lang/String; func_1_c
+.method_map net/minecraft/server/MinecraftServer/a ()V func_6016_a
+.method_map net/minecraft/server/MinecraftServer/c (Ljava/lang/String;)V func_6017_c
+.method_map net/minecraft/server/MinecraftServer/h ()V func_6018_h
+.method_map net/minecraft/server/MinecraftServer/a (Ljava/lang/String;I)V func_6019_a
+.method_map net/minecraft/server/MinecraftServer/run ()V run
+.method_map net/minecraft/server/MinecraftServer/b (Ljava/lang/String;I)I func_6020_b
+.method_map net/minecraft/server/MinecraftServer/a (Lfs;)V func_6022_a
+.method_map net/minecraft/server/MinecraftServer/b ()V func_6021_b
+.method_map net/minecraft/server/MinecraftServer/a (Ljava/lang/String;Lgd;)V func_6010_a
+.class_map mt Packet0KeepAlive
+.method_map mt/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map mt/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map mt/a ()I func_71_a
+.method_map mt/a (Lgi;)V func_72_a
+.class_map ms BlockLightStone
+.method_map ms/a (ILjava/util/Random;)I func_252_a
+.class_map mr ChunkCoordIntPair
+.field_map mr/b field_151_b
+.field_map mr/a field_152_a
+.method_map mr/a (Lfe;)D func_73_a
+.method_map mr/equals (Ljava/lang/Object;)Z equals
+.method_map mr/hashCode ()I hashCode
+.class_map mq EntityFish
+.field_map mq/au field_6144_as
+.field_map mq/at field_6145_ar
+.field_map mq/as field_6146_aq
+.field_map mq/ar field_6147_ap
+.field_map mq/aq field_6148_ao
+.field_map mq/ap field_6149_an
+.field_map mq/ao field_4124_am
+.field_map mq/an field_4125_al
+.field_map mq/am field_6150_ak
+.field_map mq/al field_4129_aj
+.field_map mq/f field_4126_f
+.field_map mq/ak field_4132_ai
+.field_map mq/e field_20905_e
+.field_map mq/d field_20906_d
+.field_map mq/c field_20907_c
+.field_map mq/b field_20909_b
+.field_map mq/a field_4134_a
+.method_map mq/a (DDDFF)V func_6142_a
+.method_map mq/b_ ()V func_106_b_
+.method_map mq/a ()V func_21044_a
+.method_map mq/b (Lah;)V func_99_b
+.method_map mq/a (Lah;)V func_97_a
+.method_map mq/d ()I func_6143_c
+.class_map mp SlotCrafting
+.field_map mp/a field_20103_a
+.method_map mp/b ()V func_20091_b
+.method_map mp/a (Ljl;)Z func_20095_a
+.class_map mo ItemFood
+.field_map mo/a field_20901_a
+.method_map mo/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map mn IInventory
+.method_map mn/h_ ()I func_83_a
+.method_map mn/a (ILjl;)V func_206_a
+.method_map mn/b (II)Ljl; func_20069_a
+.method_map mn/c ()I func_202_d
+.method_map mn/a_ (Lhl;)Z func_20067_a_
+.method_map mn/b ()Ljava/lang/String; func_20068_b
+.method_map mn/d ()V func_183_c
+.method_map mn/a (I)Ljl; func_82_a
+.class_map mm MaterialTransparent
+.method_map mm/a ()Z func_216_a
+.method_map mm/c ()Z func_218_c
+.method_map mm/b ()Z func_219_b
+.class_map ml ItemReed
+.field_map ml/a field_253_a
+.method_map ml/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map mk GuiStatsListener
+.field_map mk/a field_527_a
+.method_map mk/actionPerformed (Ljava/awt/event/ActionEvent;)V actionPerformed
+.class_map mj EntityLiving
+.field_map mj/bC field_9126_bt
+.field_map mj/bB field_9127_bs
+.field_map mj/bA field_9128_br
+.field_map mj/aZ field_9109_aQ
+.field_map mj/aY field_9110_aP
+.field_map mj/aX field_9111_aO
+.field_map mj/aW field_9112_aN
+.field_map mj/aV field_9113_aM
+.field_map mj/aU field_9114_aL
+.field_map mj/aT field_9115_aK
+.field_map mj/aS field_9116_aJ
+.field_map mj/aR field_9117_aI
+.field_map mj/aQ field_9118_aH
+.field_map mj/aP field_9119_aG
+.field_map mj/aO field_9120_aF
+.field_map mj/aN field_9121_aE
+.field_map mj/aM field_9122_aD
+.field_map mj/aL field_9123_aC
+.field_map mj/aK field_9124_aB
+.field_map mj/aJ field_9125_aA
+.field_map mj/aI field_9095_az
+.field_map mj/aH field_9096_ay
+.field_map mj/aG field_9098_aw
+.field_map mj/aF field_9099_av
+.field_map mj/bz field_9129_bq
+.field_map mj/by field_9130_bp
+.field_map mj/bx field_9131_bo
+.field_map mj/bw field_9132_bn
+.field_map mj/bv field_9133_bm
+.field_map mj/bu field_9134_bl
+.field_map mj/bt field_9135_bk
+.field_map mj/bs field_9136_bj
+.field_map mj/br field_9137_bi
+.field_map mj/bq field_9138_bh
+.field_map mj/bp field_9139_bg
+.field_map mj/bo field_9140_bf
+.field_map mj/bn field_386_ba
+.field_map mj/bm field_9141_bd
+.field_map mj/bl field_9142_bc
+.field_map mj/bk field_9143_bb
+.field_map mj/bj field_9144_ba
+.field_map mj/bi field_9100_aZ
+.field_map mj/bh field_9101_aY
+.field_map mj/bg field_9102_aX
+.field_map mj/bf field_9103_aW
+.field_map mj/c field_4104_c
+.field_map mj/be field_9104_aV
+.field_map mj/b field_4098_b
+.field_map mj/bd field_9105_aU
+.field_map mj/a field_4099_a
+.field_map mj/bc field_9106_aT
+.field_map mj/bb field_9107_aS
+.field_map mj/ba field_9108_aR
+.method_map mj/b (Lah;)V func_99_b
+.method_map mj/e (I)V func_6099_c
+.method_map mj/a (Lfe;I)Z func_121_a
+.method_map mj/w ()F func_104_p
+.method_map mj/z ()Z func_124_r
+.method_map mj/B ()Z func_120_t
+.method_map mj/d ()V func_152_d_
+.method_map mj/S ()V func_154_F
+.method_map mj/f ()Ljava/lang/String; func_6100_e
+.method_map mj/b (FFF)F func_140_b
+.method_map mj/b_ ()V func_106_b_
+.method_map mj/b ()Z func_155_a
+.method_map mj/d (I)V func_137_a
+.method_map mj/i ()F func_6102_h
+.method_map mj/a (FF)V func_113_a
+.method_map mj/a (F)V func_114_a
+.method_map mj/c (FF)V func_148_c
+.method_map mj/a (Lfe;IDD)V func_143_a
+.method_map mj/T ()V func_6101_K
+.method_map mj/G ()Lbu; func_4039_B
+.method_map mj/o ()V func_153_y
+.method_map mj/d_ ()Z func_21046_d_
+.method_map mj/e ()Ljava/lang/String; func_6097_d
+.method_map mj/t ()V func_4043_o
+.method_map mj/j ()I func_4045_i
+.method_map mj/f (Lfe;)V func_142_f
+.method_map mj/R ()V func_156_D
+.method_map mj/c (F)Lbu; func_141_d
+.method_map mj/m ()Z func_144_E
+.method_map mj/g ()Ljava/lang/String; func_6098_f
+.method_map mj/c ()I func_146_b
+.method_map mj/r ()V func_84_k
+.method_map mj/g_ ()V func_21047_g_
+.method_map mj/b (Lfe;F)V func_147_b
+.method_map mj/a ()V func_21044_a
+.method_map mj/i (Lfe;)Z func_145_g
+.method_map mj/h ()I func_149_g
+.method_map mj/c_ ()Z func_129_c_
+.method_map mj/a (Lah;)V func_97_a
+.method_map mj/D ()V func_115_v
+.class_map mi ChunkCoordinates
+.field_map mi/b field_528_b
+.field_map mi/a field_529_a
+.method_map mi/equals (Ljava/lang/Object;)Z equals
+.method_map mi/hashCode ()I hashCode
+.class_map mh Material
+.field_map mh/z field_4211_y
+.field_map mh/y field_21100_y
+.field_map mh/x field_4212_x
+.field_map mh/w field_4213_w
+.field_map mh/v field_505_v
+.field_map mh/u field_4214_u
+.field_map mh/t field_507_t
+.field_map mh/s field_508_s
+.field_map mh/r field_509_r
+.field_map mh/q field_4215_q
+.field_map mh/p field_511_p
+.field_map mh/o field_4216_o
+.field_map mh/n field_513_n
+.field_map mh/m field_514_m
+.field_map mh/l field_515_l
+.field_map mh/k field_4217_k
+.field_map mh/j field_517_j
+.field_map mh/i field_518_i
+.field_map mh/h field_4218_h
+.field_map mh/g field_520_g
+.field_map mh/f field_521_f
+.field_map mh/e field_522_e
+.field_map mh/d field_523_d
+.field_map mh/c field_524_c
+.field_map mh/b field_525_b
+.field_map mh/a field_526_a
+.method_map mh/f ()Lmh; func_4052_f
+.method_map mh/e ()Z func_4051_e
+.method_map mh/a ()Z func_216_a
+.method_map mh/d ()Z func_217_d
+.method_map mh/c ()Z func_218_c
+.method_map mh/b ()Z func_219_b
+.class_map mg BlockStep
+.field_map mg/a field_20910_a
+.method_map mg/a (Lla;IIII)Z func_253_a
+.method_map mg/a ()Z func_240_b
+.method_map mg/a (I)I func_241_a
+.method_map mg/e (Lfv;III)V func_250_e
+.method_map mg/b (Lfv;IIII)V func_234_b
+.method_map mg/a (ILjava/util/Random;)I func_252_a
+.class_map mf Packet255KickDisconnect
+.field_map mf/a field_41_a
+.method_map mf/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map mf/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map mf/a ()I func_71_a
+.method_map mf/a (Lgi;)V func_72_a
+.class_map me Chunk
+.field_map me/r field_676_s
+.field_map me/q field_677_r
+.field_map me/p field_679_p
+.field_map me/o field_680_o
+.field_map me/n field_681_n
+.field_map me/m field_682_m
+.field_map me/l field_683_l
+.field_map me/k field_684_k
+.field_map me/j field_685_j
+.field_map me/i field_686_i
+.field_map me/h field_687_h
+.field_map me/g field_688_g
+.field_map me/f field_689_f
+.field_map me/e field_690_e
+.field_map me/d field_691_d
+.field_map me/c field_692_c
+.field_map me/b field_693_b
+.field_map me/a field_694_a
+.method_map me/a (Leo;IIII)V func_330_a
+.method_map me/a (Lfe;Lfa;Ljava/util/List;)V func_329_a
+.method_map me/d ()V func_358_c
+.method_map me/c (II)V func_333_c
+.method_map me/a (J)Ljava/util/Random; func_334_a
+.method_map me/b (Lfe;)V func_350_b
+.method_map me/e ()V func_331_d
+.method_map me/b (II)I func_337_b
+.method_map me/a (Lfe;I)V func_332_a
+.method_map me/g (III)V func_339_g
+.method_map me/a ([BIIIIIII)I func_340_a
+.method_map me/f ()V func_336_e
+.method_map me/a (Lbm;)V func_349_a
+.method_map me/g ()Z func_21101_g
+.method_map me/c (III)Z func_343_c
+.method_map me/a (III)I func_344_a
+.method_map me/b (IIII)V func_345_b
+.method_map me/a (IIILbm;)V func_352_a
+.method_map me/a (IIIII)Z func_346_a
+.method_map me/a (Z)Z func_347_a
+.method_map me/a (Leo;III)I func_341_a
+.method_map me/a ()V func_348_a
+.method_map me/a (Lfe;)V func_335_a
+.method_map me/a (II)Z func_351_a
+.method_map me/b ()V func_353_b
+.method_map me/d (III)Lbm; func_338_d
+.method_map me/c (IIII)I func_354_c
+.method_map me/a (Ljava/lang/Class;Lfa;Ljava/util/List;)V func_342_a
+.method_map me/f (III)V func_355_f
+.method_map me/b (III)I func_356_b
+.method_map me/a (IIII)Z func_357_a
+.method_map me/e (III)V func_359_e
+.method_map me/c ()V func_4053_c
+.class_map md ItemInWorldManager
+.field_map md/i field_667_i
+.field_map md/h field_668_h
+.field_map md/g field_669_g
+.field_map md/f field_670_f
+.field_map md/e field_671_e
+.field_map md/d field_672_d
+.field_map md/c field_673_c
+.field_map md/b field_674_b
+.field_map md/a field_675_a
+.method_map md/a (Lhl;Lfv;Ljl;IIII)Z func_327_a
+.method_map md/b (III)Z func_323_b
+.method_map md/a (III)V func_324_a
+.method_map md/a (Lhl;Lfv;Ljl;)Z func_6154_a
+.method_map md/c (III)Z func_325_c
+.method_map md/a (IIII)V func_326_a
+.method_map md/a ()V func_328_a
+.class_map mc BlockFire
+.field_map mc/b field_645_b
+.field_map mc/a field_646_a
+.method_map mc/a (Lfv;IIIILjava/util/Random;)V func_266_a
+.method_map mc/b (Lla;III)Z func_269_b
+.method_map mc/e (Lfv;III)V func_250_e
+.method_map mc/a (Ljava/util/Random;)I func_244_a
+.method_map mc/b (Lfv;IIII)V func_234_b
+.method_map mc/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map mc/a ()Z func_240_b
+.method_map mc/a (III)V func_267_a
+.method_map mc/g (Lfv;III)Z func_268_g
+.method_map mc/d ()Z func_245_e
+.method_map mc/f (Lfv;IIII)I func_265_f
+.method_map mc/b ()I func_4028_b
+.method_map mc/h (Lfv;III)I func_270_h
+.method_map mc/d (Lfv;III)Lfa; func_248_d
+.method_map mc/a (Lfv;III)Z func_259_a
+.class_map mb ItemPainting
+.method_map mb/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map ma EnumCreatureType
+.field_map ma/b creature
+.field_map ma/a monster
+.field_map ma/h field_6155_e
+.field_map ma/g field_21106_g
+.field_map ma/f field_21107_f
+.field_map ma/e field_21108_e
+.field_map ma/d field_21109_d
+.field_map ma/c waterCreature
+.method_map ma/c ()Lmh; func_21102_c
+.method_map ma/d ()Z func_21103_d
+.method_map ma/b ()I func_21104_b
+.method_map ma/a ()Ljava/lang/Class; func_21105_a
+.class_map lz EmptyChunk
+.method_map lz/a (Leo;IIII)V func_330_a
+.method_map lz/a (Lfe;Lfa;Ljava/util/List;)V func_329_a
+.method_map lz/d ()V func_358_c
+.method_map lz/a (J)Ljava/util/Random; func_334_a
+.method_map lz/b (Lfe;)V func_350_b
+.method_map lz/e ()V func_331_d
+.method_map lz/b (II)I func_337_b
+.method_map lz/a (Lfe;I)V func_332_a
+.method_map lz/a ([BIIIIIII)I func_340_a
+.method_map lz/f ()V func_336_e
+.method_map lz/a (Lbm;)V func_349_a
+.method_map lz/g ()Z func_21101_g
+.method_map lz/a (III)I func_344_a
+.method_map lz/c (III)Z func_343_c
+.method_map lz/b (IIII)V func_345_b
+.method_map lz/a (IIILbm;)V func_352_a
+.method_map lz/a (IIIII)Z func_346_a
+.method_map lz/a (Z)Z func_347_a
+.method_map lz/a (Leo;III)I func_341_a
+.method_map lz/a ()V func_348_a
+.method_map lz/a (Lfe;)V func_335_a
+.method_map lz/a (II)Z func_351_a
+.method_map lz/b ()V func_353_b
+.method_map lz/d (III)Lbm; func_338_d
+.method_map lz/c (IIII)I func_354_c
+.method_map lz/a (Ljava/lang/Class;Lfa;Ljava/util/List;)V func_342_a
+.method_map lz/b (III)I func_356_b
+.method_map lz/a (IIII)Z func_357_a
+.method_map lz/e (III)V func_359_e
+.method_map lz/c ()V func_4053_c
+.class_map ly ChunkProviderServer
+.field_map ly/b field_724_b
+.field_map ly/a field_725_a
+.field_map ly/g field_726_g
+.field_map ly/f field_727_f
+.field_map ly/e field_728_e
+.field_map ly/d field_729_d
+.field_map ly/c field_730_c
+.method_map ly/e (II)Lme; func_4063_e
+.method_map ly/a ()Z func_361_a
+.method_map ly/a (ZLlk;)Z func_360_a
+.method_map ly/b (Lme;)V func_373_b
+.method_map ly/a (Lcq;II)V func_4055_a
+.method_map ly/a (Lme;)V func_375_a
+.method_map ly/d (II)Lme; func_376_d
+.method_map ly/c (II)V func_374_c
+.method_map ly/b (II)Lme; func_363_b
+.method_map ly/b ()Z func_364_b
+.method_map ly/a (II)Z func_365_a
+.class_map lx NBTTagEnd
+.method_map lx/a ()B func_379_a
+.method_map lx/a (Ljava/io/DataOutput;)V func_381_a
+.method_map lx/a (Ljava/io/DataInput;)V func_382_a
+.method_map lx/toString ()Ljava/lang/String; toString
+.class_map lw EntityMinecart
+.field_map lw/at field_9158_as
+.field_map lw/as field_9159_ar
+.field_map lw/ar field_9160_aq
+.field_map lw/aq field_9161_ap
+.field_map lw/ap field_9162_ao
+.field_map lw/ao field_9163_an
+.field_map lw/an field_468_ak
+.field_map lw/am field_469_aj
+.field_map lw/al field_470_ai
+.field_map lw/f field_9164_f
+.field_map lw/ak field_9166_aj
+.field_map lw/e field_9165_e
+.field_map lw/d field_476_ae
+.field_map lw/c field_477_ad
+.field_map lw/b field_9167_b
+.field_map lw/a field_9168_a
+.method_map lw/q ()V func_118_j
+.method_map lw/a (Lah;)V func_97_a
+.method_map lw/d ()V func_183_c
+.method_map lw/a (Lfe;I)Z func_121_a
+.method_map lw/c ()I func_202_d
+.method_map lw/c (Lfe;)V func_92_c
+.method_map lw/a (ILjl;)V func_206_a
+.method_map lw/z ()Z func_124_r
+.method_map lw/u ()Lfa; func_93_n
+.method_map lw/a (I)Ljl; func_82_a
+.method_map lw/c_ ()Z func_129_c_
+.method_map lw/g (DDD)Lbu; func_182_g
+.method_map lw/k ()D func_130_h
+.method_map lw/a_ (Lhl;)Z func_20067_a_
+.method_map lw/b (Lah;)V func_99_b
+.method_map lw/b ()Ljava/lang/String; func_20068_b
+.method_map lw/a ()V func_21044_a
+.method_map lw/h_ ()I func_83_a
+.method_map lw/b_ ()V func_106_b_
+.method_map lw/d (Lfe;)Lfa; func_89_d
+.method_map lw/b (II)Ljl; func_20069_a
+.method_map lw/a (Lhl;)Z func_6092_a
+.class_map lv TileEntitySign
+.field_map lv/f field_484_f
+.field_map lv/e field_485_e
+.method_map lv/g ()Lkx; func_20070_f
+.method_map lv/a (Lah;)V func_186_a
+.method_map lv/b (Lah;)V func_188_b
+.class_map lu Path
+.field_map lu/b field_743_b
+.field_map lu/a field_744_a
+.method_map lu/a (I)V func_412_a
+.method_map lu/a (Lc;F)V func_414_a
+.method_map lu/a (Lc;)Lc; func_413_a
+.method_map lu/b (I)V func_416_b
+.method_map lu/a ()V func_417_a
+.method_map lu/c ()Z func_418_c
+.method_map lu/b ()Lc; func_415_b
+.class_map lt BlockDoor
+.method_map lt/a (Lfv;IIIZ)V func_272_a
+.method_map lt/b (Lfv;IIII)V func_234_b
+.method_map lt/b (Lfv;IIILhl;)V func_235_b
+.method_map lt/a ()Z func_240_b
+.method_map lt/d (I)I func_271_d
+.method_map lt/a (Lfv;IIILbu;Lbu;)Lih; func_262_a
+.method_map lt/a (ILjava/util/Random;)I func_252_a
+.method_map lt/a (Lla;III)V func_233_a
+.method_map lt/a (Lfv;IIILhl;)Z func_246_a
+.method_map lt/d (Lfv;III)Lfa; func_248_d
+.method_map lt/c (I)V func_273_b
+.method_map lt/a (Lfv;III)Z func_259_a
+.class_map ls MobSpawnerRainforest
+.method_map ls/a (Ljava/util/Random;)Lcb; func_21114_a
+.class_map lr BlockBloodStone
+.class_map lq WorldGenTrees
+.method_map lq/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map lp NetServerHandler
+.field_map lp/k field_10_k
+.field_map lp/j field_9006_j
+.field_map lp/i field_9007_i
+.field_map lp/h field_9008_h
+.field_map lp/g field_9009_g
+.field_map lp/f field_15_f
+.field_map lp/e field_16_e
+.field_map lp/d field_17_d
+.field_map lp/c field_18_c
+.field_map lp/b field_19_b
+.field_map lp/a field_20_a
+.method_map lp/a (Ljava/lang/String;)V func_43_c
+.method_map lp/b ()I func_38_b
+.method_map lp/a (Lbd;)V func_20008_a
+.method_map lp/a (Liv;)V func_18_a
+.method_map lp/a (DDDFF)V func_41_a
+.method_map lp/b (Lkx;)V func_39_b
+.method_map lp/a (Ldc;)V func_20007_a
+.method_map lp/a (Lmf;)V func_4009_a
+.method_map lp/b (Ljava/lang/String;)V func_2_b
+.method_map lp/a (Lbz;)V func_23_a
+.method_map lp/a (Lhh;)V func_20005_a
+.method_map lp/a (Lik;)V func_11_a
+.method_map lp/a (Lhp;)V func_24_a
+.method_map lp/a (Lkx;)V func_6001_a
+.method_map lp/a (Lz;)V func_3_a
+.method_map lp/c ()Ljava/lang/String; func_1_c
+.method_map lp/a ()V func_42_a
+.method_map lp/c (Ljava/lang/String;)V func_4010_d
+.method_map lp/a (Ljava/lang/String;[Ljava/lang/Object;)V func_6_a
+.method_map lp/a (Lbo;)V func_9002_a
+.method_map lp/a (Lgv;)V func_21001_a
+.method_map lp/a (La;)V func_6006_a
+.method_map lp/a (Lh;)V func_20006_a
+.method_map lp/a (Lkf;)V func_26_a
+.class_map lo ItemHoe
+.method_map lo/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map ln ChunkProviderGenerate
+.field_map ln/w field_4222_w
+.field_map ln/v field_4223_v
+.field_map ln/u field_695_u
+.field_map ln/t field_696_t
+.field_map ln/s field_697_s
+.field_map ln/r field_698_r
+.field_map ln/q field_4224_q
+.field_map ln/p field_700_p
+.field_map ln/o field_701_o
+.field_map ln/n field_702_n
+.field_map ln/m field_703_m
+.field_map ln/l field_704_l
+.field_map ln/k field_705_k
+.field_map ln/j field_706_j
+.field_map ln/i field_707_i
+.field_map ln/h field_4225_h
+.field_map ln/g field_4226_g
+.field_map ln/f field_4227_f
+.field_map ln/e field_4228_e
+.field_map ln/d field_4229_d
+.field_map ln/c field_713_c
+.field_map ln/b field_714_b
+.field_map ln/a field_715_a
+.method_map ln/a ()Z func_361_a
+.method_map ln/a (ZLlk;)Z func_360_a
+.method_map ln/a (Lcq;II)V func_4055_a
+.method_map ln/a ([DIIIIII)[D func_4058_a
+.method_map ln/a (II[B[Lkt;)V func_4056_a
+.method_map ln/b (II)Lme; func_363_b
+.method_map ln/a (II[B[Lkt;[D)V func_4057_a
+.method_map ln/b ()Z func_364_b
+.method_map ln/a (II)Z func_365_a
+.class_map lm ItemFlintAndSteel
+.method_map lm/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map ll GuiStatsComponent
+.field_map ll/b field_766_b
+.field_map ll/a field_767_a
+.field_map ll/c field_768_c
+.method_map ll/paint (Ljava/awt/Graphics;)V paint
+.method_map ll/a ()V func_436_a
+.method_map ll/a (Lll;)V func_435_a
+.class_map lk IProgressUpdate
+.method_map lk/a (I)V func_437_a
+.method_map lk/a (Ljava/lang/String;)V func_438_a
+.method_map lk/b (Ljava/lang/String;)V func_439_b
+.class_map lj ChunkProviderLoadOrGenerate
+.field_map lj/j field_21112_j
+.field_map lj/i field_21113_i
+.field_map lj/h field_718_h
+.field_map lj/g field_719_g
+.field_map lj/f field_720_f
+.field_map lj/e field_721_e
+.field_map lj/d field_722_d
+.field_map lj/c field_723_c
+.field_map lj/b field_716_b
+.field_map lj/a field_717_a
+.method_map lj/a ()Z func_361_a
+.method_map lj/a (ZLlk;)Z func_360_a
+.method_map lj/b (Lme;)V func_370_b
+.method_map lj/c (II)Z func_21111_c
+.method_map lj/a (Lcq;II)V func_4055_a
+.method_map lj/a (Lme;)V func_371_a
+.method_map lj/d (II)Lme; func_4059_c
+.method_map lj/b (II)Lme; func_363_b
+.method_map lj/b ()Z func_364_b
+.method_map lj/a (II)Z func_365_a
+.class_map li RecipeSorter
+.field_map li/a field_20108_a
+.method_map li/compare (Ljava/lang/Object;Ljava/lang/Object;)I compare
+.method_map li/a (Led;Led;)I func_20107_a
+.class_map lh EntityPigZombie
+.field_map lh/b field_4105_b
+.field_map lh/a field_4106_a
+.field_map lh/f field_4107_c
+.method_map lh/h ()I func_149_g
+.method_map lh/g (Lfe;)V func_4047_h
+.method_map lh/f ()Ljava/lang/String; func_6100_e
+.method_map lh/g ()Ljava/lang/String; func_6098_f
+.method_map lh/e ()Ljava/lang/String; func_6097_d
+.method_map lh/b_ ()V func_106_b_
+.method_map lh/b (Lah;)V func_99_b
+.method_map lh/o ()V func_153_y
+.method_map lh/a (Lfe;I)Z func_121_a
+.method_map lh/a (Lah;)V func_97_a
+.method_map lh/b ()Z func_155_a
+.method_map lh/l ()Lfe; func_158_i
+.class_map lg WorldChunkManager
+.field_map lg/b field_4258_b
+.field_map lg/a field_4259_a
+.field_map lg/g field_4253_g
+.field_map lg/f field_4254_f
+.field_map lg/e field_4255_e
+.field_map lg/d field_4256_d
+.field_map lg/c field_4257_c
+.method_map lg/a ([Lkt;IIII)[Lkt; func_4064_a
+.method_map lg/a (II)Lkt; func_4067_a
+.method_map lg/a (Lmr;)Lkt; func_4066_a
+.method_map lg/a (IIII)[Lkt; func_4065_a
+.method_map lg/a ([DIIII)[D func_4068_a
+.class_map lf RedstoneUpdateInfo
+.field_map lf/b field_774_b
+.field_map lf/a field_775_a
+.field_map lf/d field_776_d
+.field_map lf/c field_777_c
+.class_map le EntitySquid
+.field_map le/at field_21050_at
+.field_map le/as field_21051_as
+.field_map le/ar field_21052_ar
+.field_map le/aq field_21053_aq
+.field_map le/ap field_21054_ap
+.field_map le/ao field_21055_ao
+.field_map le/an field_21056_an
+.field_map le/am field_21057_am
+.field_map le/al field_21058_al
+.field_map le/f field_21059_f
+.field_map le/ak field_21060_ak
+.field_map le/c field_21061_c
+.field_map le/b field_21062_b
+.field_map le/a field_21063_a
+.method_map le/a (Lhl;)Z func_6092_a
+.method_map le/h ()I func_149_g
+.method_map le/f ()Ljava/lang/String; func_6100_e
+.method_map le/g ()Ljava/lang/String; func_6098_f
+.method_map le/e ()Ljava/lang/String; func_6097_d
+.method_map le/d ()V func_152_d_
+.method_map le/o ()V func_153_y
+.method_map le/v ()Z func_119_o
+.method_map le/b (Lah;)V func_99_b
+.method_map le/c (FF)V func_148_c
+.method_map le/a (Lah;)V func_97_a
+.method_map le/g_ ()V func_21047_g_
+.method_map le/i ()F func_6102_h
+.class_map ld WorldGenFire
+.method_map ld/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map lc BlockLever
+.method_map lc/c (Lfv;IIII)V func_255_c
+.method_map lc/e (Lfv;III)V func_250_e
+.method_map lc/b (Lfv;IIILhl;)V func_235_b
+.method_map lc/b (Lfv;IIII)V func_234_b
+.method_map lc/a ()Z func_240_b
+.method_map lc/g (Lfv;III)Z func_274_g
+.method_map lc/b (Lla;IIII)Z func_239_b
+.method_map lc/a (Lfv;IIILhl;)Z func_246_a
+.method_map lc/a (Lla;III)V func_233_a
+.method_map lc/c ()Z func_225_d
+.method_map lc/d (Lfv;IIII)Z func_238_d
+.method_map lc/b (Lfv;III)V func_242_b
+.method_map lc/d (Lfv;III)Lfa; func_248_d
+.method_map lc/a (Lfv;III)Z func_259_a
+.class_map lb BlockDispenser
+.method_map lb/e (Lfv;III)V func_250_e
+.method_map lb/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map lb/b (Lfv;IIII)V func_234_b
+.method_map lb/a (ILjava/util/Random;)I func_252_a
+.method_map lb/g (Lfv;III)V func_21035_g
+.method_map lb/a (I)I func_241_a
+.method_map lb/a (Lfv;IIILhl;)Z func_246_a
+.method_map lb/b ()I func_4028_b
+.method_map lb/a_ ()Lbm; func_294_a_
+.method_map lb/b (Lfv;IIILjava/util/Random;)V func_21036_b
+.method_map lb/a (Lfv;IIILmj;)V func_4027_a
+.class_map la IBlockAccess
+.method_map la/c (III)Lmh; func_443_c
+.method_map la/a (III)I func_444_a
+.method_map la/d (III)Z func_445_d
+.method_map la/b (III)I func_446_b
+.class_map kz WorldGenLiquids
+.field_map kz/a field_4249_a
+.method_map kz/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map ky ItemDye
+.field_map ky/a field_21099_a
+.method_map ky/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.method_map ky/b (Ljl;Lmj;)V func_9202_b
+.class_map kx Packet
+.field_map kx/b field_38_b
+.field_map kx/l field_40_j
+.field_map kx/a field_39_a
+.field_map kx/k field_20009_j
+.method_map kx/a (Lgi;)V func_72_a
+.method_map kx/a (ILjava/lang/Class;)V func_64_a
+.method_map kx/b (Ljava/io/DataInputStream;)Lkx; func_65_b
+.method_map kx/a (I)Lkx; func_67_a
+.method_map kx/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map kx/b ()I func_69_b
+.method_map kx/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map kx/a (Lkx;Ljava/io/DataOutputStream;)V func_66_a
+.method_map kx/a ()I func_71_a
+.class_map kw NetworkWriterThread
+.field_map kw/a field_826_a
+.method_map kw/run ()V run
+.class_map kv NetworkReaderThread
+.field_map kv/a field_827_a
+.method_map kv/run ()V run
+.class_map ku ThreadMonitorConnection
+.field_map ku/a field_828_a
+.method_map ku/run ()V run
+.class_map kt MobSpawnerBase
+.field_map kt/u field_4281_t
+.field_map kt/t field_21115_t
+.field_map kt/s field_4282_s
+.field_map kt/r field_4283_r
+.field_map kt/q field_6161_q
+.field_map kt/p field_4285_p
+.field_map kt/o field_4286_o
+.field_map kt/n field_6162_n
+.field_map kt/m field_6163_m
+.field_map kt/l field_4289_l
+.field_map kt/k field_4290_k
+.field_map kt/j field_4291_j
+.field_map kt/i field_4292_i
+.field_map kt/h field_4293_h
+.field_map kt/g field_4294_g
+.field_map kt/f field_4295_f
+.field_map kt/e field_4296_e
+.field_map kt/d field_4297_d
+.field_map kt/c field_4298_c
+.field_map kt/b field_4299_b
+.field_map kt/a field_4300_a
+.method_map kt/a (FF)Lkt; func_4078_a
+.method_map kt/a (Lma;)[Ljava/lang/Class; func_4081_a
+.method_map kt/a (DD)Lkt; func_4085_a
+.method_map kt/a ()V func_4084_a
+.method_map kt/b ()Lkt; func_4083_b
+.method_map kt/b (I)Lkt; func_4079_b
+.method_map kt/a (I)Lkt; func_4080_a
+.method_map kt/a (Ljava/lang/String;)Lkt; func_4082_a
+.method_map kt/a (Ljava/util/Random;)Lcb; func_21114_a
+.class_map ks NetworkMasterThread
+.field_map ks/a field_829_a
+.method_map ks/run ()V run
+.class_map kr BlockSponge
+.method_map kr/b (Lfv;III)V func_242_b
+.method_map kr/e (Lfv;III)V func_250_e
+.class_map kq NBTTagString
+.field_map kq/a field_732_a
+.method_map kq/a ()B func_379_a
+.method_map kq/a (Ljava/io/DataInput;)V func_382_a
+.method_map kq/a (Ljava/io/DataOutput;)V func_381_a
+.method_map kq/toString ()Ljava/lang/String; toString
+.class_map kp RecipesWeapons
+.field_map kp/b field_20113_b
+.field_map kp/a field_20114_a
+.method_map kp/a (Lib;)V func_20112_a
+.class_map ko WorldProvider
+.field_map ko/b field_4301_b
+.field_map ko/a field_4302_a
+.field_map ko/h field_6164_h
+.field_map ko/g field_6165_g
+.field_map ko/f field_4305_d
+.field_map ko/e field_4306_c
+.field_map ko/d field_6166_d
+.field_map ko/c field_6167_c
+.method_map ko/b ()V func_4088_b
+.method_map ko/a (JF)F func_4089_a
+.method_map ko/c ()Lcq; func_4087_c
+.method_map ko/a ()V func_4090_a
+.method_map ko/a (Lfv;)V func_4093_a
+.method_map ko/a (I)Lko; func_4091_a
+.method_map ko/a (II)Z func_4092_a
+.method_map ko/a (Ljava/io/File;)Lbj; func_4086_a
+.class_map kn Packet104
+.field_map kn/b field_20010_b
+.field_map kn/a field_20011_a
+.method_map kn/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map kn/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map kn/a ()I func_71_a
+.method_map kn/a (Lgi;)V func_72_a
+.class_map km WorldGenPumpkin
+.method_map km/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map kl Packet52MultiBlockChange
+.field_map kl/b field_47_b
+.field_map kl/a field_48_a
+.field_map kl/f field_49_f
+.field_map kl/e field_50_e
+.field_map kl/d field_51_d
+.field_map kl/c field_52_c
+.method_map kl/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map kl/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map kl/a ()I func_71_a
+.method_map kl/a (Lgi;)V func_72_a
+.class_map kk EntityChicken
+.field_map kk/b field_391_b
+.field_map kk/a field_392_a
+.field_map kk/am field_396_aj
+.field_map kk/f field_394_ae
+.field_map kk/al field_390_ai
+.field_map kk/ak field_393_af
+.field_map kk/c field_395_ad
+.method_map kk/a (F)V func_114_a
+.method_map kk/e ()Ljava/lang/String; func_6097_d
+.method_map kk/g ()Ljava/lang/String; func_6098_f
+.method_map kk/o ()V func_153_y
+.method_map kk/h ()I func_149_g
+.method_map kk/b (Lah;)V func_99_b
+.method_map kk/a (Lah;)V func_97_a
+.method_map kk/f ()Ljava/lang/String; func_6100_e
+.class_map kj PlayerManager
+.field_map kj/b field_9215_b
+.field_map kj/a field_9216_a
+.field_map kj/d field_832_d
+.field_map kj/c field_833_c
+.method_map kj/a (IIZ)Lat; func_537_a
+.method_map kj/a (III)V func_535_a
+.method_map kj/c (Lkj;)Ljava/util/List; func_533_c
+.method_map kj/a ()V func_538_a
+.method_map kj/b (Lkj;)Lgm; func_539_b
+.method_map kj/c (Lfy;)V func_543_c
+.method_map kj/a (Lkj;)Lnet/minecraft/server/MinecraftServer; func_540_a
+.method_map kj/b ()I func_542_b
+.method_map kj/b (Lfy;)V func_9213_b
+.method_map kj/a (Lfy;)V func_9214_a
+.method_map kj/a (IIII)Z func_544_a
+.class_map ki RecipesCrafting
+.method_map ki/a (Lib;)V func_20115_a
+.class_map kh MCHashTable
+.field_map kh/b field_834_b
+.field_map kh/a field_835_a
+.field_map kh/e field_836_e
+.field_map kh/d field_837_d
+.field_map kh/c field_838_c
+.method_map kh/g (I)I func_545_g
+.method_map kh/f (I)I func_546_f
+.method_map kh/a (IILjava/lang/Object;I)V func_547_a
+.method_map kh/a (I)Ljava/lang/Object; func_550_a
+.method_map kh/a ()V func_551_a
+.method_map kh/h (I)V func_552_h
+.method_map kh/d (I)Ljava/lang/Object; func_553_d
+.method_map kh/e (I)Ljw; func_557_e
+.method_map kh/a (ILjava/lang/Object;)V func_554_a
+.method_map kh/a (II)I func_555_a
+.method_map kh/b (I)Z func_556_b
+.method_map kh/c (I)Ljw; func_548_c
+.method_map kh/a ([Ljw;)V func_549_a
+.class_map kg BlockFence
+.method_map kg/a ()Z func_240_b
+.method_map kg/a (Lfv;III)Z func_259_a
+.method_map kg/a (Lfv;IIILfa;Ljava/util/ArrayList;)V func_264_a
+.class_map kf Packet14BlockDig
+.field_map kf/b field_53_b
+.field_map kf/a field_54_a
+.field_map kf/e field_55_e
+.field_map kf/d field_56_d
+.field_map kf/c field_57_c
+.method_map kf/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map kf/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map kf/a ()I func_71_a
+.method_map kf/a (Lgi;)V func_72_a
+.class_map ke WorldGenTaiga2
+.method_map ke/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map kd EntityFallingSand
+.field_map kd/b field_426_b
+.field_map kd/a field_427_a
+.method_map kd/b_ ()V func_106_b_
+.method_map kd/a ()V func_21044_a
+.method_map kd/c_ ()Z func_129_c_
+.method_map kd/b (Lah;)V func_99_b
+.method_map kd/a (Lah;)V func_97_a
+.class_map kc TileEntityChest
+.field_map kc/e field_494_e
+.method_map kc/a (I)Ljl; func_82_a
+.method_map kc/a (ILjl;)V func_206_a
+.method_map kc/a_ (Lhl;)Z func_20067_a_
+.method_map kc/c ()I func_202_d
+.method_map kc/h_ ()I func_83_a
+.method_map kc/b (Lah;)V func_188_b
+.method_map kc/b ()Ljava/lang/String; func_20068_b
+.method_map kc/b (II)Ljl; func_20069_a
+.method_map kc/a (Lah;)V func_186_a
+.class_map kb BlockSnow
+.method_map kb/a (Ljava/util/Random;)I func_244_a
+.method_map kb/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map kb/b (Lfv;IIII)V func_234_b
+.method_map kb/a ()Z func_240_b
+.method_map kb/g (Lfv;III)Z func_275_g
+.method_map kb/a (ILjava/util/Random;)I func_252_a
+.method_map kb/a (Lla;IIII)Z func_253_a
+.method_map kb/g (Lfv;IIII)V func_12007_g
+.method_map kb/d (Lfv;III)Lfa; func_248_d
+.method_map kb/a (Lfv;III)Z func_259_a
+.class_map ka EntityFlying
+.method_map ka/c (FF)V func_148_c
+.method_map ka/a (F)V func_114_a
+.method_map ka/m ()Z func_144_E
+.class_map jz BlockGrass
+.method_map jz/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map jz/a (ILjava/util/Random;)I func_252_a
+.class_map jy BlockBreakable
+.field_map jy/a field_6084_a
+.method_map jy/a (Lla;IIII)Z func_253_a
+.method_map jy/a ()Z func_240_b
+.class_map jx ConsoleLogFormatter
+.field_map jx/a field_839_a
+.method_map jx/format (Ljava/util/logging/LogRecord;)Ljava/lang/String; format
+.class_map jw HashEntry
+.field_map jw/b field_840_b
+.field_map jw/a field_841_a
+.field_map jw/d field_842_d
+.field_map jw/c field_843_c
+.method_map jw/b ()Ljava/lang/Object; func_558_b
+.method_map jw/equals (Ljava/lang/Object;)Z equals
+.method_map jw/hashCode ()I hashCode
+.method_map jw/toString ()Ljava/lang/String; toString
+.method_map jw/a ()I func_559_a
+.class_map jv Packet24MobSpawn
+.field_map jv/i field_21005_i
+.field_map jv/h field_21006_h
+.field_map jv/g field_60_g
+.field_map jv/f field_61_f
+.field_map jv/e field_62_e
+.field_map jv/d field_63_d
+.field_map jv/c field_64_c
+.field_map jv/b field_58_b
+.field_map jv/a field_59_a
+.method_map jv/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map jv/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map jv/a ()I func_71_a
+.method_map jv/a (Lgi;)V func_72_a
+.class_map ju InventoryCraftResult
+.field_map ju/a field_20071_a
+.method_map ju/h_ ()I func_83_a
+.method_map ju/a (ILjl;)V func_206_a
+.method_map ju/b (II)Ljl; func_20069_a
+.method_map ju/c ()I func_202_d
+.method_map ju/a_ (Lhl;)Z func_20067_a_
+.method_map ju/b ()Ljava/lang/String; func_20068_b
+.method_map ju/d ()V func_183_c
+.method_map ju/a (I)Ljl; func_82_a
+.class_map jt NibbleArray
+.field_map jt/a field_844_a
+.method_map jt/a ()Z func_560_a
+.method_map jt/a (IIII)V func_561_a
+.method_map jt/a (III)I func_562_a
+.class_map js EntityPig
+.method_map js/a (Lhl;)Z func_6092_a
+.method_map js/h ()I func_149_g
+.method_map js/f ()Ljava/lang/String; func_6100_e
+.method_map js/g ()Ljava/lang/String; func_6098_f
+.method_map js/a ()V func_21044_a
+.method_map js/e ()Ljava/lang/String; func_6097_d
+.method_map js/a (Z)V func_21064_a
+.method_map js/b (Lah;)V func_99_b
+.method_map js/a (Lah;)V func_97_a
+.method_map js/K ()Z func_21065_K
+.class_map jr EnumMovingObjectType
+.field_map jr/b ENTITY
+.field_map jr/a TILE
+.field_map jr/c field_21124_c
+.class_map jq ChunkPosition
+.field_map jq/b field_845_b
+.field_map jq/a field_846_a
+.field_map jq/c field_847_c
+.method_map jq/equals (Ljava/lang/Object;)Z equals
+.method_map jq/hashCode ()I hashCode
+.class_map jp WorldProviderHell
+.method_map jp/b ()V func_4088_b
+.method_map jp/a (JF)F func_4089_a
+.method_map jp/c ()Lcq; func_4087_c
+.method_map jp/a ()V func_4090_a
+.method_map jp/a (II)Z func_4092_a
+.method_map jp/a (Ljava/io/File;)Lbj; func_4086_a
+.class_map jo Packet38
+.field_map jo/b field_9015_b
+.field_map jo/a field_9016_a
+.method_map jo/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map jo/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map jo/a ()I func_71_a
+.method_map jo/a (Lgi;)V func_72_a
+.class_map jn EntityList
+.field_map jn/b field_848_b
+.field_map jn/a field_849_a
+.field_map jn/d field_850_d
+.field_map jn/c field_851_c
+.method_map jn/a (Ljava/lang/Class;Ljava/lang/String;I)V func_563_a
+.method_map jn/a (Ljava/lang/String;Lfv;)Lfe; func_567_a
+.method_map jn/b (Lfe;)Ljava/lang/String; func_564_b
+.method_map jn/a (Lfe;)I func_565_a
+.method_map jn/a (Lah;Lfv;)Lfe; func_566_a
+.class_map jm ItemSpade
+.field_map jm/bg field_4206_bb
+.method_map jm/a (Lhr;)Z func_80_a
+.class_map jl ItemStack
+.field_map jl/b field_852_b
+.field_map jl/a field_853_a
+.field_map jl/d field_854_d
+.field_map jl/c field_855_c
+.method_map jl/j ()Ljl; func_578_d
+.method_map jl/h ()I func_21125_h
+.method_map jl/a (Ljl;Ljl;)Z func_20119_a
+.method_map jl/a (Lhl;)V func_577_a
+.method_map jl/a (Lfe;)I func_9218_a
+.method_map jl/a (IIII)V func_568_a
+.method_map jl/d ()Z func_21126_d
+.method_map jl/b ()I func_576_b
+.method_map jl/i ()I func_571_c
+.method_map jl/a (Ljl;)Z func_21127_a
+.method_map jl/e ()Z func_21128_e
+.method_map jl/a (Lfv;Lhl;)Ljl; func_6168_a
+.method_map jl/a (Lhl;Lfv;IIII)Z func_572_a
+.method_map jl/a (Lhr;)F func_574_a
+.method_map jl/toString ()Ljava/lang/String; toString
+.method_map jl/b (Lmj;)V func_21129_b
+.method_map jl/b (Lhr;)Z func_573_b
+.method_map jl/f ()Z func_21130_f
+.method_map jl/a (I)Ljl; func_20118_a
+.method_map jl/b (Ljl;)Ljl; func_20117_a
+.method_map jl/b (Lah;)V func_575_b
+.method_map jl/c (Ljl;)Z func_20116_b
+.method_map jl/a ()Lhg; func_569_a
+.method_map jl/a (Lah;)Lah; func_570_a
+.method_map jl/a (Lmj;)V func_9217_a
+.method_map jl/g ()I func_21131_g
+.method_map jl/c ()Z func_21132_c
+.method_map jl/b (I)V func_579_a
+.class_map jk BlockFlower
+.method_map jk/d (Lfv;III)Lfa; func_248_d
+.method_map jk/a ()Z func_240_b
+.method_map jk/f (Lfv;III)Z func_220_f
+.method_map jk/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map jk/b (Lfv;IIII)V func_234_b
+.method_map jk/a (Lfv;III)Z func_259_a
+.method_map jk/c (I)Z func_277_b
+.method_map jk/g (Lfv;III)V func_276_g
+.class_map jj ItemArmor
+.field_map jj/bk field_258_bb
+.field_map jj/a field_254_a
+.field_map jj/bj field_259_ba
+.field_map jj/bi field_255_aZ
+.field_map jj/bh field_256_aY
+.field_map jj/bg field_257_aX
+.class_map ji InventoryPlayer
+.field_map ji/b field_495_b
+.field_map ji/a field_496_a
+.field_map ji/f field_20074_f
+.field_map ji/e field_497_f
+.field_map ji/d field_498_e
+.field_map ji/c field_499_d
+.method_map ji/a (Lfe;)I func_9157_a
+.method_map ji/c (Ljl;)I func_21082_c
+.method_map ji/d ()V func_183_c
+.method_map ji/a (Ljl;)Z func_201_a
+.method_map ji/c ()I func_202_d
+.method_map ji/a (Lhr;)F func_208_a
+.method_map ji/j ()I func_205_g
+.method_map ji/a (ILjl;)V func_206_a
+.method_map ji/b (Lhr;)Z func_207_b
+.method_map ji/e ()Ljl; func_213_b
+.method_map ji/a (I)Ljl; func_82_a
+.method_map ji/d (I)I func_6126_d
+.method_map ji/f ()V func_210_c
+.method_map ji/c (I)V func_211_b
+.method_map ji/d (Ljl;)I func_21083_d
+.method_map ji/a_ (Lhl;)Z func_20067_a_
+.method_map ji/a (Lfh;)Lfh; func_200_a
+.method_map ji/i ()Ljl; func_20072_i
+.method_map ji/b ()Ljava/lang/String; func_20068_b
+.method_map ji/b (Lfh;)V func_203_b
+.method_map ji/h ()V func_199_f
+.method_map ji/b (Ljl;)V func_20073_b
+.method_map ji/b (I)Z func_6127_b
+.method_map ji/h_ ()I func_83_a
+.method_map ji/g ()I func_212_e
+.method_map ji/b (II)Ljl; func_20069_a
+.class_map jh Packet100
+.field_map jh/b field_20012_b
+.field_map jh/a field_20013_a
+.field_map jh/d field_20014_d
+.field_map jh/c field_20015_c
+.method_map jh/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map jh/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map jh/a ()I func_71_a
+.method_map jh/a (Lgi;)V func_72_a
+.class_map jg CraftingInventoryWorkbenchCB
+.field_map jg/b field_20145_b
+.field_map jg/a field_20146_a
+.field_map jg/j field_20147_j
+.field_map jg/i field_20148_i
+.field_map jg/h field_20149_h
+.field_map jg/c field_20150_c
+.method_map jg/b (Lhl;)Z func_20126_b
+.method_map jg/a (Lhl;)V func_20130_a
+.method_map jg/a (Lmn;)V func_20121_a
+.class_map jf ShapedRecipes
+.field_map jf/b field_21140_b
+.field_map jf/a field_21141_a
+.field_map jf/e field_21142_e
+.field_map jf/d field_21143_d
+.field_map jf/c field_21144_c
+.method_map jf/a (Lk;)Z func_21134_a
+.method_map jf/a ()I func_20165_a
+.method_map jf/b (Lk;)Ljl; func_21136_b
+.method_map jf/a (Lk;IIZ)Z func_21139_a
+.class_map je WorldGenReed
+.method_map je/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map jd Packet54
+.field_map jd/b field_21007_b
+.field_map jd/a field_21008_a
+.field_map jd/e field_21009_e
+.field_map jd/d field_21010_d
+.field_map jd/c field_21011_c
+.method_map jd/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map jd/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map jd/a ()I func_71_a
+.method_map jd/a (Lgi;)V func_72_a
+.class_map jc EnumArt
+.field_map jc/z field_857_y
+.field_map jc/y DonkeyKong
+.field_map jc/x Skeleton
+.field_map jc/w BurningSkull
+.field_map jc/v Pigscene
+.field_map jc/u Pointer
+.field_map jc/E field_863_D
+.field_map jc/t Fighters
+.field_map jc/D field_865_C
+.field_map jc/s SkullAndRoses
+.field_map jc/C field_867_B
+.field_map jc/r Void
+.field_map jc/B field_869_A
+.field_map jc/q Stage
+.field_map jc/A field_856_z
+.field_map jc/p Bust
+.field_map jc/o Match
+.field_map jc/n Graham
+.field_map jc/m Wanderer
+.field_map jc/l Creebet
+.field_map jc/k Sunset
+.field_map jc/j Sea
+.field_map jc/i Courbet
+.field_map jc/h Pool
+.field_map jc/g Wasteland
+.field_map jc/f Plant
+.field_map jc/e Bomb
+.field_map jc/d Aztec2
+.field_map jc/c Alban
+.field_map jc/b Aztec
+.field_map jc/a Kebab
+.class_map jb EntityEgg
+.field_map jb/am field_20079_al
+.field_map jb/al field_20081_ak
+.field_map jb/f field_20080_f
+.field_map jb/ak field_20083_aj
+.field_map jb/e field_20082_e
+.field_map jb/d field_20084_d
+.field_map jb/c field_20085_c
+.field_map jb/b field_20086_b
+.field_map jb/a field_20087_a
+.method_map jb/a (DDDFF)V func_20078_a
+.method_map jb/b (Lhl;)V func_6093_b
+.method_map jb/b_ ()V func_106_b_
+.method_map jb/a ()V func_21044_a
+.method_map jb/b (Lah;)V func_99_b
+.method_map jb/a (Lah;)V func_97_a
+.class_map ja Packet25
+.field_map ja/b field_21012_b
+.field_map ja/a field_21013_a
+.field_map ja/f field_21014_f
+.field_map ja/e field_21015_e
+.field_map ja/d field_21016_d
+.field_map ja/c field_21017_c
+.method_map ja/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map ja/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map ja/a ()I func_71_a
+.method_map ja/a (Lgi;)V func_72_a
+.class_map iz MathHelper
+.field_map iz/a field_886_a
+.method_map iz/a (DD)D func_581_a
+.method_map iz/b (F)F func_582_b
+.method_map iz/a (D)F func_583_a
+.method_map iz/b (D)I func_584_b
+.method_map iz/a (F)F func_585_a
+.method_map iz/c (F)F func_586_c
+.method_map iz/e (F)F func_587_e
+.method_map iz/d (F)I func_588_d
+.class_map iy WorldGenBigTree
+.field_map iy/o field_746_o
+.field_map iy/n field_747_n
+.field_map iy/m field_748_m
+.field_map iy/l field_749_l
+.field_map iy/k field_750_k
+.field_map iy/j field_751_j
+.field_map iy/i field_752_i
+.field_map iy/h field_753_h
+.field_map iy/g field_754_g
+.field_map iy/f field_755_f
+.field_map iy/e field_756_e
+.field_map iy/d field_757_d
+.field_map iy/c field_758_c
+.field_map iy/b field_759_b
+.field_map iy/a field_760_a
+.method_map iy/b ()V func_421_b
+.method_map iy/e ()Z func_422_e
+.method_map iy/a (III)V func_423_a
+.method_map iy/a ()V func_424_a
+.method_map iy/a ([I[II)V func_425_a
+.method_map iy/a (IIIFBI)V func_426_a
+.method_map iy/a ([I[I)I func_427_a
+.method_map iy/d ()V func_428_d
+.method_map iy/b (I)F func_429_b
+.method_map iy/c (I)Z func_430_c
+.method_map iy/a (I)F func_431_a
+.method_map iy/c ()V func_432_c
+.method_map iy/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.method_map iy/a (DDD)V func_420_a
+.class_map ix NBTBase
+.field_map ix/a field_731_a
+.method_map ix/b (Ljava/io/DataInput;)Lix; func_383_b
+.method_map ix/b (B)Ljava/lang/String; func_377_b
+.method_map ix/a ()B func_379_a
+.method_map ix/m (Ljava/lang/String;)Lix; func_385_m
+.method_map ix/a (Lix;Ljava/io/DataOutput;)V func_380_a
+.method_map ix/a (Ljava/io/DataOutput;)V func_381_a
+.method_map ix/a (Ljava/io/DataInput;)V func_382_a
+.method_map ix/c ()Ljava/lang/String; func_384_c
+.method_map ix/a (B)Lix; func_378_a
+.class_map iw EntityCreature
+.field_map iw/a field_388_a
+.field_map iw/e field_387_ah
+.field_map iw/d field_389_ag
+.method_map iw/a (Lfe;F)V func_157_a
+.method_map iw/l ()Lfe; func_158_i
+.method_map iw/a (III)F func_159_a
+.method_map iw/d ()V func_152_d_
+.method_map iw/b ()Z func_155_a
+.class_map iv Packet10Flying
+.field_map iv/i field_65_i
+.field_map iv/h field_66_h
+.field_map iv/g field_67_g
+.field_map iv/f field_68_f
+.field_map iv/e field_69_e
+.field_map iv/d field_70_d
+.field_map iv/c field_71_c
+.field_map iv/b field_72_b
+.field_map iv/a field_73_a
+.method_map iv/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map iv/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map iv/a ()I func_71_a
+.method_map iv/a (Lgi;)V func_72_a
+.class_map iu ItemRedstone
+.method_map iu/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map it MinecartTrackLogic
+.field_map it/b field_887_b
+.field_map it/a field_888_a
+.field_map it/g field_889_g
+.field_map it/f field_890_f
+.field_map it/e field_891_e
+.field_map it/d field_892_d
+.field_map it/c field_893_c
+.method_map it/a (III)Z func_589_a
+.method_map it/b ()V func_591_b
+.method_map it/c (III)Z func_592_c
+.method_map it/c (Lit;)Z func_597_c
+.method_map it/d (Lit;)V func_598_d
+.method_map it/a ()V func_593_a
+.method_map it/c ()I func_594_c
+.method_map it/a (Lit;)I func_600_a
+.method_map it/a (Z)V func_596_a
+.method_map it/a (Ljq;)Lit; func_595_a
+.method_map it/b (Lit;)Z func_590_b
+.method_map it/b (III)Z func_599_b
+.class_map is BlockTorch
+.method_map is/c (Lfv;IIII)V func_255_c
+.method_map is/e (Lfv;III)V func_250_e
+.method_map is/b (Lfv;IIII)V func_234_b
+.method_map is/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map is/a ()Z func_240_b
+.method_map is/g (Lfv;III)Z func_279_g
+.method_map is/a (Lfv;IIILbu;Lbu;)Lih; func_262_a
+.method_map is/d (Lfv;III)Lfa; func_248_d
+.method_map is/a (Lfv;III)Z func_259_a
+.class_map ir GuiLogFormatter
+.field_map ir/a field_894_a
+.method_map ir/format (Ljava/util/logging/LogRecord;)Ljava/lang/String; format
+.class_map iq ItemDoor
+.field_map iq/a field_260_a
+.method_map iq/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map ip BlockSoil
+.method_map ip/d (Lfv;III)Lfa; func_248_d
+.method_map ip/b (Lfv;IIILfe;)V func_249_b
+.method_map ip/a ()Z func_240_b
+.method_map ip/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map ip/g (Lfv;III)Z func_282_g
+.method_map ip/b (Lfv;IIII)V func_234_b
+.method_map ip/a (ILjava/util/Random;)I func_252_a
+.method_map ip/h (Lfv;III)Z func_283_h
+.class_map io EntityTrackerEntry
+.field_map io/s field_9220_u
+.field_map io/r field_12020_u
+.field_map io/q field_9222_s
+.field_map io/p field_9223_r
+.field_map io/o field_9224_q
+.field_map io/n field_899_k
+.field_map io/m field_900_j
+.field_map io/l field_9221_t
+.field_map io/k field_9226_m
+.field_map io/j field_9227_l
+.field_map io/i field_9228_k
+.field_map io/h field_9229_j
+.field_map io/g field_9230_i
+.field_map io/f field_9231_h
+.field_map io/e field_9232_g
+.field_map io/d field_9233_f
+.field_map io/c field_9234_e
+.field_map io/b field_9235_d
+.field_map io/a field_909_a
+.method_map io/b ()Lkx; func_602_b
+.method_map io/hashCode ()I hashCode
+.method_map io/equals (Ljava/lang/Object;)Z equals
+.method_map io/a ()V func_604_a
+.method_map io/c (Lfy;)V func_9219_b
+.method_map io/b (Lkx;)V func_12018_b
+.method_map io/a (Ljava/util/List;)V func_605_a
+.method_map io/a (Lkx;)V func_603_a
+.method_map io/b (Lfy;)V func_606_a
+.method_map io/b (Ljava/util/List;)V func_601_b
+.method_map io/a (Lfy;)V func_12019_a
+.class_map in Packet103
+.field_map in/b field_20016_b
+.field_map in/a field_20017_a
+.field_map in/c field_20018_c
+.method_map in/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map in/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map in/a ()I func_71_a
+.method_map in/a (Lgi;)V func_72_a
+.class_map im EntityTracker
+.field_map im/b field_910_b
+.field_map im/a field_911_a
+.field_map im/d field_912_d
+.field_map im/c field_913_c
+.method_map im/a (Lfe;Lkx;)V func_12021_a
+.method_map im/b (Lfe;)V func_610_b
+.method_map im/a (Lfe;)V func_611_a
+.method_map im/a (Lfe;IIZ)V func_6186_a
+.method_map im/a ()V func_607_a
+.method_map im/a (Lfe;II)V func_6187_a
+.method_map im/b (Lfe;Lkx;)V func_609_a
+.method_map im/a (Lfy;)V func_9238_a
+.class_map il Packet12PlayerLook
+.method_map il/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map il/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map il/a ()I func_71_a
+.class_map ik Packet16BlockItemSwitch
+.field_map ik/a field_74_b
+.method_map ik/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map ik/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map ik/a ()I func_71_a
+.method_map ik/a (Lgi;)V func_72_a
+.class_map ij BlockLog
+.method_map ij/a (Ljava/util/Random;)I func_244_a
+.method_map ij/b (Lfv;III)V func_242_b
+.method_map ij/a (ILjava/util/Random;)I func_252_a
+.method_map ij/b (I)I func_21025_b
+.class_map ii ServerConfigurationManager
+.field_map ii/l field_914_l
+.field_map ii/k field_9250_k
+.field_map ii/j field_9251_j
+.field_map ii/i field_917_i
+.field_map ii/h field_918_h
+.field_map ii/g field_919_g
+.field_map ii/f field_9252_f
+.field_map ii/e field_9253_e
+.field_map ii/d field_922_d
+.field_map ii/c field_923_c
+.field_map ii/b field_924_b
+.field_map ii/a field_925_a
+.method_map ii/j ()V func_9239_j
+.method_map ii/d (Ljava/lang/String;)V func_9240_d
+.method_map ii/a (Ljava/lang/String;)V func_9241_a
+.method_map ii/a (Lgc;)V func_618_a
+.method_map ii/d ()V func_617_d
+.method_map ii/a (Lhc;Ljava/lang/String;Ljava/lang/String;)Lfy; func_619_a
+.method_map ii/b (Lfy;)V func_613_b
+.method_map ii/c (Lfy;)V func_616_c
+.method_map ii/a (III)V func_622_a
+.method_map ii/e ()V func_623_e
+.method_map ii/a (Ljava/lang/String;Lkx;)Z func_621_a
+.method_map ii/e (Ljava/lang/String;)V func_9243_e
+.method_map ii/b (Ljava/lang/String;)V func_9244_b
+.method_map ii/a (DDDDLkx;)V func_12022_a
+.method_map ii/f ()V func_626_f
+.method_map ii/a (IIILbm;)V func_636_a
+.method_map ii/a (Ljava/lang/String;Ljava/lang/String;)V func_628_a
+.method_map ii/g ()V func_9245_g
+.method_map ii/i (Ljava/lang/String;)V func_630_i
+.method_map ii/f (Ljava/lang/String;)V func_9246_f
+.method_map ii/a (Lkx;)V func_631_a
+.method_map ii/c ()Ljava/lang/String; func_633_c
+.method_map ii/c (Ljava/lang/String;)V func_9247_c
+.method_map ii/h ()V func_9248_h
+.method_map ii/a (Lfy;)V func_627_a
+.method_map ii/d (Lfy;)Lfy; func_9242_d
+.method_map ii/b ()V func_637_b
+.method_map ii/i ()V func_9249_i
+.method_map ii/g (Ljava/lang/String;)Z func_639_g
+.method_map ii/h (Ljava/lang/String;)Lfy; func_620_h
+.method_map ii/a ()I func_640_a
+.class_map ih MovingObjectPosition
+.field_map ih/b field_926_b
+.field_map ih/a field_927_a
+.field_map ih/g field_928_g
+.field_map ih/f field_929_f
+.field_map ih/e field_930_e
+.field_map ih/d field_931_d
+.field_map ih/c field_932_c
+.class_map ig ItemBoat
+.method_map ig/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map if ItemSign
+.method_map if/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map ie NBTTagByteArray
+.field_map ie/a field_733_a
+.method_map ie/a ()B func_379_a
+.method_map ie/a (Ljava/io/DataInput;)V func_382_a
+.method_map ie/a (Ljava/io/DataOutput;)V func_381_a
+.method_map ie/toString ()Ljava/lang/String; toString
+.class_map id ServerGUI
+.field_map id/b field_21_b
+.field_map id/a field_22_a
+.method_map id/c ()Ljava/lang/String; func_1_c
+.method_map id/a ()Ljavax/swing/JComponent; func_45_a
+.method_map id/b (Ljava/lang/String;)V func_2_b
+.method_map id/a (Lid;)Lnet/minecraft/server/MinecraftServer; func_44_a
+.method_map id/a (Lnet/minecraft/server/MinecraftServer;)V func_46_a
+.method_map id/d ()Ljavax/swing/JComponent; func_47_d
+.method_map id/b ()Ljavax/swing/JComponent; func_48_b
+.class_map ic EntityItem
+.field_map ic/b field_9169_b
+.field_map ic/a field_429_a
+.field_map ic/f field_430_ag
+.field_map ic/e field_9170_e
+.field_map ic/d field_432_ae
+.field_map ic/c field_433_ad
+.method_map ic/b (Lhl;)V func_6093_b
+.method_map ic/g (DDD)Z func_176_g
+.method_map ic/a ()V func_21044_a
+.method_map ic/b_ ()V func_106_b_
+.method_map ic/b (Lah;)V func_99_b
+.method_map ic/v ()Z func_119_o
+.method_map ic/a (Lfe;I)Z func_121_a
+.method_map ic/a (Lah;)V func_97_a
+.method_map ic/b (I)V func_125_b
+.class_map ib CraftingManager
+.field_map ib/b field_20154_b
+.field_map ib/a field_20155_a
+.method_map ib/a ()Lib; func_20151_a
+.method_map ib/b (Ljl;[Ljava/lang/Object;)V func_21146_b
+.method_map ib/a (Ljl;[Ljava/lang/Object;)V func_20153_a
+.method_map ib/a (Lk;)Ljl; func_21147_a
+.class_map ia EntityZombie
+.method_map ia/e ()Ljava/lang/String; func_6097_d
+.method_map ia/g ()Ljava/lang/String; func_6098_f
+.method_map ia/o ()V func_153_y
+.method_map ia/h ()I func_149_g
+.method_map ia/f ()Ljava/lang/String; func_6100_e
+.class_map hz Packet4UpdateTime
+.field_map hz/a field_76_a
+.method_map hz/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map hz/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map hz/a ()I func_71_a
+.method_map hz/a (Lgi;)V func_72_a
+.class_map hy ConsoleLogManager
+.field_map hy/a field_933_a
+.method_map hy/a ()V func_641_a
+.class_map hx Packet40
+.field_map hx/b field_21018_b
+.field_map hx/a field_21019_a
+.method_map hx/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map hx/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map hx/a ()I func_71_a
+.method_map hx/a (Lgi;)V func_72_a
+.class_map hw BlockSapling
+.method_map hw/b (Lfv;IIILjava/util/Random;)V func_21027_b
+.method_map hw/a (Lfv;IIILjava/util/Random;)V func_221_a
+.class_map hv WorldChunkManagerHell
+.field_map hv/g field_4260_g
+.field_map hv/f field_4261_f
+.field_map hv/e field_4262_e
+.method_map hv/a ([Lkt;IIII)[Lkt; func_4064_a
+.method_map hv/a (II)Lkt; func_4067_a
+.method_map hv/a (Lmr;)Lkt; func_4066_a
+.method_map hv/a (IIII)[Lkt; func_4065_a
+.method_map hv/a ([DIIII)[D func_4068_a
+.class_map hu BlockBookshelf
+.method_map hu/a (Ljava/util/Random;)I func_244_a
+.method_map hu/a (I)I func_241_a
+.class_map ht EntitySlime
+.field_map ht/b field_400_b
+.field_map ht/a field_401_a
+.field_map ht/d field_402_ae
+.field_map ht/c field_403_ad
+.method_map ht/b (Lhl;)V func_6093_b
+.method_map ht/h ()I func_149_g
+.method_map ht/q ()V func_118_j
+.method_map ht/f ()Ljava/lang/String; func_6100_e
+.method_map ht/g ()Ljava/lang/String; func_6098_f
+.method_map ht/b_ ()V func_106_b_
+.method_map ht/d ()V func_152_d_
+.method_map ht/b (Lah;)V func_99_b
+.method_map ht/a (Lah;)V func_97_a
+.method_map ht/b ()Z func_155_a
+.method_map ht/i ()F func_6102_h
+.method_map ht/a (I)V func_160_c
+.class_map hs RecipesTools
+.field_map hs/b field_20157_b
+.field_map hs/a field_20158_a
+.method_map hs/a (Lib;)V func_20156_a
+.class_map hr Block
+.field_map hr/z field_4064_A
+.field_map hr/y field_6047_y
+.field_map hr/x field_531_y
+.field_map hr/w field_532_x
+.field_map hr/v field_533_w
+.field_map hr/u field_534_v
+.field_map hr/t field_535_u
+.field_map hr/s field_536_t
+.field_map hr/r field_537_s
+.field_map hr/q field_538_r
+.field_map hr/p field_539_q
+.field_map hr/o field_540_p
+.field_map hr/n field_541_o
+.field_map hr/m field_542_n
+.field_map hr/l field_9021_l
+.field_map hr/k field_9022_k
+.field_map hr/j field_9023_j
+.field_map hr/i field_9024_i
+.field_map hr/h field_9025_h
+.field_map hr/g field_9026_g
+.field_map hr/f field_9027_f
+.field_map hr/e field_9028_e
+.field_map hr/d field_551_e
+.field_map hr/bu field_552_bo
+.field_map hr/bt field_553_bn
+.field_map hr/a field_666_a
+.field_map hr/bs field_554_bm
+.field_map hr/br field_555_bl
+.field_map hr/bq field_557_bk
+.field_map hr/bp field_559_bj
+.field_map hr/bo field_561_bi
+.field_map hr/bn field_563_bh
+.field_map hr/bm field_565_bg
+.field_map hr/bl field_567_bf
+.field_map hr/Z field_9029_Z
+.field_map hr/bk field_569_be
+.field_map hr/Y field_9030_Y
+.field_map hr/bj field_571_bd
+.field_map hr/X field_9031_X
+.field_map hr/bi field_573_bc
+.field_map hr/W field_9032_W
+.field_map hr/bh field_575_bb
+.field_map hr/V field_9033_V
+.field_map hr/bg field_21026_bg
+.field_map hr/U field_9034_U
+.field_map hr/bf field_9035_bf
+.field_map hr/T field_9036_T
+.field_map hr/be field_4044_bf
+.field_map hr/S field_9037_S
+.field_map hr/bd field_6065_bd
+.field_map hr/R field_9038_R
+.field_map hr/bc field_4048_bd
+.field_map hr/Q field_9039_Q
+.field_map hr/bb field_4050_bc
+.field_map hr/P field_9040_P
+.field_map hr/ba field_4052_bb
+.field_map hr/O field_9041_O
+.field_map hr/N field_9042_N
+.field_map hr/M field_4056_N
+.field_map hr/L field_9043_L
+.field_map hr/K field_581_L
+.field_map hr/J field_582_K
+.field_map hr/az field_644_aA
+.field_map hr/I field_583_J
+.field_map hr/ay field_9044_ay
+.field_map hr/H field_4059_I
+.field_map hr/ax field_4060_ay
+.field_map hr/G field_4061_H
+.field_map hr/aw field_588_ax
+.field_map hr/F field_4062_G
+.field_map hr/E field_590_F
+.field_map hr/av field_591_aw
+.field_map hr/D field_592_E
+.field_map hr/au field_593_av
+.field_map hr/C field_594_D
+.field_map hr/at field_9045_at
+.field_map hr/B field_596_C
+.field_map hr/as field_597_at
+.field_map hr/A field_598_B
+.field_map hr/ar field_599_as
+.field_map hr/aq field_9046_aq
+.field_map hr/ap field_602_aq
+.field_map hr/ao field_603_ap
+.field_map hr/an field_604_ao
+.field_map hr/am field_605_an
+.field_map hr/al field_9047_al
+.field_map hr/ak field_607_al
+.field_map hr/aj field_608_ak
+.field_map hr/ai field_4067_aj
+.field_map hr/ah field_4068_ai
+.field_map hr/ag field_4069_ah
+.field_map hr/af field_4070_ag
+.field_map hr/ae field_4071_af
+.field_map hr/ad field_4072_ae
+.field_map hr/ac field_9048_ac
+.field_map hr/ab field_616_ac
+.field_map hr/aa field_9049_aa
+.field_map hr/aZ field_9050_aZ
+.field_map hr/aY field_619_aZ
+.field_map hr/aX field_620_aY
+.field_map hr/aW field_621_aX
+.field_map hr/aV field_622_aW
+.field_map hr/aU field_4076_aV
+.field_map hr/aT field_4077_aU
+.field_map hr/aS field_625_aT
+.field_map hr/aR field_9051_aR
+.field_map hr/aQ field_627_aR
+.field_map hr/aP field_628_aQ
+.field_map hr/aO field_629_aP
+.field_map hr/aN field_630_aO
+.field_map hr/aM field_9052_aM
+.field_map hr/aL field_632_aM
+.field_map hr/aK field_9053_aK
+.field_map hr/aJ field_9054_aJ
+.field_map hr/aI field_4082_aJ
+.field_map hr/aH field_9055_aH
+.field_map hr/aG field_637_aH
+.field_map hr/aF field_638_aG
+.field_map hr/aE field_639_aF
+.field_map hr/aD field_4084_aE
+.field_map hr/aC field_641_aD
+.field_map hr/aB field_642_aC
+.field_map hr/aA field_643_aB
+.method_map hr/b (F)Lhr; func_232_b
+.method_map hr/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map hr/a (Lfv;IIILfa;Ljava/util/ArrayList;)V func_264_a
+.method_map hr/b (Lbu;)Z func_228_b
+.method_map hr/c (F)Lhr; func_237_c
+.method_map hr/d ()Z func_245_e
+.method_map hr/c (Lbu;)Z func_236_c
+.method_map hr/b (Lfv;IIILhl;)V func_235_b
+.method_map hr/a (Lla;IIII)Z func_253_a
+.method_map hr/a (FFFFFF)V func_229_a
+.method_map hr/f (Lfv;III)Z func_220_f
+.method_map hr/a (Lfv;IIILfe;)V func_263_a
+.method_map hr/a (Z)V func_231_a
+.method_map hr/a_ (Lfv;IIII)V func_247_a_
+.method_map hr/a (Lfv;IIIIF)V func_227_a
+.method_map hr/a (Lfv;IIII)V func_251_a
+.method_map hr/a (I)I func_241_a
+.method_map hr/a (Lfv;IIILmj;)V func_4027_a
+.method_map hr/c (Lfv;IIII)V func_255_c
+.method_map hr/a (IZ)Z func_243_a
+.method_map hr/a (Lfv;IIILbu;Lbu;)Lih; func_262_a
+.method_map hr/a (Ljava/util/Random;)I func_244_a
+.method_map hr/a_ (Lfv;III)V func_4029_c
+.method_map hr/a (Lla;III)V func_233_a
+.method_map hr/a (Lfv;IIILhl;)Z func_246_a
+.method_map hr/b ()I func_4028_b
+.method_map hr/b (Lfv;III)V func_242_b
+.method_map hr/g (Lfv;IIII)V func_12007_g
+.method_map hr/a (Lfe;)F func_226_a
+.method_map hr/d (Lfv;III)Lfa; func_248_d
+.method_map hr/a (Lfv;IIILfe;Lbu;)V func_230_a
+.method_map hr/a (ILjava/util/Random;)I func_252_a
+.method_map hr/a (Lcy;)Lhr; func_4026_a
+.method_map hr/b (Lla;IIII)Z func_239_b
+.method_map hr/e ()Ljava/lang/String; func_20036_e
+.method_map hr/c ()Z func_225_d
+.method_map hr/e (Lfv;III)V func_250_e
+.method_map hr/b (Lfv;IIILfe;)V func_249_b
+.method_map hr/e (I)Lhr; func_258_c
+.method_map hr/b (Lfv;IIII)V func_234_b
+.method_map hr/d (Lfv;IIII)Z func_238_d
+.method_map hr/a (Lhl;)F func_254_a
+.method_map hr/a ()Z func_240_b
+.method_map hr/a (Ljava/lang/String;)Lhr; func_20037_a
+.method_map hr/a (Lfv;IIIII)V func_21024_a
+.method_map hr/f ()Z func_261_f
+.method_map hr/a (F)Lhr; func_224_a
+.method_map hr/a (Lbu;)Z func_223_a
+.method_map hr/a (Lfv;III)Z func_259_a
+.method_map hr/b (I)I func_21025_b
+.class_map hq EntityMobs
+.field_map hq/c field_404_af
+.method_map hq/a (Lfe;F)V func_157_a
+.method_map hq/b_ ()V func_106_b_
+.method_map hq/b (Lah;)V func_99_b
+.method_map hq/o ()V func_153_y
+.method_map hq/a (Lfe;I)Z func_121_a
+.method_map hq/a (Lah;)V func_97_a
+.method_map hq/b ()Z func_155_a
+.method_map hq/l ()Lfe; func_158_i
+.method_map hq/a (III)F func_159_a
+.class_map hp Packet15Place
+.field_map hp/b field_77_b
+.field_map hp/a field_78_a
+.field_map hp/e field_79_e
+.field_map hp/d field_80_d
+.field_map hp/c field_81_c
+.method_map hp/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map hp/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map hp/a ()I func_71_a
+.method_map hp/a (Lgi;)V func_72_a
+.class_map ho MinecraftException
+.class_map hn BlockCake
+.method_map hn/a (Ljava/util/Random;)I func_244_a
+.method_map hn/b (Lfv;IIII)V func_234_b
+.method_map hn/b (Lfv;IIILhl;)V func_235_b
+.method_map hn/a ()Z func_240_b
+.method_map hn/c (Lfv;IIILhl;)V func_21030_c
+.method_map hn/a (ILjava/util/Random;)I func_252_a
+.method_map hn/a (I)I func_241_a
+.method_map hn/a (Lla;III)V func_233_a
+.method_map hn/a (Lfv;IIILhl;)Z func_246_a
+.method_map hn/f (Lfv;III)Z func_220_f
+.method_map hn/d (Lfv;III)Lfa; func_248_d
+.method_map hn/a (Lfv;III)Z func_259_a
+.class_map hm NBTTagShort
+.field_map hm/a field_734_a
+.method_map hm/a ()B func_379_a
+.method_map hm/a (Ljava/io/DataInput;)V func_382_a
+.method_map hm/a (Ljava/io/DataOutput;)V func_381_a
+.method_map hm/toString ()Ljava/lang/String; toString
+.class_map hl EntityPlayer
+.field_map hl/az field_20046_az
+.field_map hl/ay field_20047_ay
+.field_map hl/ax field_4110_as
+.field_map hl/aw field_409_aq
+.field_map hl/av field_9147_ar
+.field_map hl/au field_9148_aq
+.field_map hl/aE field_6124_at
+.field_map hl/at field_9149_ap
+.field_map hl/aD field_20048_aD
+.field_map hl/as field_9150_ao
+.field_map hl/aC field_20049_aC
+.field_map hl/ar field_9151_an
+.field_map hl/aB field_20050_aB
+.field_map hl/aq field_9152_am
+.field_map hl/aA field_20051_aA
+.field_map hl/ap field_20052_ap
+.field_map hl/ao field_20053_ao
+.field_map hl/an field_416_aj
+.field_map hl/a field_421_a
+.method_map hl/O ()V func_161_a
+.method_map hl/F ()D func_117_x
+.method_map hl/q ()V func_118_j
+.method_map hl/a (Lah;)V func_97_a
+.method_map hl/d ()V func_152_d_
+.method_map hl/P ()Ljl; func_172_B
+.method_map hl/a (Lfe;I)Z func_121_a
+.method_map hl/g (Lfe;)V func_9145_g
+.method_map hl/a (Ljl;)V func_20045_a
+.method_map hl/a (Lez;)V func_170_a
+.method_map hl/a (III)V func_174_A
+.method_map hl/j (Lfe;)V func_171_h
+.method_map hl/a (Lhr;)F func_165_a
+.method_map hl/h (Lfe;)V func_9146_h
+.method_map hl/c (Lfe;I)V func_163_c
+.method_map hl/Q ()V func_164_C
+.method_map hl/w ()F func_104_p
+.method_map hl/a (Lic;)V func_162_a
+.method_map hl/b (Lhr;)Z func_167_b
+.method_map hl/D ()V func_115_v
+.method_map hl/K ()V func_168_z
+.method_map hl/a (Lmn;)V func_166_a
+.method_map hl/a (Lbf;)V func_21072_a
+.method_map hl/a (Ljl;Z)V func_169_a
+.method_map hl/L ()V func_20043_I
+.method_map hl/b (Lah;)V func_99_b
+.method_map hl/b (Ljl;)V func_20044_b
+.method_map hl/f (Lfe;)V func_142_f
+.method_map hl/e (I)V func_6099_c
+.method_map hl/o ()V func_153_y
+.method_map hl/b (Lfe;I)V func_96_b
+.method_map hl/b_ ()V func_106_b_
+.method_map hl/a (Llv;)V func_4048_a
+.class_map hk ItemLog
+.method_map hk/a (I)I func_21089_a
+.class_map hj Slot
+.field_map hj/b field_20096_b
+.field_map hj/a field_20097_a
+.field_map hj/e field_20098_e
+.field_map hj/d field_20099_d
+.field_map hj/c field_20100_c
+.method_map hj/c ()Ljl; func_20092_c
+.method_map hj/a (Ljl;)Z func_20095_a
+.method_map hj/b ()V func_20091_b
+.method_map hj/b (Ljl;)V func_20089_b
+.method_map hj/a (I)Ljl; func_20088_a
+.method_map hj/a ()I func_20093_a
+.method_map hj/d ()V func_20094_d
+.method_map hj/a (Lmn;I)Z func_20090_a
+.class_map hi BlockSign
+.field_map hi/b field_653_b
+.field_map hi/a field_654_a
+.method_map hi/d (Lfv;III)Lfa; func_248_d
+.method_map hi/a ()Z func_240_b
+.method_map hi/a (Lla;III)V func_233_a
+.method_map hi/b (Lfv;IIII)V func_234_b
+.method_map hi/a (ILjava/util/Random;)I func_252_a
+.method_map hi/a_ ()Lbm; func_294_a_
+.class_map hh Packet130
+.field_map hh/b field_20019_b
+.field_map hh/a field_20020_a
+.field_map hh/d field_20021_d
+.field_map hh/c field_20022_c
+.method_map hh/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map hh/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map hh/a ()I func_71_a
+.method_map hh/a (Lgi;)V func_72_a
+.class_map hg Item
+.field_map hg/z field_4135_z
+.field_map hg/y field_4136_y
+.field_map hg/x field_4137_x
+.field_map hg/w field_4138_w
+.field_map hg/v field_4139_v
+.field_map hg/u field_4140_u
+.field_map hg/t field_4141_t
+.field_map hg/s field_4142_s
+.field_map hg/r field_4143_r
+.field_map hg/q field_4144_q
+.field_map hg/p field_4145_p
+.field_map hg/o field_4146_o
+.field_map hg/n field_4147_n
+.field_map hg/m field_166_m
+.field_map hg/l field_167_l
+.field_map hg/k field_168_k
+.field_map hg/j field_4148_j
+.field_map hg/i field_4149_i
+.field_map hg/h field_171_h
+.field_map hg/g field_4150_g
+.field_map hg/f field_4151_f
+.field_map hg/e field_4152_e
+.field_map hg/d field_4153_d
+.field_map hg/c field_176_c
+.field_map hg/b field_4154_b
+.field_map hg/a field_20900_a
+.field_map hg/Z field_4155_Z
+.field_map hg/Y field_4156_Y
+.field_map hg/X field_4157_X
+.field_map hg/W field_4158_W
+.field_map hg/V field_4159_V
+.field_map hg/bg field_275_a
+.field_map hg/U field_4160_U
+.field_map hg/bf field_21094_bf
+.field_map hg/T field_4161_T
+.field_map hg/be field_230_aW
+.field_map hg/S field_185_S
+.field_map hg/bd field_6153_aZ
+.field_map hg/R field_186_R
+.field_map hg/bc field_232_aU
+.field_map hg/Q field_187_Q
+.field_map hg/bb field_233_aT
+.field_map hg/P field_4162_P
+.field_map hg/ba field_234_aS
+.field_map hg/O field_4163_O
+.field_map hg/N field_4164_N
+.field_map hg/M field_4165_M
+.field_map hg/L field_4166_L
+.field_map hg/K field_193_K
+.field_map hg/J field_194_J
+.field_map hg/az field_195_az
+.field_map hg/I field_196_I
+.field_map hg/ay field_197_ay
+.field_map hg/H field_4167_H
+.field_map hg/ax field_199_ax
+.field_map hg/G field_4168_G
+.field_map hg/aw field_201_aw
+.field_map hg/F field_4169_F
+.field_map hg/av field_4170_av
+.field_map hg/E field_4171_E
+.field_map hg/au field_205_au
+.field_map hg/D field_4172_D
+.field_map hg/C field_4173_C
+.field_map hg/at field_208_at
+.field_map hg/B field_209_B
+.field_map hg/as field_4174_as
+.field_map hg/A field_4175_A
+.field_map hg/ar field_212_ar
+.field_map hg/aq field_213_aq
+.field_map hg/ap field_4176_ap
+.field_map hg/ao field_215_ao
+.field_map hg/an field_216_an
+.field_map hg/am field_4177_am
+.field_map hg/al field_4178_al
+.field_map hg/ak field_4179_ak
+.field_map hg/aj field_4180_aj
+.field_map hg/ai field_4181_ai
+.field_map hg/ah field_4182_ah
+.field_map hg/ag field_4183_ag
+.field_map hg/af field_4184_af
+.field_map hg/ae field_4185_ae
+.field_map hg/ad field_4186_ad
+.field_map hg/ac field_4187_ac
+.field_map hg/ab field_4188_ab
+.field_map hg/aa field_4189_aa
+.field_map hg/aZ field_4191_aV
+.field_map hg/aY field_236_aQ
+.field_map hg/aX field_21098_aX
+.field_map hg/aW field_21095_aW
+.field_map hg/aV field_21096_aV
+.field_map hg/aU field_21097_aU
+.field_map hg/aT field_4192_aT
+.field_map hg/aS field_4193_aS
+.field_map hg/aR field_4194_aR
+.field_map hg/aQ field_4195_aQ
+.field_map hg/aP field_4196_aP
+.field_map hg/aO field_4197_aO
+.field_map hg/aN field_239_aN
+.field_map hg/aM field_4198_aM
+.field_map hg/aL field_4199_aL
+.field_map hg/aK field_242_aK
+.field_map hg/aJ field_4200_aJ
+.field_map hg/aI field_4201_aI
+.field_map hg/aH field_4202_aH
+.field_map hg/aG field_246_aG
+.field_map hg/aF field_4203_aF
+.field_map hg/aE field_4204_aE
+.field_map hg/aD field_249_aD
+.field_map hg/aC field_4205_aC
+.field_map hg/aB field_251_aB
+.field_map hg/aA field_252_aA
+.method_map hg/a (Lfe;)I func_9203_a
+.method_map hg/b (I)Lhg; func_4049_a
+.method_map hg/c (I)Lhg; func_21086_c
+.method_map hg/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.method_map hg/b ()I func_81_a
+.method_map hg/a (Ljl;Lhr;)F func_79_a
+.method_map hg/a (II)Lhg; func_20104_a
+.method_map hg/a (Ljava/lang/String;)Lhg; func_20105_a
+.method_map hg/d ()I func_77_b
+.method_map hg/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.method_map hg/f ()Lhg; func_21087_f
+.method_map hg/g ()Z func_21088_g
+.method_map hg/e ()Lhg; func_4050_c
+.method_map hg/a ()Ljava/lang/String; func_20106_a
+.method_map hg/a (I)I func_21089_a
+.method_map hg/d (I)Lhg; func_21090_d
+.method_map hg/a (Ljl;Lmj;)V func_9201_a
+.method_map hg/a (Z)Lhg; func_21091_a
+.method_map hg/b (Ljl;Lmj;)V func_9202_b
+.method_map hg/a (Lhr;)Z func_80_a
+.method_map hg/a (Ljl;IIII)V func_75_a
+.method_map hg/c ()Z func_21092_c
+.method_map hg/a (Lhg;)Lhg; func_21093_a
+.class_map hf BlockSand
+.field_map hf/a field_650_a
+.method_map hf/h (Lfv;III)V func_284_h
+.method_map hf/e (Lfv;III)V func_250_e
+.method_map hf/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map hf/g (Lfv;III)Z func_285_g
+.method_map hf/b ()I func_4028_b
+.method_map hf/b (Lfv;IIII)V func_234_b
+.class_map he Packet28
+.field_map he/b field_6039_b
+.field_map he/a field_6040_a
+.field_map he/d field_6041_d
+.field_map he/c field_6042_c
+.method_map he/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map he/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map he/a ()I func_71_a
+.method_map he/a (Lgi;)V func_72_a
+.class_map hd Packet30Entity
+.field_map hd/b field_82_b
+.field_map hd/a field_83_a
+.field_map hd/g field_84_g
+.field_map hd/f field_85_f
+.field_map hd/e field_86_e
+.field_map hd/d field_87_d
+.field_map hd/c field_88_c
+.method_map hd/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map hd/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map hd/a ()I func_71_a
+.method_map hd/a (Lgi;)V func_72_a
+.class_map hc NetLoginHandler
+.field_map hc/i field_1_i
+.field_map hc/h field_9004_h
+.field_map hc/g field_3_g
+.field_map hc/f field_9005_f
+.field_map hc/e field_5_e
+.field_map hc/d field_6_d
+.field_map hc/c field_7_c
+.field_map hc/b field_8_b
+.field_map hc/a field_9_a
+.method_map hc/b (Lan;)V func_6007_b
+.method_map hc/a (Ljava/lang/String;[Ljava/lang/Object;)V func_6_a
+.method_map hc/a (Lan;)V func_4001_a
+.method_map hc/a (Lj;)V func_6004_a
+.method_map hc/a ()V func_33_a
+.method_map hc/a (Lhc;Lan;)Lan; func_31_a
+.method_map hc/a (Lhc;)Ljava/lang/String; func_32_a
+.method_map hc/b ()Ljava/lang/String; func_35_b
+.method_map hc/a (Lkx;)V func_6001_a
+.method_map hc/a (Ljava/lang/String;)V func_34_b
+.class_map hb NoiseGeneratorOctaves2
+.field_map hb/b field_4307_b
+.field_map hb/a field_4308_a
+.method_map hb/a ([DDDIIDDDD)[D func_4100_a
+.method_map hb/a ([DDDIIDDD)[D func_4101_a
+.class_map ha NoiseGeneratorOctaves
+.field_map ha/b field_938_b
+.field_map ha/a field_939_a
+.method_map ha/a (DD)D func_647_a
+.method_map ha/a ([DDDDIIIDDD)[D func_648_a
+.method_map ha/a ([DIIIIDDD)[D func_4103_a
+.class_map gz WorldGenLightStone1
+.method_map gz/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map gy EntityCreeper
+.field_map gy/b field_405_b
+.field_map gy/a field_406_a
+.method_map gy/h ()I func_149_g
+.method_map gy/f ()Ljava/lang/String; func_6100_e
+.method_map gy/f (Lfe;)V func_142_f
+.method_map gy/a (Lfe;F)V func_157_a
+.method_map gy/g ()Ljava/lang/String; func_6098_f
+.method_map gy/a ()V func_21044_a
+.method_map gy/b_ ()V func_106_b_
+.method_map gy/K ()I func_21048_K
+.method_map gy/b (Lah;)V func_99_b
+.method_map gy/a (Lah;)V func_97_a
+.method_map gy/a (I)V func_21049_a
+.class_map gx DataWatcher
+.field_map gx/b field_21157_b
+.field_map gx/a field_21158_a
+.field_map gx/c field_21159_c
+.method_map gx/b ()Ljava/util/ArrayList; func_21148_b
+.method_map gx/a (Ljava/io/DataInputStream;)Ljava/util/List; func_21149_a
+.method_map gx/a ()Z func_21150_a
+.method_map gx/a (Ljava/util/List;Ljava/io/DataOutputStream;)V func_21151_a
+.method_map gx/a (Ljava/io/DataOutputStream;)V func_21152_a
+.method_map gx/a (ILjava/lang/Object;)V func_21153_a
+.method_map gx/a (Ljava/io/DataOutputStream;Lb;)V func_21154_a
+.method_map gx/b (ILjava/lang/Object;)V func_21155_b
+.method_map gx/a (I)B func_21156_a
+.class_map gw Packet53BlockChange
+.field_map gw/b field_89_b
+.field_map gw/a field_90_a
+.field_map gw/e field_91_e
+.field_map gw/d field_92_d
+.field_map gw/c field_93_c
+.method_map gw/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map gw/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map gw/a ()I func_71_a
+.method_map gw/a (Lgi;)V func_72_a
+.class_map gv Packet19
+.field_map gv/b field_21020_b
+.field_map gv/a field_21021_a
+.method_map gv/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map gv/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map gv/a ()I func_71_a
+.method_map gv/a (Lgi;)V func_72_a
+.class_map gu EntityBoat
+.field_map gu/am field_9171_al
+.field_map gu/al field_9173_ak
+.field_map gu/f field_9172_f
+.field_map gu/ak field_9175_aj
+.field_map gu/e field_9174_e
+.field_map gu/d field_9176_d
+.field_map gu/c field_436_ad
+.field_map gu/b field_9177_b
+.field_map gu/a field_9178_a
+.method_map gu/a (Lhl;)Z func_6092_a
+.method_map gu/u ()Lfa; func_93_n
+.method_map gu/c_ ()Z func_129_c_
+.method_map gu/d (Lfe;)Lfa; func_89_d
+.method_map gu/a ()V func_21044_a
+.method_map gu/b_ ()V func_106_b_
+.method_map gu/k ()D func_130_h
+.method_map gu/E ()V func_127_w
+.method_map gu/z ()Z func_124_r
+.method_map gu/b (Lah;)V func_99_b
+.method_map gu/a (Lfe;I)Z func_121_a
+.method_map gu/a (Lah;)V func_97_a
+.class_map gt ShapelessRecipes
+.field_map gt/b field_21137_b
+.field_map gt/a field_21138_a
+.method_map gt/a (Lk;)Z func_21134_a
+.method_map gt/a ()I func_20165_a
+.method_map gt/b (Lk;)Ljl; func_21136_b
+.class_map gs ItemRecord
+.field_map gs/a field_261_a
+.method_map gs/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map gr WorldGenCactus
+.method_map gr/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map gq RecipesIngots
+.field_map gq/a field_20160_a
+.method_map gq/a (Lib;)V func_20159_a
+.class_map gp Pathfinder
+.field_map gp/b field_940_b
+.field_map gp/a field_941_a
+.field_map gp/d field_942_d
+.field_map gp/c field_943_c
+.method_map gp/a (Lfe;IIILc;I)Lc; func_650_a
+.method_map gp/a (Lfe;IIILc;)I func_649_a
+.method_map gp/a (III)Lc; func_655_a
+.method_map gp/b (Lfe;Lc;Lc;Lc;F)I func_654_b
+.method_map gp/a (Lfe;Lfe;F)Ldo; func_657_a
+.method_map gp/a (Lfe;DDDF)Ldo; func_652_a
+.method_map gp/a (Lfe;IIIF)Ldo; func_651_a
+.method_map gp/a (Lfe;Lc;Lc;Lc;F)Ldo; func_656_a
+.method_map gp/a (Lc;Lc;)Ldo; func_653_a
+.class_map go ChunkLoader
+.field_map go/b field_944_b
+.field_map go/a field_945_a
+.method_map go/a (Lfv;Lme;)V func_662_a
+.method_map go/b ()V func_660_b
+.method_map go/a (Lme;Lfv;Lah;)V func_663_a
+.method_map go/b (Lfv;Lme;)V func_4104_b
+.method_map go/a ()V func_661_a
+.method_map go/a (Lfv;Lah;)Lme; func_664_a
+.method_map go/a (Lfv;II)Lme; func_659_a
+.method_map go/a (II)Ljava/io/File; func_665_a
+.class_map gn MapGenBase
+.field_map gn/b field_946_b
+.field_map gn/a field_947_a
+.method_map gn/a (Lcq;Lfv;II[B)V func_667_a
+.method_map gn/a (Lfv;IIII[B)V func_666_a
+.class_map gm MCHashTable2
+.field_map gm/b field_948_b
+.field_map gm/a field_949_a
+.field_map gm/e field_950_e
+.field_map gm/d field_951_d
+.field_map gm/c field_952_c
+.method_map gm/a ([Lda;)V func_673_a
+.method_map gm/b (J)Ljava/lang/Object; func_670_b
+.method_map gm/e (J)I func_671_e
+.method_map gm/d (J)I func_674_d
+.method_map gm/c (J)Lda; func_672_c
+.method_map gm/a (JLjava/lang/Object;)V func_675_a
+.method_map gm/a (I)I func_676_a
+.method_map gm/a (J)Ljava/lang/Object; func_677_a
+.method_map gm/a (II)I func_678_a
+.method_map gm/a (IJLjava/lang/Object;I)V func_679_a
+.method_map gm/b (I)V func_680_b
+.class_map gl TileEntityNote
+.field_map gl/f field_21076_f
+.field_map gl/e field_21077_e
+.method_map gl/a (Lfv;III)V func_21074_a
+.method_map gl/a ()V func_21075_a
+.method_map gl/a (Lah;)V func_186_a
+.method_map gl/b (Lah;)V func_188_b
+.class_map gk MobSpawnerDesert
+.class_map gj EntitySkeleton
+.field_map gj/a field_4108_a
+.method_map gj/h ()I func_149_g
+.method_map gj/f ()Ljava/lang/String; func_6100_e
+.method_map gj/a (Lfe;F)V func_157_a
+.method_map gj/g ()Ljava/lang/String; func_6098_f
+.method_map gj/e ()Ljava/lang/String; func_6097_d
+.method_map gj/b (Lah;)V func_99_b
+.method_map gj/o ()V func_153_y
+.method_map gj/a (Lah;)V func_97_a
+.method_map gj/g_ ()V func_21047_g_
+.class_map gi NetHandler
+.method_map gi/a (Lbd;)V func_20008_a
+.method_map gi/a (Lhh;)V func_20005_a
+.method_map gi/a (Ljava/lang/String;[Ljava/lang/Object;)V func_6_a
+.method_map gi/a (Lz;)V func_3_a
+.method_map gi/a (Lgv;)V func_21001_a
+.method_map gi/a (Lbz;)V func_23_a
+.method_map gi/a (Ldc;)V func_20007_a
+.method_map gi/a (Lfg;)V func_4003_a
+.method_map gi/a (Ldm;)V func_15_a
+.method_map gi/a (Leu;)V func_29_a
+.method_map gi/a (Lin;)V func_20003_a
+.method_map gi/a (Ljv;)V func_4006_a
+.method_map gi/a (Lhp;)V func_24_a
+.method_map gi/a (Ljo;)V func_9001_a
+.method_map gi/a (Lkf;)V func_26_a
+.method_map gi/a (Lhd;)V func_30_a
+.method_map gi/a (Lv;)V func_16_a
+.method_map gi/a (Lfj;)V func_9003_a
+.method_map gi/a (Ldp;)V func_4007_a
+.method_map gi/a (Lan;)V func_4001_a
+.method_map gi/a (Le;)V func_4002_a
+.method_map gi/a (Lhz;)V func_25_a
+.method_map gi/a (Lgw;)V func_12_a
+.method_map gi/a (Lj;)V func_6004_a
+.method_map gi/a (Ljh;)V func_20004_a
+.method_map gi/a (Lab;)V func_6003_a
+.method_map gi/a (Liv;)V func_18_a
+.method_map gi/a (Lbo;)V func_9002_a
+.method_map gi/a (Lhx;)V func_21002_a
+.method_map gi/a (Lja;)V func_21003_a
+.method_map gi/a (Lh;)V func_20006_a
+.method_map gi/a (Lkn;)V func_20001_a
+.method_map gi/a (Ldx;)V func_12001_a
+.method_map gi/a (Lr;)V func_4004_a
+.method_map gi/a (La;)V func_6006_a
+.method_map gi/a (Lkx;)V func_6001_a
+.method_map gi/a (Lhe;)V func_6002_a
+.method_map gi/a (Ldq;)V func_28_a
+.method_map gi/a (Ljd;)V func_21004_a
+.method_map gi/a (Lmf;)V func_4009_a
+.method_map gi/a (Lkl;)V func_13_a
+.method_map gi/a (Leh;)V func_8_a
+.method_map gi/a (Lp;)V func_20002_a
+.method_map gi/a (Ler;)V func_4_a
+.method_map gi/a (Lik;)V func_11_a
+.class_map gh BlockMushroom
+.method_map gh/f (Lfv;III)Z func_220_f
+.method_map gh/c (I)Z func_277_b
+.class_map gg FontAllowedCharacters
+.field_map gg/a field_20162_a
+.method_map gg/a ()Ljava/lang/String; func_20161_a
+.class_map gf BlockJukeBox
+.method_map gf/f (Lfv;IIII)V func_286_f
+.method_map gf/a (I)I func_241_a
+.method_map gf/a (Lfv;IIILhl;)Z func_246_a
+.method_map gf/a (Lfv;IIIIF)V func_227_a
+.class_map ge WorldGenMinable
+.field_map ge/b field_761_b
+.field_map ge/a field_762_a
+.method_map ge/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map gd ICommandListener
+.method_map gd/c ()Ljava/lang/String; func_1_c
+.method_map gd/b (Ljava/lang/String;)V func_2_b
+.class_map gc WorldServer
+.field_map gc/A field_20911_y
+.field_map gc/E field_20912_E
+.field_map gc/D field_6160_D
+.field_map gc/C field_816_A
+.field_map gc/B field_819_z
+.method_map gc/b (Lfe;Z)V func_12017_b
+.method_map gc/b (Lfe;)V func_479_b
+.method_map gc/f ()V func_4071_f
+.method_map gc/c (IIIII)V func_21117_c
+.method_map gc/a (Lhl;III)Z func_6157_a
+.method_map gc/a (Ljava/io/File;)Lcq; func_4076_a
+.method_map gc/a (Lfe;DDDFZ)Ldg; func_12015_a
+.method_map gc/a (Lfe;B)V func_9206_a
+.method_map gc/d (IIIIII)Ljava/util/List; func_532_d
+.method_map gc/a (Lfe;Z)V func_4074_a
+.method_map gc/c (Lfe;)V func_531_c
+.method_map gc/a (I)Lfe; func_6158_a
+.class_map gb BlockGlass
+.method_map gb/a (Ljava/util/Random;)I func_244_a
+.class_map ga BlockWorkbench
+.method_map ga/a (I)I func_241_a
+.method_map ga/a (Lfv;IIILhl;)Z func_246_a
+.class_map fz WorldManager
+.field_map fz/a field_953_a
+.method_map fz/b (Lfe;)V func_688_b
+.method_map fz/a (Lfe;)V func_681_a
+.method_map fz/a (Ljava/lang/String;III)V func_682_a
+.method_map fz/a (III)V func_683_a
+.method_map fz/a (IIILbm;)V func_686_a
+.method_map fz/a ()V func_684_a
+.method_map fz/a (IIIIII)V func_685_a
+.method_map fz/a (Ljava/lang/String;DDDDDD)V func_687_a
+.method_map fz/a (Ljava/lang/String;DDDFF)V func_689_a
+.class_map fy EntityPlayerMP
+.field_map fy/am field_20064_am
+.field_map fy/al field_418_ai
+.field_map fy/f field_422_ag
+.field_map fy/ak field_420_ah
+.field_map fy/e field_9154_e
+.field_map fy/d field_9155_d
+.field_map fy/c field_425_ad
+.field_map fy/b field_419_b
+.field_map fy/a field_20908_a
+.field_map fy/bG field_20065_bH
+.field_map fy/bF field_20066_bG
+.field_map fy/bE field_15004_bw
+.field_map fy/bD field_9156_bu
+.method_map fy/d (I)V func_137_a
+.method_map fy/I ()[Ljl; func_20042_E
+.method_map fy/a (Lfe;I)Z func_121_a
+.method_map fy/a (Ljl;)V func_20045_a
+.method_map fy/a (Lez;)V func_170_a
+.method_map fy/a (III)V func_174_A
+.method_map fy/e (Lfe;)V func_6094_e
+.method_map fy/c (Lfe;I)V func_163_c
+.method_map fy/w ()F func_104_p
+.method_map fy/l ()V func_20057_k
+.method_map fy/a (Lei;Ljava/util/List;)V func_20054_a
+.method_map fy/a (I)Ljl; func_21073_a
+.method_map fy/a (Lmn;)V func_166_a
+.method_map fy/K ()V func_168_z
+.method_map fy/a (Lbf;)V func_21072_a
+.method_map fy/a (Lei;II)V func_20056_a
+.method_map fy/a (Lbm;)V func_20063_a
+.method_map fy/a (DZ)V func_122_m
+.method_map fy/L ()V func_20043_I
+.method_map fy/n ()V func_175_i
+.method_map fy/b (DZ)V func_9153_b
+.method_map fy/M ()V func_20058_J
+.method_map fy/a (Lei;ILjl;)V func_20055_a
+.method_map fy/f (Lfe;)V func_142_f
+.method_map fy/o ()V func_153_y
+.method_map fy/N ()V func_20059_K
+.method_map fy/b_ ()V func_106_b_
+.method_map fy/U ()V func_20060_R
+.class_map fx IMobs
+.class_map fw MobSpawnerSwamp
+.class_map fv World
+.field_map fv/O field_778_L
+.field_map fv/N field_4263_L
+.field_map fv/M field_4264_K
+.field_map fv/L field_21120_L
+.field_map fv/K field_21121_K
+.field_map fv/J field_4265_J
+.field_map fv/I field_9207_I
+.field_map fv/H field_9208_H
+.field_map fv/G field_783_G
+.field_map fv/F field_784_F
+.field_map fv/E field_6159_E
+.field_map fv/D field_788_B
+.field_map fv/C field_789_A
+.field_map fv/B field_790_z
+.field_map fv/A field_821_y
+.field_map fv/z field_792_x
+.field_map fv/y field_4268_y
+.field_map fv/x field_9209_x
+.field_map fv/w field_9210_w
+.field_map fv/v field_795_u
+.field_map fv/u field_796_t
+.field_map fv/t field_797_s
+.field_map fv/s field_9211_s
+.field_map fv/r field_798_r
+.field_map fv/q field_4272_q
+.field_map fv/p field_9212_p
+.field_map fv/o field_4274_o
+.field_map fv/n field_4275_n
+.field_map fv/m field_4276_m
+.field_map fv/l field_803_m
+.field_map fv/k field_804_l
+.field_map fv/j field_4277_j
+.field_map fv/i field_808_h
+.field_map fv/h field_4278_h
+.field_map fv/g field_4279_g
+.field_map fv/f field_811_e
+.field_map fv/e field_813_c
+.field_map fv/d field_805_k
+.field_map fv/c field_814_b
+.field_map fv/b field_815_a
+.field_map fv/a field_4280_a
+.method_map fv/a (ZZ)V func_21116_a
+.method_map fv/a (Lce;)V func_4072_a
+.method_map fv/g (IIII)V func_498_f
+.method_map fv/p (III)Z func_474_n
+.method_map fv/m (III)Lbm; func_451_k
+.method_map fv/i (IIII)V func_499_h
+.method_map fv/b (II)Lme; func_492_a
+.method_map fv/a (Lfe;Z)V func_4074_a
+.method_map fv/b (Lfa;Lmh;)Z func_524_b
+.method_map fv/e (IIII)Z func_508_d
+.method_map fv/a (Lfa;Lmh;Lfe;)Z func_490_a
+.method_map fv/a (II)I func_528_f
+.method_map fv/j (III)I func_495_h
+.method_map fv/c (IIIII)V func_21117_c
+.method_map fv/b ()Z func_453_a
+.method_map fv/o (III)Z func_496_m
+.method_map fv/d (III)Z func_445_d
+.method_map fv/b (Ljava/util/List;)V func_461_b
+.method_map fv/a (Lbu;Lbu;)Lih; func_486_a
+.method_map fv/c (III)Lmh; func_443_c
+.method_map fv/c ()V func_459_b
+.method_map fv/d ()Z func_6156_d
+.method_map fv/a (Lhl;III)Z func_6157_a
+.method_map fv/b (Leo;IIII)V func_529_b
+.method_map fv/a (IIII)Z func_21118_a
+.method_map fv/a (Ljava/util/List;)V func_464_a
+.method_map fv/a (IIIIII)Z func_466_a
+.method_map fv/c (IIII)V func_511_b
+.method_map fv/e ()V func_465_d
+.method_map fv/a (IIIII)Z func_470_a
+.method_map fv/f ()V func_4071_f
+.method_map fv/a (Lfe;Lfa;)Ljava/util/List; func_481_a
+.method_map fv/a (Lfa;)Z func_522_a
+.method_map fv/i (III)Z func_497_g
+.method_map fv/c (Lfa;)Z func_523_c
+.method_map fv/g ()V func_4073_g
+.method_map fv/e (Lfe;)V func_20110_e
+.method_map fv/n (III)V func_513_l
+.method_map fv/a (Lfe;IIIF)Ldo; func_501_a
+.method_map fv/b (F)F func_477_b
+.method_map fv/h ()V func_476_g
+.method_map fv/a (ZLlk;)V func_485_a
+.method_map fv/b (IIILbm;)V func_515_b
+.method_map fv/i ()V func_478_h
+.method_map fv/l (IIII)V func_527_k
+.method_map fv/a (Lfe;D)Lhl; func_472_a
+.method_map fv/a (Lfe;)Z func_526_a
+.method_map fv/c (Lfe;)V func_531_c
+.method_map fv/a (Ljava/lang/Class;)I func_487_a
+.method_map fv/h (III)V func_21119_h
+.method_map fv/j (IIII)Z func_448_i
+.method_map fv/a (Lbu;Lfa;)F func_494_a
+.method_map fv/a (Leo;III)I func_512_a
+.method_map fv/a (Ljava/lang/String;III)V func_491_a
+.method_map fv/a (F)I func_493_a
+.method_map fv/b (III)I func_446_b
+.method_map fv/c (II)Lme; func_525_b
+.method_map fv/a (Lfe;Ljava/lang/String;FF)V func_506_a
+.method_map fv/g (III)V func_521_f
+.method_map fv/f (IIII)V func_454_e
+.method_map fv/h (IIII)V func_449_g
+.method_map fv/a (DDDLjava/lang/String;FF)V func_502_a
+.method_map fv/d (II)I func_488_c
+.method_map fv/c (IIIIII)[B func_504_c
+.method_map fv/a (DDDD)Lhl; func_456_a
+.method_map fv/b (IIIII)Z func_507_b
+.method_map fv/a (Lbu;Lbu;Z)Lih; func_505_a
+.method_map fv/b (IIII)Z func_462_a
+.method_map fv/d (IIII)Z func_463_c
+.method_map fv/a (Ljava/lang/String;DDDDDD)V func_514_a
+.method_map fv/a (Ljava/lang/Class;Lfa;)Ljava/util/List; func_457_a
+.method_map fv/a (Lfe;DDDFZ)Ldg; func_12015_a
+.method_map fv/a (IIIIZ)Z func_516_a
+.method_map fv/b (Lfa;)Z func_469_b
+.method_map fv/f (Lfe;)V func_520_e
+.method_map fv/e (II)I func_4075_e
+.method_map fv/a (IIIZ)I func_517_a
+.method_map fv/l (III)F func_455_j
+.method_map fv/a (III)I func_444_a
+.method_map fv/a (Lfe;Lfe;F)Ldo; func_482_a
+.method_map fv/a (Z)Z func_518_a
+.method_map fv/b (IIIIII)V func_519_b
+.method_map fv/a ()Llg; func_4077_a
+.method_map fv/a (Lfe;B)V func_9206_a
+.method_map fv/a (Lfa;Lmh;)Z func_500_a
+.method_map fv/f (III)Z func_530_e
+.method_map fv/f (II)Z func_447_g
+.method_map fv/a (Lfe;DDDF)Ldg; func_12013_a
+.method_map fv/b (Lfe;)V func_479_b
+.method_map fv/d (Lfe;)V func_20109_d
+.method_map fv/a (Leo;IIIIIIZ)V func_484_a
+.method_map fv/k (IIII)Z func_489_j
+.method_map fv/k (III)Z func_475_i
+.method_map fv/b (Lfe;Lfa;)Ljava/util/List; func_450_b
+.method_map fv/e (III)Z func_20111_e
+.method_map fv/a (Leo;IIIIII)V func_483_a
+.method_map fv/a (Ljava/io/File;)Lcq; func_4076_a
+.method_map fv/a (IIILbm;)V func_473_a
+.method_map fv/a (Leo;IIII)V func_4069_a
+.class_map fu BlockObsidian
+.method_map fu/a (Ljava/util/Random;)I func_244_a
+.method_map fu/a (ILjava/util/Random;)I func_252_a
+.class_map ft BlockPumpkin
+.field_map ft/a field_4086_a
+.method_map ft/a (I)I func_241_a
+.method_map ft/e (Lfv;III)V func_250_e
+.method_map ft/a (Lfv;III)Z func_259_a
+.method_map ft/a (Lfv;IIILmj;)V func_4027_a
+.class_map fs IUpdatePlayerListBox
+.method_map fs/a ()V func_690_a
+.class_map fr BlockFurnace
+.field_map fr/a field_655_a
+.method_map fr/a (I)I func_241_a
+.method_map fr/a (Lfv;IIILhl;)Z func_246_a
+.method_map fr/e (Lfv;III)V func_250_e
+.method_map fr/a (ILjava/util/Random;)I func_252_a
+.method_map fr/a_ ()Lbm; func_294_a_
+.method_map fr/a (ZLfv;III)V func_295_a
+.method_map fr/g (Lfv;III)V func_296_g
+.method_map fr/a (Lfv;IIILmj;)V func_4027_a
+.class_map fq ItemAxe
+.field_map fq/bg field_4207_bb
+.class_map fp FurnaceRecipes
+.field_map fp/b field_21163_b
+.field_map fp/a field_21164_a
+.method_map fp/a (ILjl;)V func_21160_a
+.method_map fp/a (I)Ljl; func_21161_a
+.method_map fp/a ()Lfp; func_21162_a
+.class_map fo NBTTagDouble
+.field_map fo/a field_735_a
+.method_map fo/a ()B func_379_a
+.method_map fo/a (Ljava/io/DataInput;)V func_382_a
+.method_map fo/a (Ljava/io/DataOutput;)V func_381_a
+.method_map fo/toString ()Ljava/lang/String; toString
+.class_map fn Packet31RelEntityMove
+.method_map fn/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map fn/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map fn/a ()I func_71_a
+.class_map fm ChunkCache
+.field_map fm/b field_822_b
+.field_map fm/a field_823_a
+.field_map fm/d field_824_d
+.field_map fm/c field_825_c
+.method_map fm/c (III)Lmh; func_443_c
+.method_map fm/a (III)I func_444_a
+.method_map fm/d (III)Z func_445_d
+.method_map fm/b (III)I func_446_b
+.class_map fl Packet13PlayerLookMove
+.method_map fl/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map fl/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map fl/a ()I func_71_a
+.class_map fk MetadataChunkBlock
+.field_map fk/b field_956_b
+.field_map fk/a field_957_a
+.field_map fk/g field_958_g
+.field_map fk/f field_959_f
+.field_map fk/e field_960_e
+.field_map fk/d field_961_d
+.field_map fk/c field_962_c
+.method_map fk/a (Lfv;)V func_4107_a
+.method_map fk/a (IIIIII)Z func_692_a
+.class_map fj Packet8
+.field_map fj/a field_9017_a
+.method_map fj/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map fj/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map fj/a ()I func_71_a
+.method_map fj/a (Lgi;)V func_72_a
+.class_map fi BlockStairs
+.field_map fi/a field_651_a
+.method_map fi/a (Ljava/util/Random;)I func_244_a
+.method_map fi/d ()Z func_245_e
+.method_map fi/a (Lfv;IIILfe;Lbu;)V func_230_a
+.method_map fi/a (Lfv;IIIIF)V func_227_a
+.method_map fi/b (Lfv;III)V func_242_b
+.method_map fi/a (Lfe;)F func_226_a
+.method_map fi/d (Lfv;III)Lfa; func_248_d
+.method_map fi/b ()I func_4028_b
+.method_map fi/e (Lfv;III)V func_250_e
+.method_map fi/a (IZ)Z func_243_a
+.method_map fi/b (Lfv;IIILfe;)V func_249_b
+.method_map fi/a (Lla;III)V func_233_a
+.method_map fi/a (Lfv;IIILmj;)V func_4027_a
+.method_map fi/a (Lla;IIII)Z func_253_a
+.method_map fi/a (Lfv;IIILhl;)Z func_246_a
+.method_map fi/a (ILjava/util/Random;)I func_252_a
+.method_map fi/a (Lfv;IIII)V func_251_a
+.method_map fi/b (Lfv;IIILhl;)V func_235_b
+.method_map fi/a (I)I func_241_a
+.method_map fi/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map fi/a ()Z func_240_b
+.method_map fi/a_ (Lfv;III)V func_4029_c
+.method_map fi/a (Lfv;III)Z func_259_a
+.method_map fi/a (Lfv;IIILfa;Ljava/util/ArrayList;)V func_264_a
+.method_map fi/a_ (Lfv;IIII)V func_247_a_
+.class_map fh NBTTagList
+.field_map fh/b field_736_b
+.field_map fh/a field_737_a
+.method_map fh/a (I)Lix; func_388_a
+.method_map fh/a ()B func_379_a
+.method_map fh/b ()I func_387_b
+.method_map fh/a (Ljava/io/DataInput;)V func_382_a
+.method_map fh/a (Ljava/io/DataOutput;)V func_381_a
+.method_map fh/toString ()Ljava/lang/String; toString
+.method_map fh/a (Lix;)V func_386_a
+.class_map fg Packet23VehicleSpawn
+.field_map fg/b field_97_b
+.field_map fg/a field_98_a
+.field_map fg/e field_99_e
+.field_map fg/d field_100_d
+.field_map fg/c field_101_c
+.method_map fg/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map fg/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map fg/a ()I func_71_a
+.method_map fg/a (Lgi;)V func_72_a
+.class_map ff MapGenCaves
+.method_map ff/a (II[BDDDFFFIID)V func_668_a
+.method_map ff/a (II[BDDD)V func_669_a
+.method_map ff/a (Lfv;IIII[B)V func_666_a
+.class_map fe Entity
+.field_map fe/Z field_9061_Z
+.field_map fe/Y field_9062_Y
+.field_map fe/X field_9063_X
+.field_map fe/W field_9064_W
+.field_map fe/V field_9065_V
+.field_map fe/U field_286_P
+.field_map fe/T field_9066_T
+.field_map fe/S field_9067_S
+.field_map fe/R field_9068_R
+.field_map fe/Q field_9069_Q
+.field_map fe/P field_9070_P
+.field_map fe/O field_9071_O
+.field_map fe/N field_9072_N
+.field_map fe/M field_9073_M
+.field_map fe/L field_9074_L
+.field_map fe/K field_9075_K
+.field_map fe/J field_298_E
+.field_map fe/aj field_303_ac
+.field_map fe/I field_300_D
+.field_map fe/ai field_305_ab
+.field_map fe/H field_9076_H
+.field_map fe/ah field_307_aa
+.field_map fe/G field_304_B
+.field_map fe/ag field_276_Z
+.field_map fe/F field_9077_F
+.field_map fe/af field_21045_af
+.field_map fe/E field_9078_E
+.field_map fe/ae field_9079_ae
+.field_map fe/D field_9080_D
+.field_map fe/ad field_9081_ad
+.field_map fe/C field_9082_C
+.field_map fe/ac field_9083_ac
+.field_map fe/B field_9084_B
+.field_map fe/ab field_9085_ab
+.field_map fe/A field_9086_A
+.field_map fe/aa field_9087_aa
+.field_map fe/z field_312_v
+.field_map fe/y field_9088_y
+.field_map fe/x field_9089_x
+.field_map fe/w field_315_s
+.field_map fe/v field_316_r
+.field_map fe/u field_317_q
+.field_map fe/t field_318_p
+.field_map fe/s field_319_o
+.field_map fe/r field_320_n
+.field_map fe/q field_321_m
+.field_map fe/p field_322_l
+.field_map fe/o field_9090_o
+.field_map fe/n field_9091_n
+.field_map fe/m field_9092_m
+.field_map fe/l field_9093_l
+.field_map fe/k field_327_g
+.field_map fe/j field_328_f
+.field_map fe/i field_329_e
+.field_map fe/h field_9094_h
+.field_map fe/g field_331_c
+.field_map fe/e field_4128_e
+.field_map fe/d field_4130_d
+.field_map fe/c field_4131_c
+.field_map fe/b field_6151_b
+.field_map fe/a field_384_a
+.method_map fe/F ()D func_117_x
+.method_map fe/a (DDD)V func_86_a
+.method_map fe/b (Lah;)V func_99_b
+.method_map fe/f (DDD)V func_87_f
+.method_map fe/c (DDD)V func_88_c
+.method_map fe/c (Lah;)Z func_95_c
+.method_map fe/a (FFF)V func_90_a
+.method_map fe/a (IIF)Lic; func_123_a
+.method_map fe/a (Lfe;I)Z func_121_a
+.method_map fe/w ()F func_104_p
+.method_map fe/I ()[Ljl; func_20042_E
+.method_map fe/z ()Z func_124_r
+.method_map fe/B ()Z func_120_t
+.method_map fe/d (Lah;)V func_98_d
+.method_map fe/p ()Lgx; func_21039_p
+.method_map fe/a (II)Lic; func_128_a
+.method_map fe/k ()D func_130_h
+.method_map fe/d (DDD)D func_101_d
+.method_map fe/e (DDD)D func_103_e
+.method_map fe/e (Lah;)V func_100_e
+.method_map fe/b_ ()V func_106_b_
+.method_map fe/a (Ljl;F)Lic; func_21040_a
+.method_map fe/s ()V func_4040_n
+.method_map fe/x ()Z func_112_q
+.method_map fe/c (DDDFF)V func_107_c
+.method_map fe/a (DZ)V func_122_m
+.method_map fe/a (IZ)V func_21041_a
+.method_map fe/b (F)F func_108_b
+.method_map fe/a ([D)Lfh; func_132_a
+.method_map fe/E ()V func_127_w
+.method_map fe/J ()Z func_9059_p
+.method_map fe/a ([F)Lfh; func_85_a
+.method_map fe/hashCode ()I hashCode
+.method_map fe/a (FF)V func_113_a
+.method_map fe/q ()V func_118_j
+.method_map fe/v ()Z func_119_o
+.method_map fe/a (F)V func_114_a
+.method_map fe/c (Lfe;)V func_92_c
+.method_map fe/a (Lfe;)F func_94_a
+.method_map fe/c (I)Z func_21042_c
+.method_map fe/C ()Z func_91_u
+.method_map fe/b (Lfe;I)V func_96_b
+.method_map fe/b (Lfe;)D func_102_b
+.method_map fe/a (Lmh;)Z func_110_a
+.method_map fe/G ()Lbu; func_4039_B
+.method_map fe/a (Lhl;)Z func_6092_a
+.method_map fe/H ()V func_4042_C
+.method_map fe/e (Lfe;)V func_6094_e
+.method_map fe/t ()V func_4043_o
+.method_map fe/b (Lhl;)V func_6093_b
+.method_map fe/y ()V func_9060_u
+.method_map fe/equals (Ljava/lang/Object;)Z equals
+.method_map fe/u ()Lfa; func_93_n
+.method_map fe/b (I)V func_125_b
+.method_map fe/A ()Ljava/lang/String; func_109_s
+.method_map fe/r ()V func_84_k
+.method_map fe/b (Z)V func_21043_b
+.method_map fe/b (DDDFF)V func_6095_b
+.method_map fe/a ()V func_21044_a
+.method_map fe/d (Lfe;)Lfa; func_89_d
+.method_map fe/a (Lah;)V func_97_a
+.method_map fe/c_ ()Z func_129_c_
+.method_map fe/b (FF)V func_6096_b
+.method_map fe/D ()V func_115_v
+.method_map fe/b (DDD)Z func_133_b
+.class_map fd WorldGenDungeons
+.method_map fd/b (Ljava/util/Random;)Ljava/lang/String; func_433_b
+.method_map fd/a (Ljava/util/Random;)Ljl; func_434_a
+.method_map fd/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map fc EntityArrow
+.field_map fc/am field_437_aj
+.field_map fc/al field_438_ai
+.field_map fc/f field_9179_f
+.field_map fc/ak field_9181_aj
+.field_map fc/e field_9180_e
+.field_map fc/d field_9182_d
+.field_map fc/c field_9183_c
+.field_map fc/b field_439_ah
+.field_map fc/a field_9184_a
+.method_map fc/a (DDDFF)V func_177_a
+.method_map fc/b (Lhl;)V func_6093_b
+.method_map fc/b_ ()V func_106_b_
+.method_map fc/a ()V func_21044_a
+.method_map fc/b (Lah;)V func_99_b
+.method_map fc/a (Lah;)V func_97_a
+.class_map fb BlockRedstoneWire
+.field_map fb/b field_21032_b
+.field_map fb/a field_652_a
+.method_map fb/b (Lla;III)Z func_293_b
+.method_map fb/e (Lfv;III)V func_250_e
+.method_map fb/b (Lfv;IIII)V func_234_b
+.method_map fb/a ()Z func_240_b
+.method_map fb/h (Lfv;III)V func_291_h
+.method_map fb/b (Lla;IIII)Z func_239_b
+.method_map fb/a (ILjava/util/Random;)I func_252_a
+.method_map fb/a (Lfv;IIIIII)V func_21031_a
+.method_map fb/f (Lfv;IIII)I func_290_f
+.method_map fb/g (Lfv;III)V func_292_g
+.method_map fb/c ()Z func_225_d
+.method_map fb/d (Lfv;IIII)Z func_238_d
+.method_map fb/b (Lfv;III)V func_242_b
+.method_map fb/d (Lfv;III)Lfa; func_248_d
+.method_map fb/a (Lfv;III)Z func_259_a
+.class_map fa AxisAlignedBB
+.field_map fa/b field_963_b
+.field_map fa/a field_964_a
+.field_map fa/h field_965_h
+.field_map fa/g field_966_g
+.field_map fa/f field_967_f
+.field_map fa/e field_968_e
+.field_map fa/d field_969_d
+.field_map fa/c field_970_c
+.method_map fa/b ()Lfa; func_711_b
+.method_map fa/e (DDD)Lfa; func_694_e
+.method_map fa/b (DDDDDD)Lfa; func_693_b
+.method_map fa/a (Lfa;)Z func_704_a
+.method_map fa/b (Lbu;)Z func_705_b
+.method_map fa/c (Lbu;)Z func_707_c
+.method_map fa/c (DDDDDD)Lfa; func_695_c
+.method_map fa/c (DDD)Lfa; func_696_c
+.method_map fa/toString ()Ljava/lang/String; toString
+.method_map fa/a (DDDDDD)Lfa; func_698_a
+.method_map fa/c (Lfa;D)D func_709_c
+.method_map fa/a (Lfa;D)D func_710_a
+.method_map fa/a (DDD)Lfa; func_700_a
+.method_map fa/a (Lbu;)Z func_697_a
+.method_map fa/b (Lfa;)V func_699_b
+.method_map fa/d (DDD)Lfa; func_702_d
+.method_map fa/a ()V func_703_a
+.method_map fa/b (DDD)Lfa; func_708_b
+.method_map fa/a (Lbu;Lbu;)Lih; func_706_a
+.method_map fa/b (Lfa;D)D func_701_b
+.class_map ez TileEntityFurnace
+.field_map ez/h field_489_e
+.field_map ez/g field_486_h
+.field_map ez/f field_487_g
+.field_map ez/e field_488_f
+.method_map ez/f ()V func_184_b
+.method_map ez/i ()Z func_193_g
+.method_map ez/e ()Z func_191_e
+.method_map ez/a (I)Ljl; func_82_a
+.method_map ez/a (ILjl;)V func_206_a
+.method_map ez/a_ (Lhl;)Z func_20067_a_
+.method_map ez/c ()I func_202_d
+.method_map ez/h_ ()I func_83_a
+.method_map ez/h ()V func_189_f
+.method_map ez/a (Ljl;)I func_194_a
+.method_map ez/b (Lah;)V func_188_b
+.method_map ez/b ()Ljava/lang/String; func_20068_b
+.method_map ez/b (II)Ljl; func_20069_a
+.method_map ez/a (Lah;)V func_186_a
+.class_map ey BlockStone
+.method_map ey/a (ILjava/util/Random;)I func_252_a
+.class_map ex ThreadLoginVerifier
+.field_map ex/b field_971_b
+.field_map ex/a field_972_a
+.method_map ex/run ()V run
+.class_map ew CraftingInventoryDispenserCB
+.field_map ew/a field_21133_a
+.method_map ew/b (Lhl;)Z func_20126_b
+.class_map ev NetworkListenThread
+.field_map ev/b field_973_b
+.field_map ev/a field_974_a
+.field_map ev/h field_975_h
+.field_map ev/g field_976_g
+.field_map ev/f field_977_f
+.field_map ev/e field_978_e
+.field_map ev/d field_979_d
+.field_map ev/c field_980_c
+.method_map ev/a (Lhc;)V func_717_a
+.method_map ev/b (Lev;)I func_712_b
+.method_map ev/a ()V func_715_a
+.method_map ev/a (Llp;)V func_4108_a
+.method_map ev/a (Lev;)Ljava/net/ServerSocket; func_713_a
+.method_map ev/a (Lev;Lhc;)V func_716_a
+.class_map eu Packet50PreChunk
+.field_map eu/b field_102_b
+.field_map eu/a field_103_a
+.field_map eu/c field_104_c
+.method_map eu/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map eu/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map eu/a ()I func_71_a
+.method_map eu/a (Lgi;)V func_72_a
+.class_map et WorldGenLightStone2
+.method_map et/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map es MaterialLiquid
+.method_map es/a ()Z func_216_a
+.method_map es/d ()Z func_217_d
+.method_map es/c ()Z func_218_c
+.class_map er Packet51MapChunk
+.field_map er/b field_105_b
+.field_map er/a field_106_a
+.field_map er/h field_107_h
+.field_map er/g field_108_g
+.field_map er/f field_109_f
+.field_map er/e field_110_e
+.field_map er/d field_111_d
+.field_map er/c field_112_c
+.method_map er/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map er/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map er/a ()I func_71_a
+.method_map er/a (Lgi;)V func_72_a
+.class_map eq BlockCloth
+.method_map eq/c (I)I func_21033_c
+.method_map eq/b (I)I func_21025_b
+.method_map eq/d (I)I func_21034_d
+.class_map ep ICrafting
+.method_map ep/a (Lei;II)V func_20056_a
+.method_map ep/a (Lei;Ljava/util/List;)V func_20054_a
+.method_map ep/a (Lei;ILjl;)V func_20055_a
+.class_map eo EnumSkyBlock
+.field_map eo/b Block
+.field_map eo/a Sky
+.field_map eo/d field_983_d
+.field_map eo/c field_984_c
+.class_map en Packet32EntityLook
+.method_map en/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map en/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map en/a ()I func_71_a
+.class_map em ItemSaddle
+.method_map em/b (Ljl;Lmj;)V func_9202_b
+.method_map em/a (Ljl;Lmj;)V func_9201_a
+.class_map el BlockClay
+.method_map el/a (Ljava/util/Random;)I func_244_a
+.method_map el/a (ILjava/util/Random;)I func_252_a
+.class_map ek NetworkAcceptThread
+.field_map ek/b field_985_b
+.field_map ek/a field_986_a
+.method_map ek/run ()V run
+.class_map ej ItemCoal
+.class_map ei CraftingInventoryCB
+.field_map ei/b field_20131_b
+.field_map ei/a field_20132_a
+.field_map ei/g field_20133_g
+.field_map ei/f field_20134_f
+.field_map ei/e field_20135_e
+.field_map ei/d field_20136_d
+.method_map ei/a (Lmn;I)Lhj; func_20127_a
+.method_map ei/a (Lhl;)V func_20130_a
+.method_map ei/a (Lmn;)V func_20121_a
+.method_map ei/a ()V func_20125_a
+.method_map ei/a (Lep;)V func_20128_a
+.method_map ei/a (I)Lhj; func_20120_a
+.method_map ei/c (Lhl;)Z func_20124_c
+.method_map ei/a (Lhl;Z)V func_20129_a
+.method_map ei/a (IILhl;)Ljl; func_20123_a
+.method_map ei/a (Lhj;)V func_20122_a
+.method_map ei/b (Lhl;)Z func_20126_b
+.class_map eh Packet29DestroyEntity
+.field_map eh/a field_116_a
+.method_map eh/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map eh/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map eh/a ()I func_71_a
+.method_map eh/a (Lgi;)V func_72_a
+.class_map eg BlockContainer
+.method_map eg/b (Lfv;III)V func_242_b
+.method_map eg/e (Lfv;III)V func_250_e
+.method_map eg/a_ ()Lbm; func_294_a_
+.class_map ef PropertyManager
+.field_map ef/b field_994_b
+.field_map ef/a field_995_a
+.field_map ef/c field_996_c
+.method_map ef/a (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; func_720_a
+.method_map ef/b ()V func_721_b
+.method_map ef/a (Ljava/lang/String;I)I func_722_a
+.method_map ef/a ()V func_723_a
+.method_map ef/a (Ljava/lang/String;Z)Z func_724_a
+.class_map ee EnumMobType
+.field_map ee/b mobs
+.field_map ee/a everything
+.field_map ee/d field_990_d
+.field_map ee/c players
+.class_map ed IRecipe
+.method_map ed/a (Lk;)Z func_21134_a
+.method_map ed/a ()I func_20165_a
+.method_map ed/b (Lk;)Ljl; func_21136_b
+.class_map ec ItemTool
+.field_map ec/a field_20913_a
+.field_map ec/bi field_263_aZ
+.field_map ec/bh field_264_aY
+.field_map ec/bg field_265_aX
+.method_map ec/a (Ljl;IIII)V func_75_a
+.method_map ec/a (Ljl;Lhr;)F func_79_a
+.method_map ec/a (Lfe;)I func_9203_a
+.method_map ec/a (Ljl;Lmj;)V func_9201_a
+.class_map eb GuiLogOutputHandler
+.field_map eb/b field_998_b
+.field_map eb/a field_999_a
+.field_map eb/d field_1000_d
+.field_map eb/c field_1001_c
+.method_map eb/publish (Ljava/util/logging/LogRecord;)V publish
+.method_map eb/flush ()V flush
+.method_map eb/close ()V close
+.class_map ea BlockLadder
+.method_map ea/a (Ljava/util/Random;)I func_244_a
+.method_map ea/d (Lfv;III)Lfa; func_248_d
+.method_map ea/a ()Z func_240_b
+.method_map ea/b (Lfv;IIII)V func_234_b
+.method_map ea/a (Lfv;III)Z func_259_a
+.method_map ea/c (Lfv;IIII)V func_255_c
+.class_map dz BlockFluids
+.method_map dz/a (Ljava/util/Random;)I func_244_a
+.method_map dz/a (Lfv;IIILfe;Lbu;)V func_230_a
+.method_map dz/d (Lfv;III)Lfa; func_248_d
+.method_map dz/b ()I func_4028_b
+.method_map dz/e (Lfv;III)V func_250_e
+.method_map dz/a (IZ)Z func_243_a
+.method_map dz/c (Lla;III)Lbu; func_298_c
+.method_map dz/a (Lla;IIII)Z func_253_a
+.method_map dz/a (ILjava/util/Random;)I func_252_a
+.method_map dz/a (I)I func_241_a
+.method_map dz/a ()Z func_240_b
+.method_map dz/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map dz/b (Lfv;IIII)V func_234_b
+.method_map dz/h (Lfv;III)V func_300_h
+.method_map dz/b (Lla;III)I func_303_b
+.method_map dz/g (Lfv;III)I func_301_g
+.method_map dz/i (Lfv;III)V func_302_i
+.method_map dz/c (I)F func_299_b
+.class_map dy PlayerNBTManager
+.field_map dy/b field_1002_b
+.field_map dy/a field_1003_a
+.method_map dy/b (Lfy;)V func_725_b
+.method_map dy/a (Lfy;)V func_726_a
+.class_map dx Packet60
+.field_map dx/b field_12002_b
+.field_map dx/a field_12003_a
+.field_map dx/e field_12004_e
+.field_map dx/d field_12005_d
+.field_map dx/c field_12006_c
+.method_map dx/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map dx/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map dx/a ()I func_71_a
+.method_map dx/a (Lgi;)V func_72_a
+.class_map dw ItemMinecart
+.field_map dw/a field_270_a
+.method_map dw/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map dv EntitySheep
+.field_map dv/a field_21071_a
+.method_map dv/a (Ljava/util/Random;)I func_21066_a
+.method_map dv/f ()Ljava/lang/String; func_6100_e
+.method_map dv/g ()Ljava/lang/String; func_6098_f
+.method_map dv/a ()V func_21044_a
+.method_map dv/e ()Ljava/lang/String; func_6097_d
+.method_map dv/a (Z)V func_21067_a
+.method_map dv/e_ ()I func_21068_e_
+.method_map dv/b (Lah;)V func_99_b
+.method_map dv/a (Lfe;I)Z func_121_a
+.method_map dv/f_ ()Z func_21069_f_
+.method_map dv/a (Lah;)V func_97_a
+.method_map dv/a (I)V func_21070_a
+.class_map du ItemSeeds
+.field_map du/a field_271_a
+.method_map du/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.class_map dt ItemSnowball
+.method_map dt/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map ds WorldGenLakes
+.field_map ds/a field_15005_a
+.method_map ds/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map dr BlockReed
+.method_map dr/d (Lfv;III)Lfa; func_248_d
+.method_map dr/a ()Z func_240_b
+.method_map dr/f (Lfv;III)Z func_220_f
+.method_map dr/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map dr/b (Lfv;IIII)V func_234_b
+.method_map dr/a (ILjava/util/Random;)I func_252_a
+.method_map dr/a (Lfv;III)Z func_259_a
+.method_map dr/g (Lfv;III)V func_4037_g
+.class_map dq Packet22Collect
+.field_map dq/b field_136_b
+.field_map dq/a field_137_a
+.method_map dq/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map dq/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map dq/a ()I func_71_a
+.method_map dq/a (Lgi;)V func_72_a
+.class_map dp Packet34EntityTeleport
+.field_map dp/b field_130_b
+.field_map dp/a field_131_a
+.field_map dp/f field_132_f
+.field_map dp/e field_133_e
+.field_map dp/d field_134_d
+.field_map dp/c field_135_c
+.method_map dp/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map dp/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map dp/a ()I func_71_a
+.method_map dp/a (Lgi;)V func_72_a
+.class_map do PathEntity
+.field_map do/b field_1004_b
+.field_map do/a field_1005_a
+.field_map do/c field_1006_c
+.method_map do/a (Lfe;)Lbu; func_727_a
+.method_map do/a ()V func_728_a
+.method_map do/b ()Z func_729_b
+.class_map dn NoiseGenerator
+.class_map dm Packet6SpawnPosition
+.field_map dm/b field_138_b
+.field_map dm/a field_139_a
+.field_map dm/c field_140_c
+.method_map dm/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map dm/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map dm/a ()I func_71_a
+.method_map dm/a (Lgi;)V func_72_a
+.class_map dl BlockSandStone
+.method_map dl/a (I)I func_241_a
+.class_map dk MobSpawnerForest
+.method_map dk/a (Ljava/util/Random;)Lcb; func_21114_a
+.class_map dj ItemBow
+.method_map dj/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map di BlockMobSpawner
+.method_map di/a (Ljava/util/Random;)I func_244_a
+.method_map di/a ()Z func_240_b
+.method_map di/a (ILjava/util/Random;)I func_252_a
+.method_map di/a_ ()Lbm; func_294_a_
+.class_map dh EntityTNTPrimed
+.field_map dh/a field_446_a
+.method_map dh/b_ ()V func_106_b_
+.method_map dh/a ()V func_21044_a
+.method_map dh/d ()V func_178_b
+.method_map dh/c_ ()Z func_129_c_
+.method_map dh/b (Lah;)V func_99_b
+.method_map dh/a (Lah;)V func_97_a
+.class_map dg Explosion
+.field_map dg/i field_4310_a
+.field_map dg/h field_12024_h
+.field_map dg/g field_12025_g
+.field_map dg/f field_12026_f
+.field_map dg/e field_12027_e
+.field_map dg/d field_12028_d
+.field_map dg/c field_12029_c
+.field_map dg/b field_12030_b
+.field_map dg/a field_12031_a
+.method_map dg/b ()V func_732_a
+.method_map dg/a ()V func_12023_a
+.class_map df NextTickListEntry
+.field_map df/b field_1017_b
+.field_map df/a field_1018_a
+.field_map df/g field_1019_g
+.field_map df/f field_1020_f
+.field_map df/e field_1021_e
+.field_map df/d field_1022_d
+.field_map df/c field_1023_c
+.method_map df/a (Ldf;)I func_734_a
+.method_map df/equals (Ljava/lang/Object;)Z equals
+.method_map df/hashCode ()I hashCode
+.method_map df/a (J)Ldf; func_733_a
+.method_map df/compareTo (Ljava/lang/Object;)I compareTo
+.class_map de BlockRedstoneTorch
+.field_map de/b field_648_b
+.field_map de/a field_649_a
+.method_map de/e (Lfv;III)V func_250_e
+.method_map de/b (Lfv;IIII)V func_234_b
+.method_map de/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map de/g (Lfv;III)Z func_20038_g
+.method_map de/b (Lla;IIII)Z func_239_b
+.method_map de/a (ILjava/util/Random;)I func_252_a
+.method_map de/c ()Z func_225_d
+.method_map de/b ()I func_4028_b
+.method_map de/d (Lfv;IIII)Z func_238_d
+.method_map de/b (Lfv;III)V func_242_b
+.method_map de/a (Lfv;IIIZ)Z func_280_a
+.class_map dd EntityPainting
+.field_map dd/b field_9188_d
+.field_map dd/a field_448_a
+.field_map dd/f field_452_ad
+.field_map dd/e field_9185_b
+.field_map dd/d field_9186_f
+.field_map dd/c field_9187_e
+.method_map dd/c_ ()Z func_129_c_
+.method_map dd/a ()V func_21044_a
+.method_map dd/b_ ()V func_106_b_
+.method_map dd/d ()Z func_181_b
+.method_map dd/d (I)F func_180_c
+.method_map dd/b (Lah;)V func_99_b
+.method_map dd/a (Lfe;I)Z func_121_a
+.method_map dd/a (Lah;)V func_97_a
+.method_map dd/a (I)V func_179_a
+.class_map dc Packet102
+.field_map dc/b field_20023_b
+.field_map dc/a field_20024_a
+.field_map dc/e field_20025_e
+.field_map dc/d field_20026_d
+.field_map dc/c field_20027_c
+.method_map dc/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map dc/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map dc/a ()I func_71_a
+.method_map dc/a (Lgi;)V func_72_a
+.class_map db TileEntityMobSpawner
+.field_map db/h field_492_f
+.field_map db/g field_490_h
+.field_map db/f field_491_g
+.field_map db/e field_493_e
+.method_map db/a (Ljava/lang/String;)V func_21078_a
+.method_map db/f ()V func_184_b
+.method_map db/a ()Z func_195_a
+.method_map db/b ()V func_196_d
+.method_map db/b (Lah;)V func_188_b
+.method_map db/a (Lah;)V func_186_a
+.class_map da HashEntry2
+.field_map da/b field_1024_b
+.field_map da/a field_1025_a
+.field_map da/d field_1026_d
+.field_map da/c field_1027_c
+.method_map da/b ()Ljava/lang/Object; func_735_b
+.method_map da/equals (Ljava/lang/Object;)Z equals
+.method_map da/hashCode ()I hashCode
+.method_map da/a ()J func_736_a
+.method_map da/toString ()Ljava/lang/String; toString
+.class_map cz ItemFishingRod
+.method_map cz/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map z Packet18ArmAnimation
+.field_map z/b field_119_b
+.field_map z/a field_120_a
+.method_map z/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map z/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map z/a ()I func_71_a
+.method_map z/a (Lgi;)V func_72_a
+.class_map cy StepSound
+.field_map cy/b field_1028_b
+.field_map cy/a field_1029_a
+.field_map cy/c field_1030_c
+.method_map cy/c ()Ljava/lang/String; func_737_c
+.method_map cy/a ()F func_738_a
+.method_map cy/b ()F func_739_b
+.class_map y MobSpawnerHell
+.class_map cx NBTTagByte
+.field_map cx/a field_741_a
+.method_map cx/a ()B func_379_a
+.method_map cx/a (Ljava/io/DataInput;)V func_382_a
+.method_map cx/a (Ljava/io/DataOutput;)V func_381_a
+.method_map cx/toString ()Ljava/lang/String; toString
+.class_map x BlockIce
+.method_map x/a (Ljava/util/Random;)I func_244_a
+.method_map x/a (Lla;IIII)Z func_253_a
+.method_map x/b (Lfv;III)V func_242_b
+.method_map x/a (Lfv;IIILjava/util/Random;)V func_221_a
+.class_map cw ThreadSleepForever
+.field_map cw/a field_1031_a
+.method_map cw/run ()V run
+.class_map w BlockCrops
+.method_map w/a (Ljava/util/Random;)I func_244_a
+.method_map w/a (Lfv;IIII)V func_251_a
+.method_map w/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map w/h (Lfv;III)F func_278_h
+.method_map w/c (Lfv;III)V func_21028_c
+.method_map w/a (ILjava/util/Random;)I func_252_a
+.method_map w/c (I)Z func_277_b
+.class_map cv ThreadCommandReader
+.field_map cv/a field_1032_a
+.method_map cv/run ()V run
+.class_map v Packet5PlayerInventory
+.field_map v/b field_117_b
+.field_map v/a field_118_a
+.field_map v/d field_21022_d
+.field_map v/c field_20028_c
+.method_map v/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map v/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map v/a ()I func_71_a
+.method_map v/a (Lgi;)V func_72_a
+.class_map cu ThreadServerApplication
+.field_map cu/a field_1033_a
+.method_map cu/run ()V run
+.class_map u NBTTagFloat
+.field_map u/a field_739_a
+.method_map u/a ()B func_379_a
+.method_map u/a (Ljava/io/DataInput;)V func_382_a
+.method_map u/a (Ljava/io/DataOutput;)V func_381_a
+.method_map u/toString ()Ljava/lang/String; toString
+.class_map ct ChunkProviderHell
+.field_map ct/s field_4230_s
+.field_map ct/r field_4231_r
+.field_map ct/q field_4232_q
+.field_map ct/p field_4233_p
+.field_map ct/o field_4234_o
+.field_map ct/n field_4235_n
+.field_map ct/m field_4236_m
+.field_map ct/l field_4237_l
+.field_map ct/k field_4238_k
+.field_map ct/j field_4239_j
+.field_map ct/i field_4240_i
+.field_map ct/h field_4241_h
+.field_map ct/g field_4242_g
+.field_map ct/f field_4243_f
+.field_map ct/e field_4244_e
+.field_map ct/d field_4245_d
+.field_map ct/c field_4246_c
+.field_map ct/b field_4247_b
+.field_map ct/a field_4248_a
+.method_map ct/a ()Z func_361_a
+.method_map ct/a (ZLlk;)Z func_360_a
+.method_map ct/a (Lcq;II)V func_4055_a
+.method_map ct/a ([DIIIIII)[D func_4060_a
+.method_map ct/b (II[B)V func_4061_b
+.method_map ct/b (II)Lme; func_363_b
+.method_map ct/b ()Z func_364_b
+.method_map ct/a (II)Z func_365_a
+.method_map ct/a (II[B)V func_4062_a
+.class_map t RecipesDyes
+.method_map t/a (Lib;)V func_21165_a
+.class_map cs SpawnerAnimals
+.field_map cs/a field_4311_a
+.method_map cs/a (Lmj;Lfv;FFF)V func_21166_a
+.method_map cs/a (Lfv;ZZ)I func_4111_a
+.method_map cs/a (Lfv;II)Ljq; func_4112_a
+.method_map cs/a (Lma;Lfv;III)Z func_21167_a
+.class_map s BlockGravel
+.method_map s/a (ILjava/util/Random;)I func_252_a
+.class_map cr EntitySpider
+.method_map cr/m ()Z func_144_E
+.method_map cr/h ()I func_149_g
+.method_map cr/f ()Ljava/lang/String; func_6100_e
+.method_map cr/a (Lfe;F)V func_157_a
+.method_map cr/g ()Ljava/lang/String; func_6098_f
+.method_map cr/e ()Ljava/lang/String; func_6097_d
+.method_map cr/k ()D func_130_h
+.method_map cr/b (Lah;)V func_99_b
+.method_map cr/a (Lah;)V func_97_a
+.method_map cr/l ()Lfe; func_158_i
+.class_map r Packet21PickupSpawn
+.field_map r/j field_21023_j
+.field_map r/i field_121_i
+.field_map r/h field_122_h
+.field_map r/g field_123_g
+.field_map r/f field_124_f
+.field_map r/e field_125_e
+.field_map r/d field_126_d
+.field_map r/c field_127_c
+.field_map r/b field_128_b
+.field_map r/a field_129_a
+.method_map r/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map r/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map r/a ()I func_71_a
+.method_map r/a (Lgi;)V func_72_a
+.class_map cq IChunkProvider
+.method_map cq/a ()Z func_361_a
+.method_map cq/a (ZLlk;)Z func_360_a
+.method_map cq/a (Lcq;II)V func_4055_a
+.method_map cq/b (II)Lme; func_363_b
+.method_map cq/b ()Z func_364_b
+.method_map cq/a (II)Z func_365_a
+.class_map q BlockOreBlock
+.method_map q/a (I)I func_241_a
+.class_map cp ItemBlock
+.field_map cp/a field_272_a
+.method_map cp/a (Ljl;Lhl;Lfv;IIII)Z func_78_a
+.method_map cp/a ()Ljava/lang/String; func_20106_a
+.class_map p Packet105
+.field_map p/b field_20029_b
+.field_map p/a field_20030_a
+.field_map p/c field_20031_c
+.method_map p/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map p/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map p/a ()I func_71_a
+.method_map p/a (Lgi;)V func_72_a
+.class_map co ItemSword
+.field_map co/a field_4210_a
+.method_map co/a (Ljl;IIII)V func_75_a
+.method_map co/a (Ljl;Lhr;)F func_79_a
+.method_map co/a (Lfe;)I func_9203_a
+.method_map co/a (Ljl;Lmj;)V func_9201_a
+.class_map o WorldGenForest
+.method_map o/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map cn WorldGenHellLava
+.field_map cn/a field_4250_a
+.method_map cn/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map n PlayerListBox
+.field_map n/b field_954_b
+.field_map n/a field_955_a
+.method_map n/a ()V func_690_a
+.class_map cm Packet33RelEntityMoveLook
+.method_map cm/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map cm/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map cm/a ()I func_71_a
+.class_map m BlockOre
+.method_map m/a (Ljava/util/Random;)I func_244_a
+.method_map m/a (ILjava/util/Random;)I func_252_a
+.method_map m/b (I)I func_21025_b
+.class_map cl WorldGenTaiga1
+.method_map cl/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map l WorldGenClay
+.field_map l/b field_763_b
+.field_map l/a field_764_a
+.method_map l/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map ck SlotArmor
+.field_map ck/b field_20101_b
+.field_map ck/a field_20102_a
+.method_map ck/a (Ljl;)Z func_20095_a
+.method_map ck/a ()I func_20093_a
+.class_map k InventoryCrafting
+.field_map k/b field_21085_b
+.field_map k/a field_20076_a
+.field_map k/c field_20077_c
+.method_map k/a (II)Ljl; func_21084_a
+.method_map k/a (I)Ljl; func_82_a
+.method_map k/a (ILjl;)V func_206_a
+.method_map k/a_ (Lhl;)Z func_20067_a_
+.method_map k/c ()I func_202_d
+.method_map k/h_ ()I func_83_a
+.method_map k/d ()V func_183_c
+.method_map k/b ()Ljava/lang/String; func_20068_b
+.method_map k/b (II)Ljl; func_20069_a
+.class_map cj BlockNote
+.method_map cj/a (I)I func_241_a
+.method_map cj/a (Lfv;IIILhl;)Z func_246_a
+.method_map cj/b (Lfv;IIILhl;)V func_235_b
+.method_map cj/a (Lfv;IIIII)V func_21024_a
+.method_map cj/b (Lfv;IIII)V func_234_b
+.method_map cj/a_ ()Lbm; func_294_a_
+.class_map j Packet2Handshake
+.field_map j/a field_141_a
+.method_map j/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map j/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map j/a ()I func_71_a
+.method_map j/a (Lgi;)V func_72_a
+.class_map ci EntityFireball
+.field_map ci/ap field_9189_ao
+.field_map ci/ao field_9190_an
+.field_map ci/an field_9191_am
+.field_map ci/am field_9192_al
+.field_map ci/al field_9194_ak
+.field_map ci/f field_9193_f
+.field_map ci/ak field_9197_aj
+.field_map ci/e field_9195_e
+.field_map ci/d field_9196_d
+.field_map ci/c field_9198_c
+.field_map ci/b field_9199_b
+.field_map ci/a field_9200_a
+.method_map ci/b_ ()V func_106_b_
+.method_map ci/a ()V func_21044_a
+.method_map ci/a (Lfe;I)Z func_121_a
+.method_map ci/c_ ()Z func_129_c_
+.method_map ci/b (Lah;)V func_99_b
+.method_map ci/a (Lah;)V func_97_a
+.class_map i ItemEgg
+.method_map i/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map ch NBTTagInt
+.field_map ch/a field_742_a
+.method_map ch/a ()B func_379_a
+.method_map ch/a (Ljava/io/DataInput;)V func_382_a
+.method_map ch/a (Ljava/io/DataOutput;)V func_381_a
+.method_map ch/toString ()Ljava/lang/String; toString
+.class_map h Packet101
+.field_map h/a field_20032_a
+.method_map h/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map h/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map h/a ()I func_71_a
+.method_map h/a (Lgi;)V func_72_a
+.class_map cg NoiseGenerator2
+.field_map cg/b field_4312_b
+.field_map cg/a field_4313_a
+.field_map cg/g field_4314_g
+.field_map cg/f field_4315_f
+.field_map cg/e field_4316_e
+.field_map cg/d field_4317_d
+.field_map cg/c field_4318_c
+.method_map cg/a (D)I func_4113_a
+.method_map cg/a ([IDD)D func_4114_a
+.method_map cg/a ([DDDIIDDD)V func_4115_a
+.class_map g MobSpawnerTaiga
+.method_map g/a (Ljava/util/Random;)Lcb; func_21114_a
+.class_map cf CraftingInventoryChestCB
+.field_map cf/a field_20137_a
+.method_map cf/b (Lhl;)Z func_20126_b
+.class_map f NBTTagLong
+.field_map f/a field_740_a
+.method_map f/a ()B func_379_a
+.method_map f/a (Ljava/io/DataInput;)V func_382_a
+.method_map f/a (Ljava/io/DataOutput;)V func_381_a
+.method_map f/toString ()Ljava/lang/String; toString
+.class_map ce IWorldAccess
+.method_map ce/b (Lfe;)V func_688_b
+.method_map ce/a (Lfe;)V func_681_a
+.method_map ce/a (Ljava/lang/String;III)V func_682_a
+.method_map ce/a (III)V func_683_a
+.method_map ce/a (IIILbm;)V func_686_a
+.method_map ce/a ()V func_684_a
+.method_map ce/a (IIIIII)V func_685_a
+.method_map ce/a (Ljava/lang/String;DDDDDD)V func_687_a
+.method_map ce/a (Ljava/lang/String;DDDFF)V func_689_a
+.class_map e Packet20NamedEntitySpawn
+.field_map e/b field_142_b
+.field_map e/a field_143_a
+.field_map e/h field_144_h
+.field_map e/g field_145_g
+.field_map e/f field_146_f
+.field_map e/e field_147_e
+.field_map e/d field_148_d
+.field_map e/c field_149_c
+.method_map e/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map e/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map e/a ()I func_71_a
+.method_map e/a (Lgi;)V func_72_a
+.class_map cd MapGenCavesHell
+.method_map cd/a (II[BDDDFFFIID)V func_4105_a
+.method_map cd/a (II[BDDD)V func_4106_a
+.method_map cd/a (Lfv;IIII[B)V func_666_a
+.class_map d BlockChest
+.field_map d/a field_656_a
+.method_map d/a (I)I func_241_a
+.method_map d/a (Lfv;IIILhl;)Z func_246_a
+.method_map d/b (Lfv;III)V func_242_b
+.method_map d/g (Lfv;III)Z func_297_g
+.method_map d/a (Lfv;III)Z func_259_a
+.method_map d/a_ ()Lbm; func_294_a_
+.class_map cc ItemSoup
+.method_map cc/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map c PathPoint
+.field_map c/j field_1007_j
+.field_map c/i field_1008_i
+.field_map c/h field_1009_h
+.field_map c/g field_1010_g
+.field_map c/f field_1011_f
+.field_map c/e field_1012_e
+.field_map c/d field_1013_d
+.field_map c/c field_1014_c
+.field_map c/b field_1015_b
+.field_map c/a field_1016_a
+.method_map c/a ()Z func_730_a
+.method_map c/equals (Ljava/lang/Object;)Z equals
+.method_map c/a (Lc;)F func_731_a
+.method_map c/hashCode ()I hashCode
+.method_map c/toString ()Ljava/lang/String; toString
+.class_map cb WorldGenerator
+.method_map cb/a (DDD)V func_420_a
+.method_map cb/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map b WatchableObject
+.field_map b/b field_21174_b
+.field_map b/a field_21175_a
+.field_map b/d field_21176_d
+.field_map b/c field_21177_c
+.method_map b/b ()Ljava/lang/Object; func_21168_b
+.method_map b/c ()I func_21169_c
+.method_map b/d ()Z func_21170_d
+.method_map b/a (Ljava/lang/Object;)V func_21171_a
+.method_map b/a ()I func_21172_a
+.method_map b/a (Z)V func_21173_a
+.class_map ca NetworkManager
+.field_map ca/w field_20175_w
+.field_map ca/v field_1035_s
+.field_map ca/u field_1036_r
+.field_map ca/t field_20176_t
+.field_map ca/s field_1037_q
+.field_map ca/r field_1038_p
+.field_map ca/q field_1039_o
+.field_map ca/p field_1040_n
+.field_map ca/o field_1041_m
+.field_map ca/n field_1042_l
+.field_map ca/m field_1043_k
+.field_map ca/l field_1044_j
+.field_map ca/k field_1045_i
+.field_map ca/j field_1046_h
+.field_map ca/i field_1047_g
+.field_map ca/h field_1048_f
+.field_map ca/g field_12032_f
+.field_map ca/f field_1049_e
+.field_map ca/e field_1050_d
+.field_map ca/d field_1034_t
+.field_map ca/c field_1051_c
+.field_map ca/b field_1052_b
+.field_map ca/a field_1053_a
+.method_map ca/e (Lca;)Ljava/lang/Thread; func_742_e
+.method_map ca/a (Lgi;)V func_754_a
+.method_map ca/f ()V func_741_f
+.method_map ca/d ()I func_744_d
+.method_map ca/b (Lca;)Z func_740_b
+.method_map ca/a (Ljava/lang/String;[Ljava/lang/Object;)V func_753_a
+.method_map ca/a (Lca;)Z func_743_a
+.method_map ca/e ()V func_746_e
+.method_map ca/a ()V func_747_a
+.method_map ca/f (Lca;)Ljava/lang/Thread; func_748_f
+.method_map ca/a (Ljava/lang/Exception;)V func_750_a
+.method_map ca/a (Lkx;)V func_745_a
+.method_map ca/d (Lca;)V func_749_d
+.method_map ca/c ()V func_752_c
+.method_map ca/c (Lca;)V func_751_c
+.method_map ca/b ()Ljava/net/SocketAddress; func_755_b
+.class_map a Packet7
+.field_map a/b field_9018_b
+.field_map a/a field_9019_a
+.field_map a/c field_9020_c
+.method_map a/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map a/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map a/a ()I func_71_a
+.method_map a/a (Lgi;)V func_72_a
+.class_map bz Packet3Chat
+.field_map bz/a field_150_a
+.method_map bz/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map bz/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map bz/a ()I func_71_a
+.method_map bz/a (Lgi;)V func_72_a
+.class_map by EntitySnowball
+.field_map by/am field_453_aj
+.field_map by/al field_454_ai
+.field_map by/f field_457_ag
+.field_map by/ak field_455_ah
+.field_map by/e field_459_af
+.field_map by/d field_460_ae
+.field_map by/c field_461_ad
+.field_map by/b field_456_b
+.field_map by/a field_458_a
+.method_map by/a (DDDFF)V func_6141_a
+.method_map by/b (Lhl;)V func_6093_b
+.method_map by/b_ ()V func_106_b_
+.method_map by/a ()V func_21044_a
+.method_map by/b (Lah;)V func_99_b
+.method_map by/a (Lah;)V func_97_a
+.class_map bx EntityCow
+.method_map bx/a (Lhl;)Z func_6092_a
+.method_map bx/e ()Ljava/lang/String; func_6097_d
+.method_map bx/g ()Ljava/lang/String; func_6098_f
+.method_map bx/h ()I func_149_g
+.method_map bx/i ()F func_6102_h
+.method_map bx/b (Lah;)V func_99_b
+.method_map bx/a (Lah;)V func_97_a
+.method_map bx/f ()Ljava/lang/String; func_6100_e
+.class_map bw BlockPressurePlate
+.field_map bw/a field_664_a
+.method_map bw/e (Lfv;III)V func_250_e
+.method_map bw/b (Lfv;IIII)V func_234_b
+.method_map bw/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map bw/a ()Z func_240_b
+.method_map bw/b (Lla;IIII)Z func_239_b
+.method_map bw/g (Lfv;III)V func_318_g
+.method_map bw/a (Lla;III)V func_233_a
+.method_map bw/c ()Z func_225_d
+.method_map bw/b ()I func_4028_b
+.method_map bw/d (Lfv;IIII)Z func_238_d
+.method_map bw/a (Lfv;IIILfe;)V func_263_a
+.method_map bw/b (Lfv;III)V func_242_b
+.method_map bw/d (Lfv;III)Lfa; func_248_d
+.method_map bw/a (Lfv;III)Z func_259_a
+.class_map bv EnumToolMaterial
+.field_map bv/j field_21182_j
+.field_map bv/i field_21183_i
+.field_map bv/h field_21184_h
+.field_map bv/g field_21185_g
+.field_map bv/f field_21186_f
+.field_map bv/e GOLD
+.field_map bv/d EMERALD
+.field_map bv/c IRON
+.field_map bv/b STONE
+.field_map bv/a WOOD
+.method_map bv/c ()I func_21178_c
+.method_map bv/b ()F func_21179_b
+.method_map bv/a ()I func_21180_a
+.method_map bv/d ()I func_21181_d
+.class_map bu Vec3D
+.field_map bu/b field_1054_b
+.field_map bu/a field_1055_a
+.field_map bu/e field_1056_e
+.field_map bu/d field_1057_d
+.field_map bu/c field_1058_c
+.method_map bu/b (Lbu;)D func_764_b
+.method_map bu/c (DDD)Lbu; func_757_c
+.method_map bu/b ()Lbu; func_758_b
+.method_map bu/a (Lbu;)D func_767_a
+.method_map bu/d (DDD)D func_759_d
+.method_map bu/a (DDD)Lbu; func_760_a
+.method_map bu/c (Lbu;D)Lbu; func_762_c
+.method_map bu/a ()V func_761_a
+.method_map bu/b (Lbu;D)Lbu; func_763_b
+.method_map bu/a (Lbu;D)Lbu; func_766_a
+.method_map bu/c ()D func_765_c
+.method_map bu/b (DDD)Lbu; func_768_b
+.method_map bu/toString ()Ljava/lang/String; toString
+.method_map bu/e (DDD)Lbu; func_756_e
+.class_map bt BlockRedstoneOre
+.field_map bt/a field_665_a
+.method_map bt/a (Ljava/util/Random;)I func_244_a
+.method_map bt/b (Lfv;IIILhl;)V func_235_b
+.method_map bt/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map bt/b (Lfv;IIILfe;)V func_249_b
+.method_map bt/h (Lfv;III)V func_320_h
+.method_map bt/a (ILjava/util/Random;)I func_252_a
+.method_map bt/g (Lfv;III)V func_321_g
+.method_map bt/a (Lfv;IIILhl;)Z func_246_a
+.method_map bt/b ()I func_4028_b
+.class_map bs BlockMinecartTrack
+.method_map bs/e (Lfv;III)V func_250_e
+.method_map bs/a (Ljava/util/Random;)I func_244_a
+.method_map bs/b (Lfv;IIII)V func_234_b
+.method_map bs/a ()Z func_240_b
+.method_map bs/a (Lfv;IIILbu;Lbu;)Lih; func_262_a
+.method_map bs/g (Lfv;III)V func_4038_g
+.method_map bs/a (Lla;III)V func_233_a
+.method_map bs/d (Lfv;III)Lfa; func_248_d
+.method_map bs/a (Lfv;III)Z func_259_a
+.class_map br EntityGhast
+.field_map br/b field_20902_b
+.field_map br/a field_20903_a
+.field_map br/f field_4100_f
+.field_map br/e field_4101_e
+.field_map br/al field_4103_aj
+.field_map br/ak field_4097_ai
+.field_map br/d field_4102_d
+.field_map br/c field_20904_c
+.method_map br/a (DDDD)Z func_4046_a
+.method_map br/h ()I func_149_g
+.method_map br/f ()Ljava/lang/String; func_6100_e
+.method_map br/g ()Ljava/lang/String; func_6098_f
+.method_map br/e ()Ljava/lang/String; func_6097_d
+.method_map br/j ()I func_4045_i
+.method_map br/d ()V func_152_d_
+.method_map br/b ()Z func_155_a
+.method_map br/i ()F func_6102_h
+.class_map bq CraftingInventoryFurnaceCB
+.field_map bq/b field_20138_b
+.field_map bq/a field_20139_a
+.field_map bq/h field_20140_h
+.field_map bq/c field_20141_c
+.method_map bq/b (Lhl;)Z func_20126_b
+.method_map bq/a ()V func_20125_a
+.method_map bq/a (Lep;)V func_20128_a
+.class_map bp BlockLeaves
+.field_map bp/b field_20041_b
+.field_map bp/c field_663_c
+.method_map bp/a (Ljava/util/Random;)I func_244_a
+.method_map bp/b (Lfv;IIILfe;)V func_249_b
+.method_map bp/a ()Z func_240_b
+.method_map bp/b (Lfv;III)V func_242_b
+.method_map bp/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map bp/a (ILjava/util/Random;)I func_252_a
+.method_map bp/g (Lfv;III)V func_6091_h
+.class_map bo Packet9
+.method_map bo/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map bo/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map bo/a ()I func_71_a
+.method_map bo/a (Lgi;)V func_72_a
+.class_map bn ItemCloth
+.method_map bn/a (I)I func_21089_a
+.class_map bm TileEntity
+.field_map bm/b field_478_b
+.field_map bm/a field_479_a
+.field_map bm/f field_480_f
+.field_map bm/e field_481_e
+.field_map bm/d field_482_d
+.field_map bm/c field_483_c
+.method_map bm/g ()Lkx; func_20070_f
+.method_map bm/f ()V func_184_b
+.method_map bm/a (Ljava/lang/Class;Ljava/lang/String;)V func_187_a
+.method_map bm/d ()V func_183_c
+.method_map bm/c (Lah;)Lbm; func_185_c
+.method_map bm/b (Lah;)V func_188_b
+.method_map bm/a (Lah;)V func_186_a
+.class_map bl EntityAnimals
+.method_map bl/c ()I func_146_b
+.method_map bl/a (III)F func_159_a
+.method_map bl/b (Lah;)V func_99_b
+.method_map bl/a (Lah;)V func_97_a
+.method_map bl/b ()Z func_155_a
+.class_map bk WorldGenFlowers
+.field_map bk/a field_765_a
+.method_map bk/a (Lfv;Ljava/util/Random;III)Z func_419_a
+.class_map bj IChunkLoader
+.method_map bj/a (Lfv;Lme;)V func_662_a
+.method_map bj/b ()V func_660_b
+.method_map bj/b (Lfv;Lme;)V func_4104_b
+.method_map bj/a ()V func_661_a
+.method_map bj/a (Lfv;II)Lme; func_659_a
+.class_map bi BlockDirt
+.class_map bh ItemBucket
+.field_map bh/a field_274_a
+.method_map bh/a (Ljl;Lfv;Lhl;)Ljl; func_6152_a
+.class_map bg BlockCactus
+.method_map bg/d (Lfv;III)Lfa; func_248_d
+.method_map bg/f (Lfv;III)Z func_220_f
+.method_map bg/a ()Z func_240_b
+.method_map bg/a (I)I func_241_a
+.method_map bg/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map bg/a (Lfv;IIILfe;)V func_263_a
+.method_map bg/b (Lfv;IIII)V func_234_b
+.method_map bg/a (Lfv;III)Z func_259_a
+.class_map bf TileEntityDispenser
+.field_map bf/f field_21080_f
+.field_map bf/e field_21081_e
+.method_map bf/a (I)Ljl; func_82_a
+.method_map bf/a (ILjl;)V func_206_a
+.method_map bf/a_ (Lhl;)Z func_20067_a_
+.method_map bf/c ()I func_202_d
+.method_map bf/h_ ()I func_83_a
+.method_map bf/e ()Ljl; func_21079_e
+.method_map bf/b (Lah;)V func_188_b
+.method_map bf/b ()Ljava/lang/String; func_20068_b
+.method_map bf/b (II)Ljl; func_20069_a
+.method_map bf/a (Lah;)V func_186_a
+.class_map be BlockFlowing
+.field_map be/b field_658_b
+.field_map be/a field_659_a
+.field_map be/c field_660_c
+.method_map be/l (Lfv;III)Z func_312_l
+.method_map be/e (Lfv;III)V func_250_e
+.method_map be/b (Lfv;IIIII)I func_4034_a
+.method_map be/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map be/e (Lfv;IIII)I func_307_e
+.method_map be/k (Lfv;III)Z func_309_k
+.method_map be/j (Lfv;III)[Z func_4035_j
+.method_map be/i (Lfv;III)V func_20039_i
+.method_map be/f (Lfv;IIII)V func_311_f
+.class_map bd Packet106
+.field_map bd/b field_20033_b
+.field_map bd/a field_20034_a
+.field_map bd/c field_20035_c
+.method_map bd/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map bd/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map bd/a ()I func_71_a
+.method_map bd/a (Lgi;)V func_72_a
+.class_map bc ItemPickaxe
+.field_map bc/bg field_4209_bb
+.method_map bc/a (Lhr;)Z func_80_a
+.class_map bb BlockButton
+.method_map bb/c (Lfv;IIII)V func_255_c
+.method_map bb/e (Lfv;III)V func_250_e
+.method_map bb/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map bb/b (Lfv;IIILhl;)V func_235_b
+.method_map bb/b (Lfv;IIII)V func_234_b
+.method_map bb/a ()Z func_240_b
+.method_map bb/g (Lfv;III)Z func_322_g
+.method_map bb/b (Lla;IIII)Z func_239_b
+.method_map bb/a (Lfv;IIILhl;)Z func_246_a
+.method_map bb/a (Lla;III)V func_233_a
+.method_map bb/c ()Z func_225_d
+.method_map bb/b ()I func_4028_b
+.method_map bb/d (Lfv;IIII)Z func_238_d
+.method_map bb/b (Lfv;III)V func_242_b
+.method_map bb/d (Lfv;III)Lfa; func_248_d
+.method_map bb/a (Lfv;III)Z func_259_a
+.class_map ba ServerCommand
+.field_map ba/b field_1059_b
+.field_map ba/a field_1060_a
+.class_map az CompressedStreamTools
+.method_map az/a (Ljava/io/DataInput;)Lah; func_774_a
+.method_map az/a (Lah;Ljava/io/OutputStream;)V func_769_a
+.method_map az/a (Lah;Ljava/io/DataOutput;)V func_771_a
+.method_map az/a (Ljava/io/InputStream;)Lah; func_770_a
+.class_map ay InventoryLargeChest
+.field_map ay/b field_501_b
+.field_map ay/a field_502_a
+.field_map ay/c field_503_c
+.method_map ay/h_ ()I func_83_a
+.method_map ay/a (ILjl;)V func_206_a
+.method_map ay/b (II)Ljl; func_20069_a
+.method_map ay/c ()I func_202_d
+.method_map ay/a_ (Lhl;)Z func_20067_a_
+.method_map ay/b ()Ljava/lang/String; func_20068_b
+.method_map ay/d ()V func_183_c
+.method_map ay/a (I)Ljl; func_82_a
+.class_map ax EntityWaterMob
+.method_map ax/c ()I func_146_b
+.method_map ax/d_ ()Z func_21046_d_
+.method_map ax/b (Lah;)V func_99_b
+.method_map ax/a (Lah;)V func_97_a
+.method_map ax/b ()Z func_155_a
+.class_map aw MaterialLogic
+.method_map aw/a ()Z func_216_a
+.method_map aw/c ()Z func_218_c
+.method_map aw/b ()Z func_219_b
+.class_map av NoiseGeneratorPerlin
+.field_map av/b field_934_b
+.field_map av/a field_935_a
+.field_map av/d field_936_d
+.field_map av/c field_937_c
+.method_map av/a (IDD)D func_4102_a
+.method_map av/a (DD)D func_642_a
+.method_map av/a (DDD)D func_643_a
+.method_map av/a (IDDD)D func_644_a
+.method_map av/b (DDD)D func_645_b
+.method_map av/a ([DDDDIIIDDDD)V func_646_a
+.class_map au RecipesFood
+.method_map au/a (Lib;)V func_20177_a
+.class_map at PlayerInstance
+.field_map at/m field_1061_m
+.field_map at/l field_1062_l
+.field_map at/k field_1063_k
+.field_map at/j field_1064_j
+.field_map at/i field_1065_i
+.field_map at/h field_1066_h
+.field_map at/g field_1067_g
+.field_map at/f field_1068_f
+.field_map at/e field_1069_e
+.field_map at/d field_1070_d
+.field_map at/c field_1071_c
+.field_map at/b field_1072_b
+.field_map at/a field_1073_a
+.method_map at/a (Lbm;)V func_20178_a
+.method_map at/a (III)V func_775_a
+.method_map at/a ()V func_777_a
+.method_map at/a (Lkx;)V func_776_a
+.method_map at/b (Lfy;)V func_778_b
+.method_map at/a (Lfy;)V func_779_a
+.class_map as BlockPortal
+.method_map as/a (Ljava/util/Random;)I func_244_a
+.method_map as/d (Lfv;III)Lfa; func_248_d
+.method_map as/a (Lla;IIII)Z func_253_a
+.method_map as/a ()Z func_240_b
+.method_map as/a (Lla;III)V func_233_a
+.method_map as/a (Lfv;IIILfe;)V func_263_a
+.method_map as/b (Lfv;IIII)V func_234_b
+.method_map as/b_ (Lfv;III)Z func_4030_a_
+.class_map ar StepSoundStone
+.class_map aq StepSoundSand
+.class_map ap IAnimals
+.class_map ao Packet11PlayerPosition
+.method_map ao/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map ao/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map ao/a ()I func_71_a
+.class_map an Packet1Login
+.field_map an/b field_113_b
+.field_map an/a field_4024_a
+.field_map an/e field_4025_e
+.field_map an/d field_4026_d
+.field_map an/c field_4027_c
+.method_map an/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map an/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map an/a ()I func_71_a
+.method_map an/a (Lgi;)V func_72_a
+.class_map am BlockSlowSand
+.method_map am/d (Lfv;III)Lfa; func_248_d
+.method_map am/a (Lfv;IIILfe;)V func_263_a
+.class_map al BlockTNT
+.method_map al/a (Ljava/util/Random;)I func_244_a
+.method_map al/a (Lfv;IIII)V func_251_a
+.method_map al/a (I)I func_241_a
+.method_map al/b (Lfv;IIII)V func_234_b
+.method_map al/a_ (Lfv;III)V func_4029_c
+.class_map ak ServerGuiFocusAdapter
+.field_map ak/a field_987_a
+.method_map ak/focusGained (Ljava/awt/event/FocusEvent;)V focusGained
+.class_map aj BlockStationary
+.method_map aj/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map aj/i (Lfv;III)V func_20040_i
+.method_map aj/j (Lfv;III)Z func_4033_j
+.method_map aj/b (Lfv;IIII)V func_234_b
+.class_map ai ServerGuiCommandListener
+.field_map ai/b field_992_b
+.field_map ai/a field_993_a
+.method_map ai/actionPerformed (Ljava/awt/event/ActionEvent;)V actionPerformed
+.class_map ah NBTTagCompound
+.field_map ah/a field_738_a
+.method_map ah/f (Ljava/lang/String;)F func_389_f
+.method_map ah/a (Ljava/lang/String;F)V func_390_a
+.method_map ah/a ()B func_379_a
+.method_map ah/a (Ljava/lang/String;[B)V func_391_a
+.method_map ah/a (Ljava/lang/String;Lix;)V func_399_a
+.method_map ah/a (Ljava/lang/String;Z)V func_393_a
+.method_map ah/k (Ljava/lang/String;)Lfh; func_407_k
+.method_map ah/a (Ljava/lang/String;S)V func_394_a
+.method_map ah/toString ()Ljava/lang/String; toString
+.method_map ah/d (Ljava/lang/String;)I func_395_d
+.method_map ah/a (Ljava/lang/String;J)V func_396_a
+.method_map ah/g (Ljava/lang/String;)D func_398_g
+.method_map ah/j (Ljava/lang/String;)Lah; func_397_j
+.method_map ah/i (Ljava/lang/String;)[B func_400_i
+.method_map ah/h (Ljava/lang/String;)Ljava/lang/String; func_401_h
+.method_map ah/l (Ljava/lang/String;)Z func_402_l
+.method_map ah/a (Ljava/lang/String;Ljava/lang/String;)V func_403_a
+.method_map ah/e (Ljava/lang/String;)J func_404_e
+.method_map ah/a (Ljava/lang/String;I)V func_405_a
+.method_map ah/c (Ljava/lang/String;)S func_406_c
+.method_map ah/b (Ljava/lang/String;)B func_408_b
+.method_map ah/a (Ljava/lang/String;Lah;)V func_392_a
+.method_map ah/a (Ljava/io/DataOutput;)V func_381_a
+.method_map ah/a (Ljava/lang/String;B)V func_409_a
+.method_map ah/a (Ljava/io/DataInput;)V func_382_a
+.method_map ah/a (Ljava/lang/String;)Z func_410_a
+.method_map ah/a (Ljava/lang/String;D)V func_411_a
+.class_map ag ServerWindowAdapter
+.field_map ag/a field_997_a
+.method_map ag/windowClosing (Ljava/awt/event/WindowEvent;)V windowClosing
+.class_map af BlockSnowBlock
+.method_map af/a (Ljava/util/Random;)I func_244_a
+.method_map af/a (Lfv;IIILjava/util/Random;)V func_221_a
+.method_map af/a (ILjava/util/Random;)I func_252_a
+.class_map ae CraftingInventoryPlayerCB
+.field_map ae/b field_20142_b
+.field_map ae/a field_20143_a
+.field_map ae/c field_20144_c
+.method_map ae/b (Lhl;)Z func_20126_b
+.method_map ae/a (Lhl;)V func_20130_a
+.method_map ae/a (Lmn;)V func_20121_a
+.class_map ad EntityZombieSimple
+.method_map ad/a (III)F func_159_a
+.class_map ac RecipesArmor
+.field_map ac/b field_20173_b
+.field_map ac/a field_20174_a
+.method_map ac/a (Lib;)V func_20172_a
+.class_map ab Packet39
+.field_map ab/b field_6043_b
+.field_map ab/a field_6044_a
+.method_map ab/a (Ljava/io/DataInputStream;)V func_70_a
+.method_map ab/a (Ljava/io/DataOutputStream;)V func_68_a
+.method_map ab/a ()I func_71_a
+.method_map ab/a (Lgi;)V func_72_a
+.class_map aa BlockLeavesBase
+.field_map aa/a field_6088_a
+.method_map aa/a (Lla;IIII)Z func_253_a
+.method_map aa/a ()Z func_240_b
+
+.class **

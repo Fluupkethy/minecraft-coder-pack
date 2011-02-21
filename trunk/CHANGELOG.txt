@@ -1,0 +1,31 @@
+v2.8:
+    + Added alpha version of OSX support
+	+ Added alpha version of the MCP mod system
+	+ Updated mapping with a lot more method and field names
+
+v2.7:
+    + Updated scripts to support Minecraft Beta 1.2_02 and Server 1.2_01
+
+v2.6:
+    + Updated scripts to support Minecraft Beta 1.1_02 and Server 1.1_02
+
+v2.5:
+    + Updated scripts to support Minecraft 1.2.6 and Server 0.2.8
+
+v2.4:
+    + Updated scripts to support Minecraft 1.2.5 and Server 0.2.7
+
+v2.3:
+	+ Included a changelog
+	+ Linux version is now available. The scripts are available in mcp/scripts-linux. The sources for the tools in python are available in mcp/tools-linux
+	+ Renamer now includes the OpenGL constant annotater from MissLil
+	+ Renamer output the proper reobfuscation table for Obfuscathon_v2
+	+ Name collision has been turned off, removing all the _00 tails on many variables
+	+ Obfuscathon is now context aware. This should remove a lot of prb with the reobfuscation
+	+ Various updates on the scripts
+	+ The location of the CSVs have been moved to MCP server. Related tools have been updated.
+	+ Many MANY modifications on the spreadsheets. Some to prevent name crash, some were inacurates, some found, some lost... This will be better documented in next version of MCP
+	+ Started porting the whole CSV hell to a cleaner database.
+
+v2.2 and previous:
+	+ Since this changelog has been included only in v2.3, no changelog is available for previous versions.
