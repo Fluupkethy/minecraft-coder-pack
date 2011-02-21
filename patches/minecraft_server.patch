@@ -1,0 +1,2559 @@
+diff -r -U 3 minecraft_server\net\minecraft\server\MinecraftServer.java minecraft_server_patched\net\minecraft\server\MinecraftServer.java
+--- minecraft_server\net\minecraft\server\MinecraftServer.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\server\MinecraftServer.java	Sun Jan 23 21:05:32 2011
+@@ -4,33 +4,34 @@
+ 
+ package net.minecraft.server;
+ 
+-import AxisAlignedBB;
+-import ChunkProviderServer;
+-import ConsoleLogManager;
+-import EntityPlayerMP;
+-import EntityTracker;
+-import ICommandListener;
+-import IUpdatePlayerListBox;
+-import Item;
+-import ItemStack;
+-import NetServerHandler;
+-import NetworkListenThread;
+-import Packet3Chat;
+-import Packet4UpdateTime;
+-import PropertyManager;
+-import ServerCommand;
+-import ServerConfigurationManager;
+-import ServerGUI;
+-import ThreadCommandReader;
+-import ThreadServerApplication;
+-import ThreadSleepForever;
+-import Vec3D;
+-import WorldManager;
+-import WorldServer;
++import net.minecraft.src.AxisAlignedBB;
++import net.minecraft.src.ChunkProviderServer;
++import net.minecraft.src.ConsoleLogManager;
++import net.minecraft.src.EntityPlayerMP;
++import net.minecraft.src.EntityTracker;
++import net.minecraft.src.ICommandListener;
++import net.minecraft.src.IUpdatePlayerListBox;
++import net.minecraft.src.Item;
++import net.minecraft.src.ItemStack;
++import net.minecraft.src.NetServerHandler;
++import net.minecraft.src.NetworkListenThread;
++import net.minecraft.src.Packet3Chat;
++import net.minecraft.src.Packet4UpdateTime;
++import net.minecraft.src.PropertyManager;
++import net.minecraft.src.ServerCommand;
++import net.minecraft.src.ServerConfigurationManager;
++import net.minecraft.src.ServerGUI;
++import net.minecraft.src.ThreadCommandReader;
++import net.minecraft.src.ThreadServerApplication;
++import net.minecraft.src.ThreadSleepForever;
++import net.minecraft.src.Vec3D;
++import net.minecraft.src.WorldManager;
++import net.minecraft.src.WorldServer;
+ import java.awt.GraphicsEnvironment;
+ import java.io.File;
+ import java.io.IOException;
+ import java.net.InetAddress;
++import java.net.UnknownHostException;
+ import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.HashMap;
+@@ -53,7 +54,7 @@
+         new ThreadSleepForever(this);
+     }
+ 
+-    private boolean func_6008_d()
++    private boolean func_6008_d() throws UnknownHostException
+     {
+         ThreadCommandReader threadcommandreader = new ThreadCommandReader(this);
+         threadcommandreader.setDaemon(true);
+diff -r -U 3 minecraft_server\net\minecraft\src\Block.java minecraft_server_patched\net\minecraft\src\Block.java
+--- minecraft_server\net\minecraft\src\Block.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Block.java	Sun Jan 23 21:32:47 2011
+@@ -509,7 +509,7 @@
+     public static final Block field_9041_O;
+     public static final Block field_9040_P;
+     public static final Block field_9039_Q;
+-    public static final Block field_9038_R = (new BlockNote(25)).func_237_c(0.8F).func_20037_a("musicBlock");
++    public static final Block field_9038_R;
+     public static final Block field_9037_S = null;
+     public static final Block field_9036_T = null;
+     public static final Block field_9034_U = null;
+@@ -629,6 +629,7 @@
+         field_9041_O = (new Block(22, 144, Material.field_523_d)).func_237_c(3F).func_232_b(5F).func_4026_a(field_9025_h).func_20037_a("blockLapis");
+         field_9040_P = (new BlockDispenser(23)).func_237_c(3.5F).func_4026_a(field_9025_h).func_20037_a("dispenser");
+         field_9039_Q = (new BlockSandStone(24)).func_4026_a(field_9025_h).func_237_c(0.8F).func_20037_a("sandStone");
++        field_9038_R = (new BlockNote(25)).func_237_c(0.8F).func_20037_a("musicBlock");
+         field_616_ac = (new BlockCloth()).func_237_c(0.8F).func_4026_a(field_9022_k).func_20037_a("cloth");
+         field_4072_ae = (BlockFlower)(new BlockFlower(37, 13)).func_237_c(0.0F).func_4026_a(field_9026_g).func_20037_a("flower");
+         field_4071_af = (BlockFlower)(new BlockFlower(38, 12)).func_237_c(0.0F).func_4026_a(field_9026_g).func_20037_a("rose");
+diff -r -U 3 minecraft_server\net\minecraft\src\ChunkProviderLoadOrGenerate.java minecraft_server_patched\net\minecraft\src\ChunkProviderLoadOrGenerate.java
+--- minecraft_server\net\minecraft\src\ChunkProviderLoadOrGenerate.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ChunkProviderLoadOrGenerate.java	Sun Jan 23 23:10:13 2011
+@@ -149,15 +149,19 @@
+         {
+             return;
+         }
++/*
+         try
+         {
++*/
+             chunk.field_676_s = field_719_g.field_813_c;
+             field_721_e.func_662_a(field_719_g, chunk);
++/*
+         }
+         catch(IOException ioexception)
+         {
+             ioexception.printStackTrace();
+         }
++*/
+     }
+ 
+     public void func_4055_a(IChunkProvider ichunkprovider, int i, int j)
+diff -r -U 3 minecraft_server\net\minecraft\src\ChunkProviderServer.java minecraft_server_patched\net\minecraft\src\ChunkProviderServer.java
+--- minecraft_server\net\minecraft\src\ChunkProviderServer.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ChunkProviderServer.java	Sun Jan 23 23:10:19 2011
+@@ -146,15 +146,19 @@
+         {
+             return;
+         }
++/*
+         try
+         {
++*/
+             chunk.field_676_s = field_726_g.field_813_c;
+             field_729_d.func_662_a(field_726_g, chunk);
++/*
+         }
+         catch(IOException ioexception)
+         {
+             ioexception.printStackTrace();
+         }
++*/
+     }
+ 
+     public void func_4055_a(IChunkProvider ichunkprovider, int i, int j)
+diff -r -U 3 minecraft_server\net\minecraft\src\CompressedStreamTools.java minecraft_server_patched\net\minecraft\src\CompressedStreamTools.java
+--- minecraft_server\net\minecraft\src\CompressedStreamTools.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\CompressedStreamTools.java	Sun Jan 23 21:05:46 2011
+@@ -14,7 +14,7 @@
+     {
+     }
+ 
+-    public static NBTTagCompound func_770_a(InputStream inputstream)
++    public static NBTTagCompound func_770_a(InputStream inputstream) throws IOException
+     {
+         DataInputStream datainputstream = new DataInputStream(new GZIPInputStream(inputstream));
+         try
+@@ -28,7 +28,7 @@
+         }
+     }
+ 
+-    public static void func_769_a(NBTTagCompound nbttagcompound, OutputStream outputstream)
++    public static void func_769_a(NBTTagCompound nbttagcompound, OutputStream outputstream) throws IOException
+     {
+         DataOutputStream dataoutputstream = new DataOutputStream(new GZIPOutputStream(outputstream));
+         try
+@@ -41,7 +41,7 @@
+         }
+     }
+ 
+-    public static NBTTagCompound func_774_a(DataInput datainput)
++    public static NBTTagCompound func_774_a(DataInput datainput) throws IOException
+     {
+         NBTBase nbtbase = NBTBase.func_383_b(datainput);
+         if(nbtbase instanceof NBTTagCompound)
+@@ -53,7 +53,7 @@
+         }
+     }
+ 
+-    public static void func_771_a(NBTTagCompound nbttagcompound, DataOutput dataoutput)
++    public static void func_771_a(NBTTagCompound nbttagcompound, DataOutput dataoutput) throws IOException
+     {
+         NBTBase.func_380_a(nbttagcompound, dataoutput);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\DataWatcher.java minecraft_server_patched\net\minecraft\src\DataWatcher.java
+--- minecraft_server\net\minecraft\src\DataWatcher.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\DataWatcher.java	Sun Jan 23 20:54:09 2011
+@@ -56,7 +56,7 @@
+         return field_21159_c;
+     }
+ 
+-    public static void func_21151_a(List list, DataOutputStream dataoutputstream)
++    public static void func_21151_a(List list, DataOutputStream dataoutputstream) throws IOException
+     {
+         if(list != null)
+         {
+@@ -98,7 +98,7 @@
+         return arraylist;
+     }
+ 
+-    public void func_21152_a(DataOutputStream dataoutputstream)
++    public void func_21152_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         WatchableObject watchableobject;
+         for(Iterator iterator = field_21157_b.values().iterator(); iterator.hasNext(); func_21154_a(dataoutputstream, watchableobject))
+@@ -109,7 +109,7 @@
+         dataoutputstream.writeByte(127);
+     }
+ 
+-    private static void func_21154_a(DataOutputStream dataoutputstream, WatchableObject watchableobject)
++    private static void func_21154_a(DataOutputStream dataoutputstream, WatchableObject watchableobject) throws IOException
+     {
+         int i = (watchableobject.func_21169_c() << 5 | watchableobject.func_21172_a() & 0x1f) & 0xff;
+         dataoutputstream.writeByte(i);
+@@ -144,7 +144,7 @@
+         }
+     }
+ 
+-    public static List func_21149_a(DataInputStream datainputstream)
++    public static List func_21149_a(DataInputStream datainputstream) throws IOException
+     {
+         ArrayList arraylist = null;
+         for(byte byte0 = datainputstream.readByte(); byte0 != 127; byte0 = datainputstream.readByte())
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumArt.java minecraft_server_patched\net\minecraft\src\EnumArt.java
+--- minecraft_server\net\minecraft\src\EnumArt.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumArt.java	Sun Jan 23 20:45:22 2011
+@@ -4,9 +4,34 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumArt extends Enum
++public enum EnumArt
+ {
+-
++    Kebab("Kebab", 16, 16, 0, 0),
++    Aztec("Aztec", 16, 16, 16, 0),
++    Alban("Alban", 16, 16, 32, 0),
++    Aztec2("Aztec2", 16, 16, 48, 0),
++    Bomb("Bomb", 16, 16, 64, 0),
++    Plant("Plant", 16, 16, 80, 0),
++    Wasteland("Wasteland", 16, 16, 96, 0),
++    Pool("Pool", 32, 16, 0, 32),
++    Courbet("Courbet", 32, 16, 32, 32),
++    Sea("Sea", 32, 16, 64, 32),
++    Sunset("Sunset", 32, 16, 96, 32),
++    Creebet("Creebet", 32, 16, 128, 32),
++    Wanderer("Wanderer", 16, 32, 0, 64),
++    Graham("Graham", 16, 32, 16, 64),
++    Match("Match", 32, 32, 0, 128),
++    Bust("Bust", 32, 32, 32, 128),
++    Stage("Stage", 32, 32, 64, 128),
++    Void("Void", 32, 32, 96, 128),
++    SkullAndRoses("SkullAndRoses", 32, 32, 128, 128),
++    Fighters("Fighters", 64, 32, 0, 96),
++    Pointer("Pointer", 64, 64, 0, 192),
++    Pigscene("Pigscene", 64, 64, 64, 192),
++    BurningSkull("BurningSkull", 64, 64, 128, 192),
++    Skeleton("Skeleton", 64, 48, 192, 64),
++    DonkeyKong("DonkeyKong", 64, 48, 192, 112);
++/*
+     public static EnumArt[] values()
+     {
+         return (EnumArt[])field_863_D.clone();
+@@ -16,17 +41,16 @@
+     {
+         return (EnumArt)Enum.valueOf(EnumArt.class, s);
+     }
+-
+-    private EnumArt(String s, int i, String s1, int j, int k, int l, int i1)
++*/
++    private EnumArt(String s1, int j, int k, int l, int i1)
+     {
+-        super(s, i);
+         field_857_y = s1;
+         field_856_z = j;
+         field_869_A = k;
+         field_867_B = l;
+         field_865_C = i1;
+     }
+-
++/*
+     public static final EnumArt Kebab;
+     public static final EnumArt Aztec;
+     public static final EnumArt Alban;
+@@ -52,13 +76,15 @@
+     public static final EnumArt BurningSkull;
+     public static final EnumArt Skeleton;
+     public static final EnumArt DonkeyKong;
++*/
+     public final String field_857_y;
+     public final int field_856_z;
+     public final int field_869_A;
+     public final int field_867_B;
+     public final int field_865_C;
++/*
+     private static final EnumArt field_863_D[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         Kebab = new EnumArt("Kebab", 0, "Kebab", 16, 16, 0, 0);
+@@ -92,4 +118,5 @@
+             Pointer, Pigscene, BurningSkull, Skeleton, DonkeyKong
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumCreatureType.java minecraft_server_patched\net\minecraft\src\EnumCreatureType.java
+--- minecraft_server\net\minecraft\src\EnumCreatureType.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumCreatureType.java	Sun Jan 23 20:45:22 2011
+@@ -4,9 +4,12 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumCreatureType extends Enum
++public enum EnumCreatureType
+ {
+-
++    monster(IMobs.class, 70, Material.field_526_a, false),
++    creature(EntityAnimals.class, 15, Material.field_526_a, true),
++    waterCreature(EntityWaterMob.class, 5, Material.field_521_f, true);
++/*
+     public static EnumCreatureType[] values()
+     {
+         return (EnumCreatureType[])field_6155_e.clone();
+@@ -16,10 +19,9 @@
+     {
+         return (EnumCreatureType)Enum.valueOf(EnumCreatureType.class, s);
+     }
+-
+-    private EnumCreatureType(String s, int i, Class class1, int j, Material material, boolean flag)
++*/
++    private EnumCreatureType(Class class1, int j, Material material, boolean flag)
+     {
+-        super(s, i);
+         field_21109_d = class1;
+         field_21108_e = j;
+         field_21107_f = material;
+@@ -45,16 +47,18 @@
+     {
+         return field_21106_g;
+     }
+-
++/*
+     public static final EnumCreatureType monster;
+     public static final EnumCreatureType creature;
+     public static final EnumCreatureType waterCreature;
++*/
+     private final Class field_21109_d;
+     private final int field_21108_e;
+     private final Material field_21107_f;
+     private final boolean field_21106_g;
++/*
+     private static final EnumCreatureType field_6155_e[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         monster = new EnumCreatureType("monster", 0, IMobs.class, 70, Material.field_526_a, false);
+@@ -64,4 +68,5 @@
+             monster, creature, waterCreature
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumMobType.java minecraft_server_patched\net\minecraft\src\EnumMobType.java
+--- minecraft_server\net\minecraft\src\EnumMobType.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumMobType.java	Sun Jan 23 20:45:56 2011
+@@ -4,9 +4,12 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumMobType extends Enum
++public enum EnumMobType
+ {
+-
++    everything,
++    mobs,
++    players;
++/*
+     public static EnumMobType[] values()
+     {
+         return (EnumMobType[])field_990_d.clone();
+@@ -26,7 +29,7 @@
+     public static final EnumMobType mobs;
+     public static final EnumMobType players;
+     private static final EnumMobType field_990_d[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         everything = new EnumMobType("everything", 0);
+@@ -36,4 +39,5 @@
+             everything, mobs, players
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumMovingObjectType.java minecraft_server_patched\net\minecraft\src\EnumMovingObjectType.java
+--- minecraft_server\net\minecraft\src\EnumMovingObjectType.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumMovingObjectType.java	Sun Jan 23 20:46:37 2011
+@@ -4,9 +4,11 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumMovingObjectType extends Enum
++public enum EnumMovingObjectType
+ {
+-
++    TILE,
++    ENTITY;
++/*
+     public static EnumMovingObjectType[] values()
+     {
+         return (EnumMovingObjectType[])field_21124_c.clone();
+@@ -25,7 +27,7 @@
+     public static final EnumMovingObjectType TILE;
+     public static final EnumMovingObjectType ENTITY;
+     private static final EnumMovingObjectType field_21124_c[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         TILE = new EnumMovingObjectType("TILE", 0);
+@@ -34,4 +36,5 @@
+             TILE, ENTITY
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumSkyBlock.java minecraft_server_patched\net\minecraft\src\EnumSkyBlock.java
+--- minecraft_server\net\minecraft\src\EnumSkyBlock.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumSkyBlock.java	Sun Jan 23 20:48:14 2011
+@@ -4,9 +4,11 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumSkyBlock extends Enum
++public enum EnumSkyBlock
+ {
+-
++    Sky(15),
++    Block(0);
++/*
+     public static EnumSkyBlock[] values()
+     {
+         return (EnumSkyBlock[])field_983_d.clone();
+@@ -16,18 +18,19 @@
+     {
+         return (EnumSkyBlock)Enum.valueOf(EnumSkyBlock.class, s);
+     }
+-
+-    private EnumSkyBlock(String s, int i, int j)
++*/
++    private EnumSkyBlock(int j)
+     {
+-        super(s, i);
+         field_984_c = j;
+     }
+-
++/*
+     public static final EnumSkyBlock Sky;
+     public static final EnumSkyBlock Block;
++*/
+     public final int field_984_c;
++/*
+     private static final EnumSkyBlock field_983_d[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         Sky = new EnumSkyBlock("Sky", 0, 15);
+@@ -36,4 +39,5 @@
+             Sky, Block
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\EnumToolMaterial.java minecraft_server_patched\net\minecraft\src\EnumToolMaterial.java
+--- minecraft_server\net\minecraft\src\EnumToolMaterial.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\EnumToolMaterial.java	Sun Jan 23 20:49:11 2011
+@@ -4,9 +4,14 @@
+ // Decompiler options: packimports(3) braces deadcode 
+ 
+ 
+-public final class EnumToolMaterial extends Enum
++public enum EnumToolMaterial
+ {
+-
++    WOOD(0, 59, 2.0F, 0),
++    STONE(1, 131, 4F, 1),
++    IRON(2, 250, 6F, 2),
++    EMERALD(3, 1561, 8F, 3),
++    GOLD(0, 32, 12F, 0);
++/*
+     public static EnumToolMaterial[] values()
+     {
+         return (EnumToolMaterial[])field_21182_j.clone();
+@@ -16,10 +21,9 @@
+     {
+         return (EnumToolMaterial)Enum.valueOf(EnumToolMaterial.class, s);
+     }
+-
+-    private EnumToolMaterial(String s, int i, int j, int k, float f, int l)
++*/
++    private EnumToolMaterial(int j, int k, float f, int l)
+     {
+-        super(s, i);
+         field_21186_f = j;
+         field_21185_g = k;
+         field_21184_h = f;
+@@ -45,18 +49,20 @@
+     {
+         return field_21186_f;
+     }
+-
++/*
+     public static final EnumToolMaterial WOOD;
+     public static final EnumToolMaterial STONE;
+     public static final EnumToolMaterial IRON;
+     public static final EnumToolMaterial EMERALD;
+     public static final EnumToolMaterial GOLD;
++*/
+     private final int field_21186_f;
+     private final int field_21185_g;
+     private final float field_21184_h;
+     private final int field_21183_i;
++/*
+     private static final EnumToolMaterial field_21182_j[]; /* synthetic field */
+-
++/*
+     static 
+     {
+         WOOD = new EnumToolMaterial("WOOD", 0, 0, 59, 2.0F, 0);
+@@ -68,4 +74,5 @@
+             WOOD, STONE, IRON, EMERALD, GOLD
+         });
+     }
++*/
+ }
+diff -r -U 3 minecraft_server\net\minecraft\src\GuiLogFormatter.java minecraft_server_patched\net\minecraft\src\GuiLogFormatter.java
+--- minecraft_server\net\minecraft\src\GuiLogFormatter.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\GuiLogFormatter.java	Sun Jan 23 20:54:20 2011
+@@ -13,7 +13,6 @@
+     GuiLogFormatter(GuiLogOutputHandler guilogoutputhandler)
+     {
+         field_894_a = guilogoutputhandler;
+-        super();
+     }
+ 
+     public String format(LogRecord logrecord)
+diff -r -U 3 minecraft_server\net\minecraft\src\GuiStatsListener.java minecraft_server_patched\net\minecraft\src\GuiStatsListener.java
+--- minecraft_server\net\minecraft\src\GuiStatsListener.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\GuiStatsListener.java	Sun Jan 23 20:54:25 2011
+@@ -13,7 +13,6 @@
+     GuiStatsListener(GuiStatsComponent guistatscomponent)
+     {
+         field_527_a = guistatscomponent;
+-        super();
+     }
+ 
+     public void actionPerformed(ActionEvent actionevent)
+diff -r -U 3 minecraft_server\net\minecraft\src\MapGenCaves.java minecraft_server_patched\net\minecraft\src\MapGenCaves.java
+--- minecraft_server\net\minecraft\src\MapGenCaves.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\MapGenCaves.java	Sun Jan 23 21:11:21 2011
+@@ -84,42 +84,42 @@
+             {
+                 continue;
+             }
+-            d8 = MathHelper.func_584_b(d - d6) - i * 16 - 1;
++            int k8 = MathHelper.func_584_b(d - d6) - i * 16 - 1;
+             int k1 = (MathHelper.func_584_b(d + d6) - i * 16) + 1;
+-            d9 = MathHelper.func_584_b(d1 - d7) - 1;
++            int k9 = MathHelper.func_584_b(d1 - d7) - 1;
+             int l1 = MathHelper.func_584_b(d1 + d7) + 1;
+-            d10 = MathHelper.func_584_b(d2 - d6) - j * 16 - 1;
++            int k10 = MathHelper.func_584_b(d2 - d6) - j * 16 - 1;
+             int i2 = (MathHelper.func_584_b(d2 + d6) - j * 16) + 1;
+-            if(d8 < 0)
++            if(k8 < 0)
+             {
+-                d8 = 0;
++                k8 = 0;
+             }
+             if(k1 > 16)
+             {
+                 k1 = 16;
+             }
+-            if(d9 < 1)
++            if(k9 < 1)
+             {
+-                d9 = 1;
++                k9 = 1;
+             }
+             if(l1 > 120)
+             {
+                 l1 = 120;
+             }
+-            if(d10 < 0)
++            if(k10 < 0)
+             {
+-                d10 = 0;
++                k10 = 0;
+             }
+             if(i2 > 16)
+             {
+                 i2 = 16;
+             }
+             boolean flag2 = false;
+-            for(int j2 = d8; !flag2 && j2 < k1; j2++)
++            for(int j2 = k8; !flag2 && j2 < k1; j2++)
+             {
+-                for(int l2 = d10; !flag2 && l2 < i2; l2++)
++                for(int l2 = k10; !flag2 && l2 < i2; l2++)
+                 {
+-                    for(int i3 = l1 + 1; !flag2 && i3 >= d9 - 1; i3--)
++                    for(int i3 = l1 + 1; !flag2 && i3 >= k9 - 1; i3--)
+                     {
+                         int j3 = (j2 * 16 + l2) * 128 + i3;
+                         if(i3 < 0 || i3 >= 128)
+@@ -130,9 +130,9 @@
+                         {
+                             flag2 = true;
+                         }
+-                        if(i3 != d9 - 1 && j2 != d8 && j2 != k1 - 1 && l2 != d10 && l2 != i2 - 1)
++                        if(i3 != k9 - 1 && j2 != k8 && j2 != k1 - 1 && l2 != k10 && l2 != i2 - 1)
+                         {
+-                            i3 = d9;
++                            i3 = k9;
+                         }
+                     }
+ 
+@@ -144,11 +144,11 @@
+             {
+                 continue;
+             }
+-            for(int k2 = d8; k2 < k1; k2++)
++            for(int k2 = k8; k2 < k1; k2++)
+             {
+                 double d12 = (((double)(k2 + i * 16) + 0.5D) - d) / d6;
+ label0:
+-                for(int k3 = d10; k3 < i2; k3++)
++                for(int k3 = k10; k3 < i2; k3++)
+                 {
+                     double d13 = (((double)(k3 + j * 16) + 0.5D) - d2) / d6;
+                     int l3 = (k2 * 16 + k3) * 128 + l1;
+@@ -157,13 +157,8 @@
+                     {
+                         continue;
+                     }
+-                    int i4 = l1 - 1;
+-                    do
++                    for (int i4 = l1 - 1; i4 >= k9; i4--)
+                     {
+-                        if(i4 < d9)
+-                        {
+-                            continue label0;
+-                        }
+                         double d14 = (((double)i4 + 0.5D) - d1) / d7;
+                         if(d14 > -0.69999999999999996D && d12 * d12 + d14 * d14 + d13 * d13 < 1.0D)
+                         {
+@@ -188,8 +183,7 @@
+                             }
+                         }
+                         l3--;
+-                        i4--;
+-                    } while(true);
++                    }
+                 }
+ 
+             }
+diff -r -U 3 minecraft_server\net\minecraft\src\MapGenCavesHell.java minecraft_server_patched\net\minecraft\src\MapGenCavesHell.java
+--- minecraft_server\net\minecraft\src\MapGenCavesHell.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\MapGenCavesHell.java	Sun Jan 23 21:09:51 2011
+@@ -84,42 +84,42 @@
+             {
+                 continue;
+             }
+-            d8 = MathHelper.func_584_b(d - d6) - i * 16 - 1;
++            int k8 = MathHelper.func_584_b(d - d6) - i * 16 - 1;
+             int k1 = (MathHelper.func_584_b(d + d6) - i * 16) + 1;
+-            d9 = MathHelper.func_584_b(d1 - d7) - 1;
++            int k9 = MathHelper.func_584_b(d1 - d7) - 1;
+             int l1 = MathHelper.func_584_b(d1 + d7) + 1;
+-            d10 = MathHelper.func_584_b(d2 - d6) - j * 16 - 1;
++            int k10 = MathHelper.func_584_b(d2 - d6) - j * 16 - 1;
+             int i2 = (MathHelper.func_584_b(d2 + d6) - j * 16) + 1;
+-            if(d8 < 0)
++            if(k8 < 0)
+             {
+-                d8 = 0;
++                k8 = 0;
+             }
+             if(k1 > 16)
+             {
+                 k1 = 16;
+             }
+-            if(d9 < 1)
++            if(k9 < 1)
+             {
+-                d9 = 1;
++                k9 = 1;
+             }
+             if(l1 > 120)
+             {
+                 l1 = 120;
+             }
+-            if(d10 < 0)
++            if(k10 < 0)
+             {
+-                d10 = 0;
++                k10 = 0;
+             }
+             if(i2 > 16)
+             {
+                 i2 = 16;
+             }
+             boolean flag2 = false;
+-            for(int j2 = d8; !flag2 && j2 < k1; j2++)
++            for(int j2 = k8; !flag2 && j2 < k1; j2++)
+             {
+-                for(int l2 = d10; !flag2 && l2 < i2; l2++)
++                for(int l2 = k10; !flag2 && l2 < i2; l2++)
+                 {
+-                    for(int i3 = l1 + 1; !flag2 && i3 >= d9 - 1; i3--)
++                    for(int i3 = l1 + 1; !flag2 && i3 >= k9 - 1; i3--)
+                     {
+                         int j3 = (j2 * 16 + l2) * 128 + i3;
+                         if(i3 < 0 || i3 >= 128)
+@@ -130,9 +130,9 @@
+                         {
+                             flag2 = true;
+                         }
+-                        if(i3 != d9 - 1 && j2 != d8 && j2 != k1 - 1 && l2 != d10 && l2 != i2 - 1)
++                        if(i3 != k9 - 1 && j2 != k8 && j2 != k1 - 1 && l2 != k10 && l2 != i2 - 1)
+                         {
+-                            i3 = d9;
++                            i3 = k9;
+                         }
+                     }
+ 
+@@ -144,14 +144,14 @@
+             {
+                 continue;
+             }
+-            for(int k2 = d8; k2 < k1; k2++)
++            for(int k2 = k8; k2 < k1; k2++)
+             {
+                 double d12 = (((double)(k2 + i * 16) + 0.5D) - d) / d6;
+-                for(int k3 = d10; k3 < i2; k3++)
++                for(int k3 = k10; k3 < i2; k3++)
+                 {
+                     double d13 = (((double)(k3 + j * 16) + 0.5D) - d2) / d6;
+                     int l3 = (k2 * 16 + k3) * 128 + l1;
+-                    for(int i4 = l1 - 1; i4 >= d9; i4--)
++                    for(int i4 = l1 - 1; i4 >= k9; i4--)
+                     {
+                         double d14 = (((double)i4 + 0.5D) - d1) / d7;
+                         if(d14 > -0.69999999999999996D && d12 * d12 + d14 * d14 + d13 * d13 < 1.0D)
+diff -r -U 3 minecraft_server\net\minecraft\src\MinecartTrackLogic.java minecraft_server_patched\net\minecraft\src\MinecartTrackLogic.java
+--- minecraft_server\net\minecraft\src\MinecartTrackLogic.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\MinecartTrackLogic.java	Sun Jan 23 20:52:16 2011
+@@ -12,7 +12,6 @@
+     public MinecartTrackLogic(BlockMinecartTrack blockminecarttrack, World world, int i, int j, int k)
+     {
+         field_888_a = blockminecarttrack;
+-        super();
+         field_889_g = new ArrayList();
+         field_887_b = world;
+         field_893_c = i;
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTBase.java minecraft_server_patched\net\minecraft\src\NBTBase.java
+--- minecraft_server\net\minecraft\src\NBTBase.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTBase.java	Sun Jan 23 20:55:02 2011
+@@ -13,9 +13,9 @@
+         field_731_a = null;
+     }
+ 
+-    abstract void func_381_a(DataOutput dataoutput);
++    abstract void func_381_a(DataOutput dataoutput) throws IOException;
+ 
+-    abstract void func_382_a(DataInput datainput);
++    abstract void func_382_a(DataInput datainput) throws IOException;
+ 
+     public abstract byte func_379_a();
+ 
+@@ -36,7 +36,7 @@
+         return this;
+     }
+ 
+-    public static NBTBase func_383_b(DataInput datainput)
++    public static NBTBase func_383_b(DataInput datainput) throws IOException
+     {
+         byte byte0 = datainput.readByte();
+         if(byte0 == 0)
+@@ -51,7 +51,7 @@
+         }
+     }
+ 
+-    public static void func_380_a(NBTBase nbtbase, DataOutput dataoutput)
++    public static void func_380_a(NBTBase nbtbase, DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeByte(nbtbase.func_379_a());
+         if(nbtbase.func_379_a() == 0)
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagByte.java minecraft_server_patched\net\minecraft\src\NBTTagByte.java
+--- minecraft_server\net\minecraft\src\NBTTagByte.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagByte.java	Sun Jan 23 20:55:07 2011
+@@ -17,12 +17,12 @@
+         field_741_a = byte0;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeByte(field_741_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_741_a = datainput.readByte();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagByteArray.java minecraft_server_patched\net\minecraft\src\NBTTagByteArray.java
+--- minecraft_server\net\minecraft\src\NBTTagByteArray.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagByteArray.java	Sun Jan 23 20:55:26 2011
+@@ -17,13 +17,13 @@
+         field_733_a = abyte0;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeInt(field_733_a.length);
+         dataoutput.write(field_733_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         int i = datainput.readInt();
+         field_733_a = new byte[i];
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagCompound.java minecraft_server_patched\net\minecraft\src\NBTTagCompound.java
+--- minecraft_server\net\minecraft\src\NBTTagCompound.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagCompound.java	Sun Jan 23 20:55:56 2011
+@@ -14,7 +14,7 @@
+         field_738_a = new HashMap();
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         NBTBase nbtbase;
+         for(Iterator iterator = field_738_a.values().iterator(); iterator.hasNext(); NBTBase.func_380_a(nbtbase, dataoutput))
+@@ -25,7 +25,7 @@
+         dataoutput.writeByte(0);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_738_a.clear();
+         NBTBase nbtbase;
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagDouble.java minecraft_server_patched\net\minecraft\src\NBTTagDouble.java
+--- minecraft_server\net\minecraft\src\NBTTagDouble.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagDouble.java	Sun Jan 23 20:55:56 2011
+@@ -17,12 +17,12 @@
+         field_735_a = d;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeDouble(field_735_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_735_a = datainput.readDouble();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagEnd.java minecraft_server_patched\net\minecraft\src\NBTTagEnd.java
+--- minecraft_server\net\minecraft\src\NBTTagEnd.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagEnd.java	Sun Jan 23 20:55:24 2011
+@@ -12,11 +12,11 @@
+     {
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+     }
+ 
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagFloat.java minecraft_server_patched\net\minecraft\src\NBTTagFloat.java
+--- minecraft_server\net\minecraft\src\NBTTagFloat.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagFloat.java	Sun Jan 23 20:55:56 2011
+@@ -17,12 +17,12 @@
+         field_739_a = f;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeFloat(field_739_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_739_a = datainput.readFloat();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagInt.java minecraft_server_patched\net\minecraft\src\NBTTagInt.java
+--- minecraft_server\net\minecraft\src\NBTTagInt.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagInt.java	Sun Jan 23 20:55:56 2011
+@@ -17,12 +17,12 @@
+         field_742_a = i;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeInt(field_742_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_742_a = datainput.readInt();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagList.java minecraft_server_patched\net\minecraft\src\NBTTagList.java
+--- minecraft_server\net\minecraft\src\NBTTagList.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagList.java	Sun Jan 23 20:55:57 2011
+@@ -15,7 +15,7 @@
+         field_737_a = new ArrayList();
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         if(field_737_a.size() > 0)
+         {
+@@ -33,7 +33,7 @@
+ 
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_736_b = datainput.readByte();
+         int i = datainput.readInt();
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagLong.java minecraft_server_patched\net\minecraft\src\NBTTagLong.java
+--- minecraft_server\net\minecraft\src\NBTTagLong.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagLong.java	Sun Jan 23 20:55:57 2011
+@@ -17,12 +17,12 @@
+         field_740_a = l;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeLong(field_740_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_740_a = datainput.readLong();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagShort.java minecraft_server_patched\net\minecraft\src\NBTTagShort.java
+--- minecraft_server\net\minecraft\src\NBTTagShort.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagShort.java	Sun Jan 23 20:55:57 2011
+@@ -17,12 +17,12 @@
+         field_734_a = word0;
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeShort(field_734_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_734_a = datainput.readShort();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NBTTagString.java minecraft_server_patched\net\minecraft\src\NBTTagString.java
+--- minecraft_server\net\minecraft\src\NBTTagString.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NBTTagString.java	Sun Jan 23 20:55:57 2011
+@@ -24,12 +24,12 @@
+         }
+     }
+ 
+-    void func_381_a(DataOutput dataoutput)
++    void func_381_a(DataOutput dataoutput) throws IOException
+     {
+         dataoutput.writeUTF(field_732_a);
+     }
+ 
+-    void func_382_a(DataInput datainput)
++    void func_382_a(DataInput datainput) throws IOException
+     {
+         field_732_a = datainput.readUTF();
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\NetLoginHandler.java minecraft_server_patched\net\minecraft\src\NetLoginHandler.java
+--- minecraft_server\net\minecraft\src\NetLoginHandler.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetLoginHandler.java	Sun Jan 23 21:02:39 2011
+@@ -12,7 +12,7 @@
+ public class NetLoginHandler extends NetHandler
+ {
+ 
+-    public NetLoginHandler(MinecraftServer minecraftserver, Socket socket, String s)
++    public NetLoginHandler(MinecraftServer minecraftserver, Socket socket, String s) throws IOException
+     {
+         field_7_c = false;
+         field_9005_f = 0;
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkAcceptThread.java minecraft_server_patched\net\minecraft\src\NetworkAcceptThread.java
+--- minecraft_server\net\minecraft\src\NetworkAcceptThread.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkAcceptThread.java	Sun Jan 23 20:57:06 2011
+@@ -14,9 +14,9 @@
+ 
+     NetworkAcceptThread(NetworkListenThread networklistenthread, String s, MinecraftServer minecraftserver)
+     {
++        super(s);
+         field_985_b = networklistenthread;
+         field_986_a = minecraftserver;
+-        super(s);
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkListenThread.java minecraft_server_patched\net\minecraft\src\NetworkListenThread.java
+--- minecraft_server\net\minecraft\src\NetworkListenThread.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkListenThread.java	Sun Jan 23 20:57:03 2011
+@@ -14,7 +14,7 @@
+ public class NetworkListenThread
+ {
+ 
+-    public NetworkListenThread(MinecraftServer minecraftserver, InetAddress inetaddress, int i)
++    public NetworkListenThread(MinecraftServer minecraftserver, InetAddress inetaddress, int i) throws IOException
+     {
+         field_973_b = false;
+         field_977_f = 0;
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkManager.java minecraft_server_patched\net\minecraft\src\NetworkManager.java
+--- minecraft_server\net\minecraft\src\NetworkManager.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkManager.java	Sun Jan 23 20:57:00 2011
+@@ -6,12 +6,13 @@
+ import java.io.*;
+ import java.net.Socket;
+ import java.net.SocketAddress;
++import java.net.SocketException;
+ import java.util.*;
+ 
+ public class NetworkManager
+ {
+ 
+-    public NetworkManager(Socket socket, String s, NetHandler nethandler)
++    public NetworkManager(Socket socket, String s, NetHandler nethandler) throws IOException
+     {
+         field_1050_d = new Object();
+         field_1046_h = true;
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkMasterThread.java minecraft_server_patched\net\minecraft\src\NetworkMasterThread.java
+--- minecraft_server\net\minecraft\src\NetworkMasterThread.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkMasterThread.java	Sun Jan 23 20:58:04 2011
+@@ -10,7 +10,6 @@
+     NetworkMasterThread(NetworkManager networkmanager)
+     {
+         field_829_a = networkmanager;
+-        super();
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkReaderThread.java minecraft_server_patched\net\minecraft\src\NetworkReaderThread.java
+--- minecraft_server\net\minecraft\src\NetworkReaderThread.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkReaderThread.java	Sun Jan 23 20:58:02 2011
+@@ -9,8 +9,8 @@
+ 
+     NetworkReaderThread(NetworkManager networkmanager, String s)
+     {
+-        field_827_a = networkmanager;
+         super(s);
++        field_827_a = networkmanager;
+     }
+ 
+     public void run()
+@@ -19,19 +19,17 @@
+         {
+             NetworkManager.field_1052_b++;
+         }
+-        for(; NetworkManager.func_743_a(field_827_a) && !NetworkManager.func_740_b(field_827_a); NetworkManager.func_751_c(field_827_a)) { }
+-        synchronized(NetworkManager.field_1053_a)
++        try
+         {
+-            NetworkManager.field_1052_b--;
++            for(; NetworkManager.func_743_a(field_827_a) && !NetworkManager.func_740_b(field_827_a); NetworkManager.func_751_c(field_827_a)) { }
+         }
+-        break MISSING_BLOCK_LABEL_115;
+-        Exception exception2;
+-        exception2;
+-        synchronized(NetworkManager.field_1053_a)
++        finally
+         {
+-            NetworkManager.field_1052_b--;
++            synchronized(NetworkManager.field_1053_a)
++            {
++                NetworkManager.field_1052_b--;
++            }
+         }
+-        throw exception2;
+     }
+ 
+     final NetworkManager field_827_a; /* synthetic field */
+diff -r -U 3 minecraft_server\net\minecraft\src\NetworkWriterThread.java minecraft_server_patched\net\minecraft\src\NetworkWriterThread.java
+--- minecraft_server\net\minecraft\src\NetworkWriterThread.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\NetworkWriterThread.java	Sun Jan 23 20:58:00 2011
+@@ -9,8 +9,8 @@
+ 
+     NetworkWriterThread(NetworkManager networkmanager, String s)
+     {
+-        field_826_a = networkmanager;
+         super(s);
++        field_826_a = networkmanager;
+     }
+ 
+     public void run()
+@@ -19,19 +19,17 @@
+         {
+             NetworkManager.field_1051_c++;
+         }
+-        for(; NetworkManager.func_743_a(field_826_a); NetworkManager.func_749_d(field_826_a)) { }
+-        synchronized(NetworkManager.field_1053_a)
++        try
+         {
+-            NetworkManager.field_1051_c--;
++            for(; NetworkManager.func_743_a(field_826_a); NetworkManager.func_749_d(field_826_a)) { }
+         }
+-        break MISSING_BLOCK_LABEL_105;
+-        Exception exception2;
+-        exception2;
+-        synchronized(NetworkManager.field_1053_a)
++        finally
+         {
+-            NetworkManager.field_1051_c--;
++            synchronized(NetworkManager.field_1053_a)
++            {
++                NetworkManager.field_1051_c--;
++            }
+         }
+-        throw exception2;
+     }
+ 
+     final NetworkManager field_826_a; /* synthetic field */
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet.java minecraft_server_patched\net\minecraft\src\Packet.java
+--- minecraft_server\net\minecraft\src\Packet.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet.java	Sun Jan 23 20:58:36 2011
+@@ -58,7 +58,7 @@
+         return ((Integer)field_38_b.get(getClass())).intValue();
+     }
+ 
+-    public static Packet func_65_b(DataInputStream datainputstream)
++    public static Packet func_65_b(DataInputStream datainputstream) throws IOException
+     {
+         int i = datainputstream.read();
+         if(i == -1)
+@@ -76,15 +76,15 @@
+         }
+     }
+ 
+-    public static void func_66_a(Packet packet, DataOutputStream dataoutputstream)
++    public static void func_66_a(Packet packet, DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.write(packet.func_69_b());
+         packet.func_68_a(dataoutputstream);
+     }
+ 
+-    public abstract void func_70_a(DataInputStream datainputstream);
++    public abstract void func_70_a(DataInputStream datainputstream) throws IOException;
+ 
+-    public abstract void func_68_a(DataOutputStream dataoutputstream);
++    public abstract void func_68_a(DataOutputStream dataoutputstream) throws IOException;
+ 
+     public abstract void func_72_a(NetHandler nethandler);
+ 
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet0KeepAlive.java minecraft_server_patched\net\minecraft\src\Packet0KeepAlive.java
+--- minecraft_server\net\minecraft\src\Packet0KeepAlive.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet0KeepAlive.java	Sun Jan 23 20:58:42 2011
+@@ -16,11 +16,11 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+     }
+ 
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet100.java minecraft_server_patched\net\minecraft\src\Packet100.java
+--- minecraft_server\net\minecraft\src\Packet100.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet100.java	Sun Jan 23 20:58:37 2011
+@@ -25,7 +25,7 @@
+         nethandler.func_20004_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20013_a = datainputstream.readByte();
+         field_20012_b = datainputstream.readByte();
+@@ -33,7 +33,7 @@
+         field_20014_d = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20013_a);
+         dataoutputstream.writeByte(field_20012_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet101.java minecraft_server_patched\net\minecraft\src\Packet101.java
+--- minecraft_server\net\minecraft\src\Packet101.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet101.java	Sun Jan 23 21:01:23 2011
+@@ -22,12 +22,12 @@
+         nethandler.func_20006_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20032_a = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20032_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet102.java minecraft_server_patched\net\minecraft\src\Packet102.java
+--- minecraft_server\net\minecraft\src\Packet102.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet102.java	Sun Jan 23 21:01:23 2011
+@@ -17,7 +17,7 @@
+         nethandler.func_20007_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20024_a = datainputstream.readByte();
+         field_20023_b = datainputstream.readShort();
+@@ -35,7 +35,7 @@
+         }
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20024_a);
+         dataoutputstream.writeShort(field_20023_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet103.java minecraft_server_patched\net\minecraft\src\Packet103.java
+--- minecraft_server\net\minecraft\src\Packet103.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet103.java	Sun Jan 23 21:01:23 2011
+@@ -24,7 +24,7 @@
+         nethandler.func_20003_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20017_a = datainputstream.readByte();
+         field_20016_b = datainputstream.readShort();
+@@ -40,7 +40,7 @@
+         }
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20017_a);
+         dataoutputstream.writeShort(field_20016_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet104.java minecraft_server_patched\net\minecraft\src\Packet104.java
+--- minecraft_server\net\minecraft\src\Packet104.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet104.java	Sun Jan 23 21:01:23 2011
+@@ -25,7 +25,7 @@
+ 
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20011_a = datainputstream.readByte();
+         short word0 = datainputstream.readShort();
+@@ -43,7 +43,7 @@
+ 
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20011_a);
+         dataoutputstream.writeShort(field_20010_b.length);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet105.java minecraft_server_patched\net\minecraft\src\Packet105.java
+--- minecraft_server\net\minecraft\src\Packet105.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet105.java	Sun Jan 23 21:01:23 2011
+@@ -24,14 +24,14 @@
+         nethandler.func_20002_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20030_a = datainputstream.readByte();
+         field_20029_b = datainputstream.readShort();
+         field_20031_c = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20030_a);
+         dataoutputstream.writeShort(field_20029_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet106.java minecraft_server_patched\net\minecraft\src\Packet106.java
+--- minecraft_server\net\minecraft\src\Packet106.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet106.java	Sun Jan 23 21:01:23 2011
+@@ -24,14 +24,14 @@
+         nethandler.func_20008_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20034_a = datainputstream.readByte();
+         field_20033_b = datainputstream.readShort();
+         field_20035_c = datainputstream.readByte() != 0;
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeByte(field_20034_a);
+         dataoutputstream.writeShort(field_20033_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet10Flying.java minecraft_server_patched\net\minecraft\src\Packet10Flying.java
+--- minecraft_server\net\minecraft\src\Packet10Flying.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet10Flying.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         nethandler.func_18_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_67_g = datainputstream.read() != 0;
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.write(field_67_g ? 1 : 0);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet11PlayerPosition.java minecraft_server_patched\net\minecraft\src\Packet11PlayerPosition.java
+--- minecraft_server\net\minecraft\src\Packet11PlayerPosition.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet11PlayerPosition.java	Sun Jan 23 21:01:23 2011
+@@ -13,7 +13,7 @@
+         field_66_h = true;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_73_a = datainputstream.readDouble();
+         field_72_b = datainputstream.readDouble();
+@@ -22,7 +22,7 @@
+         super.func_70_a(datainputstream);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeDouble(field_73_a);
+         dataoutputstream.writeDouble(field_72_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet12PlayerLook.java minecraft_server_patched\net\minecraft\src\Packet12PlayerLook.java
+--- minecraft_server\net\minecraft\src\Packet12PlayerLook.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet12PlayerLook.java	Sun Jan 23 21:01:23 2011
+@@ -13,14 +13,14 @@
+         field_65_i = true;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_69_e = datainputstream.readFloat();
+         field_68_f = datainputstream.readFloat();
+         super.func_70_a(datainputstream);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeFloat(field_69_e);
+         dataoutputstream.writeFloat(field_68_f);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet130.java minecraft_server_patched\net\minecraft\src\Packet130.java
+--- minecraft_server\net\minecraft\src\Packet130.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet130.java	Sun Jan 23 21:01:23 2011
+@@ -22,7 +22,7 @@
+         field_20021_d = as;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_20020_a = datainputstream.readInt();
+         field_20019_b = datainputstream.readShort();
+@@ -35,7 +35,7 @@
+ 
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_20020_a);
+         dataoutputstream.writeShort(field_20019_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet13PlayerLookMove.java minecraft_server_patched\net\minecraft\src\Packet13PlayerLookMove.java
+--- minecraft_server\net\minecraft\src\Packet13PlayerLookMove.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet13PlayerLookMove.java	Sun Jan 23 21:01:23 2011
+@@ -27,7 +27,7 @@
+         field_66_h = true;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_73_a = datainputstream.readDouble();
+         field_72_b = datainputstream.readDouble();
+@@ -38,7 +38,7 @@
+         super.func_70_a(datainputstream);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeDouble(field_73_a);
+         dataoutputstream.writeDouble(field_72_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet14BlockDig.java minecraft_server_patched\net\minecraft\src\Packet14BlockDig.java
+--- minecraft_server\net\minecraft\src\Packet14BlockDig.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet14BlockDig.java	Sun Jan 23 21:01:23 2011
+@@ -12,7 +12,7 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_55_e = datainputstream.read();
+         field_54_a = datainputstream.readInt();
+@@ -21,7 +21,7 @@
+         field_56_d = datainputstream.read();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.write(field_55_e);
+         dataoutputstream.writeInt(field_54_a);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet15Place.java minecraft_server_patched\net\minecraft\src\Packet15Place.java
+--- minecraft_server\net\minecraft\src\Packet15Place.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet15Place.java	Sun Jan 23 21:01:23 2011
+@@ -12,7 +12,7 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_78_a = datainputstream.readInt();
+         field_77_b = datainputstream.read();
+@@ -30,7 +30,7 @@
+         }
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_78_a);
+         dataoutputstream.write(field_77_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet16BlockItemSwitch.java minecraft_server_patched\net\minecraft\src\Packet16BlockItemSwitch.java
+--- minecraft_server\net\minecraft\src\Packet16BlockItemSwitch.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet16BlockItemSwitch.java	Sun Jan 23 21:01:23 2011
+@@ -12,12 +12,12 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_74_b = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeShort(field_74_b);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet18ArmAnimation.java minecraft_server_patched\net\minecraft\src\Packet18ArmAnimation.java
+--- minecraft_server\net\minecraft\src\Packet18ArmAnimation.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet18ArmAnimation.java	Sun Jan 23 21:01:23 2011
+@@ -18,13 +18,13 @@
+         field_119_b = i;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_120_a = datainputstream.readInt();
+         field_119_b = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_120_a);
+         dataoutputstream.writeByte(field_119_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet19.java minecraft_server_patched\net\minecraft\src\Packet19.java
+--- minecraft_server\net\minecraft\src\Packet19.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet19.java	Sun Jan 23 21:01:23 2011
+@@ -12,13 +12,13 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_21021_a = datainputstream.readInt();
+         field_21020_b = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_21021_a);
+         dataoutputstream.writeByte(field_21020_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet1Login.java minecraft_server_patched\net\minecraft\src\Packet1Login.java
+--- minecraft_server\net\minecraft\src\Packet1Login.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet1Login.java	Sun Jan 23 21:01:23 2011
+@@ -21,7 +21,7 @@
+         field_4025_e = byte0;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_4024_a = datainputstream.readInt();
+         field_113_b = datainputstream.readUTF();
+@@ -30,7 +30,7 @@
+         field_4025_e = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_4024_a);
+         dataoutputstream.writeUTF(field_113_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet20NamedEntitySpawn.java minecraft_server_patched\net\minecraft\src\Packet20NamedEntitySpawn.java
+--- minecraft_server\net\minecraft\src\Packet20NamedEntitySpawn.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet20NamedEntitySpawn.java	Sun Jan 23 21:01:23 2011
+@@ -25,7 +25,7 @@
+         field_144_h = itemstack != null ? itemstack.field_855_c : 0;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_143_a = datainputstream.readInt();
+         field_142_b = datainputstream.readUTF();
+@@ -37,7 +37,7 @@
+         field_144_h = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_143_a);
+         dataoutputstream.writeUTF(field_142_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet21PickupSpawn.java minecraft_server_patched\net\minecraft\src\Packet21PickupSpawn.java
+--- minecraft_server\net\minecraft\src\Packet21PickupSpawn.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet21PickupSpawn.java	Sun Jan 23 21:01:23 2011
+@@ -26,7 +26,7 @@
+         field_123_g = (byte)(int)(entityitem.field_317_q * 128D);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_129_a = datainputstream.readInt();
+         field_122_h = datainputstream.readShort();
+@@ -40,7 +40,7 @@
+         field_123_g = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_129_a);
+         dataoutputstream.writeShort(field_122_h);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet22Collect.java minecraft_server_patched\net\minecraft\src\Packet22Collect.java
+--- minecraft_server\net\minecraft\src\Packet22Collect.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet22Collect.java	Sun Jan 23 21:01:23 2011
+@@ -18,13 +18,13 @@
+         field_136_b = j;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_137_a = datainputstream.readInt();
+         field_136_b = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_137_a);
+         dataoutputstream.writeInt(field_136_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet23VehicleSpawn.java minecraft_server_patched\net\minecraft\src\Packet23VehicleSpawn.java
+--- minecraft_server\net\minecraft\src\Packet23VehicleSpawn.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet23VehicleSpawn.java	Sun Jan 23 21:01:23 2011
+@@ -21,7 +21,7 @@
+         field_99_e = i;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_98_a = datainputstream.readInt();
+         field_99_e = datainputstream.readByte();
+@@ -30,7 +30,7 @@
+         field_100_d = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_98_a);
+         dataoutputstream.writeByte(field_99_e);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet24MobSpawn.java minecraft_server_patched\net\minecraft\src\Packet24MobSpawn.java
+--- minecraft_server\net\minecraft\src\Packet24MobSpawn.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet24MobSpawn.java	Sun Jan 23 21:01:23 2011
+@@ -25,7 +25,7 @@
+         field_21006_h = entityliving.func_21039_p();
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_59_a = datainputstream.readInt();
+         field_58_b = datainputstream.readByte();
+@@ -37,7 +37,7 @@
+         field_21005_i = DataWatcher.func_21149_a(datainputstream);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_59_a);
+         dataoutputstream.writeByte(field_58_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet25.java minecraft_server_patched\net\minecraft\src\Packet25.java
+--- minecraft_server\net\minecraft\src\Packet25.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet25.java	Sun Jan 23 21:01:23 2011
+@@ -22,7 +22,7 @@
+         field_21014_f = entitypainting.field_9185_b.field_857_y;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_21013_a = datainputstream.readInt();
+         field_21014_f = datainputstream.readUTF();
+@@ -32,7 +32,7 @@
+         field_21015_e = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_21013_a);
+         dataoutputstream.writeUTF(field_21014_f);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet255KickDisconnect.java minecraft_server_patched\net\minecraft\src\Packet255KickDisconnect.java
+--- minecraft_server\net\minecraft\src\Packet255KickDisconnect.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet255KickDisconnect.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_41_a = s;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_41_a = datainputstream.readUTF();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeUTF(field_41_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet28.java minecraft_server_patched\net\minecraft\src\Packet28.java
+--- minecraft_server\net\minecraft\src\Packet28.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet28.java	Sun Jan 23 21:01:23 2011
+@@ -50,7 +50,7 @@
+         field_6041_d = (int)(d2 * 8000D);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_6040_a = datainputstream.readInt();
+         field_6039_b = datainputstream.readShort();
+@@ -58,7 +58,7 @@
+         field_6041_d = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_6040_a);
+         dataoutputstream.writeShort(field_6039_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet29DestroyEntity.java minecraft_server_patched\net\minecraft\src\Packet29DestroyEntity.java
+--- minecraft_server\net\minecraft\src\Packet29DestroyEntity.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet29DestroyEntity.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_116_a = i;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_116_a = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_116_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet2Handshake.java minecraft_server_patched\net\minecraft\src\Packet2Handshake.java
+--- minecraft_server\net\minecraft\src\Packet2Handshake.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet2Handshake.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_141_a = s;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_141_a = datainputstream.readUTF();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeUTF(field_141_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet30Entity.java minecraft_server_patched\net\minecraft\src\Packet30Entity.java
+--- minecraft_server\net\minecraft\src\Packet30Entity.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet30Entity.java	Sun Jan 23 21:01:23 2011
+@@ -19,12 +19,12 @@
+         field_83_a = i;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_83_a = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_83_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet31RelEntityMove.java minecraft_server_patched\net\minecraft\src\Packet31RelEntityMove.java
+--- minecraft_server\net\minecraft\src\Packet31RelEntityMove.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet31RelEntityMove.java	Sun Jan 23 21:01:23 2011
+@@ -20,7 +20,7 @@
+         field_87_d = byte2;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         super.func_70_a(datainputstream);
+         field_82_b = datainputstream.readByte();
+@@ -28,7 +28,7 @@
+         field_87_d = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         super.func_68_a(dataoutputstream);
+         dataoutputstream.writeByte(field_82_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet32EntityLook.java minecraft_server_patched\net\minecraft\src\Packet32EntityLook.java
+--- minecraft_server\net\minecraft\src\Packet32EntityLook.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet32EntityLook.java	Sun Jan 23 21:01:23 2011
+@@ -21,14 +21,14 @@
+         field_84_g = true;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         super.func_70_a(datainputstream);
+         field_86_e = datainputstream.readByte();
+         field_85_f = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         super.func_68_a(dataoutputstream);
+         dataoutputstream.writeByte(field_86_e);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet33RelEntityMoveLook.java minecraft_server_patched\net\minecraft\src\Packet33RelEntityMoveLook.java
+--- minecraft_server\net\minecraft\src\Packet33RelEntityMoveLook.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet33RelEntityMoveLook.java	Sun Jan 23 21:01:23 2011
+@@ -24,7 +24,7 @@
+         field_84_g = true;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         super.func_70_a(datainputstream);
+         field_82_b = datainputstream.readByte();
+@@ -34,7 +34,7 @@
+         field_85_f = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         super.func_68_a(dataoutputstream);
+         dataoutputstream.writeByte(field_82_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet34EntityTeleport.java minecraft_server_patched\net\minecraft\src\Packet34EntityTeleport.java
+--- minecraft_server\net\minecraft\src\Packet34EntityTeleport.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet34EntityTeleport.java	Sun Jan 23 21:01:23 2011
+@@ -32,7 +32,7 @@
+         field_132_f = byte1;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_131_a = datainputstream.readInt();
+         field_130_b = datainputstream.readInt();
+@@ -42,7 +42,7 @@
+         field_132_f = (byte)datainputstream.read();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_131_a);
+         dataoutputstream.writeInt(field_130_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet38.java minecraft_server_patched\net\minecraft\src\Packet38.java
+--- minecraft_server\net\minecraft\src\Packet38.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet38.java	Sun Jan 23 21:01:23 2011
+@@ -18,13 +18,13 @@
+         field_9015_b = byte0;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_9016_a = datainputstream.readInt();
+         field_9015_b = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_9016_a);
+         dataoutputstream.writeByte(field_9015_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet39.java minecraft_server_patched\net\minecraft\src\Packet39.java
+--- minecraft_server\net\minecraft\src\Packet39.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet39.java	Sun Jan 23 21:01:23 2011
+@@ -23,13 +23,13 @@
+         return 8;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_6044_a = datainputstream.readInt();
+         field_6043_b = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_6044_a);
+         dataoutputstream.writeInt(field_6043_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet3Chat.java minecraft_server_patched\net\minecraft\src\Packet3Chat.java
+--- minecraft_server\net\minecraft\src\Packet3Chat.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet3Chat.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_150_a = s;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_150_a = datainputstream.readUTF();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeUTF(field_150_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet40.java minecraft_server_patched\net\minecraft\src\Packet40.java
+--- minecraft_server\net\minecraft\src\Packet40.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet40.java	Sun Jan 23 21:01:23 2011
+@@ -19,13 +19,13 @@
+         field_21018_b = datawatcher.func_21148_b();
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_21019_a = datainputstream.readInt();
+         field_21018_b = DataWatcher.func_21149_a(datainputstream);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_21019_a);
+         DataWatcher.func_21151_a(field_21018_b, dataoutputstream);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet4UpdateTime.java minecraft_server_patched\net\minecraft\src\Packet4UpdateTime.java
+--- minecraft_server\net\minecraft\src\Packet4UpdateTime.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet4UpdateTime.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_76_a = l;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_76_a = datainputstream.readLong();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeLong(field_76_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet50PreChunk.java minecraft_server_patched\net\minecraft\src\Packet50PreChunk.java
+--- minecraft_server\net\minecraft\src\Packet50PreChunk.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet50PreChunk.java	Sun Jan 23 21:01:23 2011
+@@ -21,14 +21,14 @@
+         field_104_c = flag;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_103_a = datainputstream.readInt();
+         field_102_b = datainputstream.readInt();
+         field_104_c = datainputstream.read() != 0;
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_103_a);
+         dataoutputstream.writeInt(field_102_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet51MapChunk.java minecraft_server_patched\net\minecraft\src\Packet51MapChunk.java
+--- minecraft_server\net\minecraft\src\Packet51MapChunk.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet51MapChunk.java	Sun Jan 23 21:01:23 2011
+@@ -38,7 +38,7 @@
+         }
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_106_a = datainputstream.readInt();
+         field_105_b = datainputstream.readShort();
+@@ -66,7 +66,7 @@
+         }
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_106_a);
+         dataoutputstream.writeShort(field_105_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet52MultiBlockChange.java minecraft_server_patched\net\minecraft\src\Packet52MultiBlockChange.java
+--- minecraft_server\net\minecraft\src\Packet52MultiBlockChange.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet52MultiBlockChange.java	Sun Jan 23 21:01:23 2011
+@@ -35,7 +35,7 @@
+ 
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_48_a = datainputstream.readInt();
+         field_47_b = datainputstream.readInt();
+@@ -52,7 +52,7 @@
+         datainputstream.readFully(field_50_e);
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_48_a);
+         dataoutputstream.writeInt(field_47_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet53BlockChange.java minecraft_server_patched\net\minecraft\src\Packet53BlockChange.java
+--- minecraft_server\net\minecraft\src\Packet53BlockChange.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet53BlockChange.java	Sun Jan 23 21:01:23 2011
+@@ -23,7 +23,7 @@
+         field_91_e = world.func_446_b(i, j, k);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_90_a = datainputstream.readInt();
+         field_89_b = datainputstream.read();
+@@ -32,7 +32,7 @@
+         field_91_e = datainputstream.read();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_90_a);
+         dataoutputstream.write(field_89_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet54.java minecraft_server_patched\net\minecraft\src\Packet54.java
+--- minecraft_server\net\minecraft\src\Packet54.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet54.java	Sun Jan 23 21:01:23 2011
+@@ -21,7 +21,7 @@
+         field_21009_e = i1;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_21008_a = datainputstream.readInt();
+         field_21007_b = datainputstream.readShort();
+@@ -30,7 +30,7 @@
+         field_21009_e = datainputstream.read();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_21008_a);
+         dataoutputstream.writeShort(field_21007_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet5PlayerInventory.java minecraft_server_patched\net\minecraft\src\Packet5PlayerInventory.java
+--- minecraft_server\net\minecraft\src\Packet5PlayerInventory.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet5PlayerInventory.java	Sun Jan 23 21:01:23 2011
+@@ -27,7 +27,7 @@
+         }
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_118_a = datainputstream.readInt();
+         field_117_b = datainputstream.readShort();
+@@ -35,7 +35,7 @@
+         field_21022_d = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_118_a);
+         dataoutputstream.writeShort(field_117_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet60.java minecraft_server_patched\net\minecraft\src\Packet60.java
+--- minecraft_server\net\minecraft\src\Packet60.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet60.java	Sun Jan 23 21:01:23 2011
+@@ -23,7 +23,7 @@
+         field_12004_e = new HashSet(set);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_12003_a = datainputstream.readDouble();
+         field_12002_b = datainputstream.readDouble();
+@@ -44,7 +44,7 @@
+ 
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeDouble(field_12003_a);
+         dataoutputstream.writeDouble(field_12002_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet6SpawnPosition.java minecraft_server_patched\net\minecraft\src\Packet6SpawnPosition.java
+--- minecraft_server\net\minecraft\src\Packet6SpawnPosition.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet6SpawnPosition.java	Sun Jan 23 21:01:23 2011
+@@ -19,14 +19,14 @@
+         field_140_c = k;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_139_a = datainputstream.readInt();
+         field_138_b = datainputstream.readInt();
+         field_140_c = datainputstream.readInt();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_139_a);
+         dataoutputstream.writeInt(field_138_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet7.java minecraft_server_patched\net\minecraft\src\Packet7.java
+--- minecraft_server\net\minecraft\src\Packet7.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet7.java	Sun Jan 23 21:01:23 2011
+@@ -12,14 +12,14 @@
+     {
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_9019_a = datainputstream.readInt();
+         field_9018_b = datainputstream.readInt();
+         field_9020_c = datainputstream.readByte();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeInt(field_9019_a);
+         dataoutputstream.writeInt(field_9018_b);
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet8.java minecraft_server_patched\net\minecraft\src\Packet8.java
+--- minecraft_server\net\minecraft\src\Packet8.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet8.java	Sun Jan 23 21:01:23 2011
+@@ -17,12 +17,12 @@
+         field_9017_a = i;
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+         field_9017_a = datainputstream.readShort();
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+         dataoutputstream.writeShort(field_9017_a);
+     }
+diff -r -U 3 minecraft_server\net\minecraft\src\Packet9.java minecraft_server_patched\net\minecraft\src\Packet9.java
+--- minecraft_server\net\minecraft\src\Packet9.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\Packet9.java	Sun Jan 23 21:01:23 2011
+@@ -17,11 +17,11 @@
+         nethandler.func_9002_a(this);
+     }
+ 
+-    public void func_70_a(DataInputStream datainputstream)
++    public void func_70_a(DataInputStream datainputstream) throws IOException
+     {
+     }
+ 
+-    public void func_68_a(DataOutputStream dataoutputstream)
++    public void func_68_a(DataOutputStream dataoutputstream) throws IOException
+     {
+     }
+ 
+diff -r -U 3 minecraft_server\net\minecraft\src\PlayerInstance.java minecraft_server_patched\net\minecraft\src\PlayerInstance.java
+--- minecraft_server\net\minecraft\src\PlayerInstance.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\PlayerInstance.java	Sun Jan 23 21:02:24 2011
+@@ -13,7 +13,6 @@
+     public PlayerInstance(PlayerManager playermanager, int i, int j)
+     {
+         field_1073_a = playermanager;
+-        super();
+         field_1072_b = new ArrayList();
+         field_1068_f = new short[10];
+         field_1067_g = 0;
+diff -r -U 3 minecraft_server\net\minecraft\src\RecipeSorter.java minecraft_server_patched\net\minecraft\src\RecipeSorter.java
+--- minecraft_server\net\minecraft\src\RecipeSorter.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\RecipeSorter.java	Sun Jan 23 21:02:24 2011
+@@ -12,7 +12,6 @@
+     RecipeSorter(CraftingManager craftingmanager)
+     {
+         field_20108_a = craftingmanager;
+-        super();
+     }
+ 
+     public int func_20107_a(IRecipe irecipe, IRecipe irecipe1)
+diff -r -U 3 minecraft_server\net\minecraft\src\ServerGuiCommandListener.java minecraft_server_patched\net\minecraft\src\ServerGuiCommandListener.java
+--- minecraft_server\net\minecraft\src\ServerGuiCommandListener.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ServerGuiCommandListener.java	Sun Jan 23 21:02:24 2011
+@@ -16,7 +16,6 @@
+     {
+         field_992_b = servergui;
+         field_993_a = jtextfield;
+-        super();
+     }
+ 
+     public void actionPerformed(ActionEvent actionevent)
+diff -r -U 3 minecraft_server\net\minecraft\src\ServerGuiFocusAdapter.java minecraft_server_patched\net\minecraft\src\ServerGuiFocusAdapter.java
+--- minecraft_server\net\minecraft\src\ServerGuiFocusAdapter.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ServerGuiFocusAdapter.java	Sun Jan 23 21:02:24 2011
+@@ -12,7 +12,6 @@
+     ServerGuiFocusAdapter(ServerGUI servergui)
+     {
+         field_987_a = servergui;
+-        super();
+     }
+ 
+     public void focusGained(FocusEvent focusevent)
+diff -r -U 3 minecraft_server\net\minecraft\src\ServerWindowAdapter.java minecraft_server_patched\net\minecraft\src\ServerWindowAdapter.java
+--- minecraft_server\net\minecraft\src\ServerWindowAdapter.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ServerWindowAdapter.java	Sun Jan 23 21:02:24 2011
+@@ -13,7 +13,6 @@
+     ServerWindowAdapter(MinecraftServer minecraftserver)
+     {
+         field_997_a = minecraftserver;
+-        super();
+     }
+ 
+     public void windowClosing(WindowEvent windowevent)
+diff -r -U 3 minecraft_server\net\minecraft\src\SlotArmor.java minecraft_server_patched\net\minecraft\src\SlotArmor.java
+--- minecraft_server\net\minecraft\src\SlotArmor.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\SlotArmor.java	Sun Jan 23 21:02:24 2011
+@@ -9,9 +9,9 @@
+ 
+     SlotArmor(CraftingInventoryPlayerCB craftinginventoryplayercb, IInventory iinventory, int i, int j, int k, int l)
+     {
++        super(iinventory, i, j, k);
+         field_20101_b = craftinginventoryplayercb;
+         field_20102_a = l;
+-        super(iinventory, i, j, k);
+     }
+ 
+     public int func_20093_a()
+diff -r -U 3 minecraft_server\net\minecraft\src\SpawnerAnimals.java minecraft_server_patched\net\minecraft\src\SpawnerAnimals.java
+--- minecraft_server\net\minecraft\src\SpawnerAnimals.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\SpawnerAnimals.java	Sun Jan 23 21:13:46 2011
+@@ -21,150 +21,131 @@
+         return new ChunkPosition(k, l, i1);
+     }
+ 
+-    public static final int func_4111_a(World world, boolean flag, boolean flag1)
++    public static final int func_4111_a(World var0, boolean var1, boolean var2)
+     {
+-        int j;
+-        EnumCreatureType aenumcreaturetype[];
+-        int l;
+-        int j1;
+-        if(!flag && !flag1)
++        if (!var1 && !var2)
+         {
+             return 0;
+         }
+-        field_4311_a.clear();
+-        for(int i = 0; i < world.field_805_k.size(); i++)
++        else
+         {
+-            EntityPlayer entityplayer = (EntityPlayer)world.field_805_k.get(i);
+-            int k = MathHelper.func_584_b(entityplayer.field_322_l / 16D);
+-            int i1 = MathHelper.func_584_b(entityplayer.field_320_n / 16D);
+-            byte byte0 = 8;
+-            for(int k1 = -byte0; k1 <= byte0; k1++)
++            field_4311_a.clear();
++
++            int var3;
++            int var5;
++            int var6;
++            for (var3 = 0; var3 < var0.field_805_k.size(); ++var3)
+             {
+-                for(int l1 = -byte0; l1 <= byte0; l1++)
++                EntityPlayer var4 = (EntityPlayer)var0.field_805_k.get(var3);
++                var5 = MathHelper.func_584_b(var4.field_322_l / 16.0D);
++                var6 = MathHelper.func_584_b(var4.field_320_n / 16.0D);
++                byte var7 = 8;
++
++                for (int var8 = -var7; var8 <= var7; ++var8)
+                 {
+-                    field_4311_a.add(new ChunkCoordIntPair(k1 + k, l1 + i1));
++                    for (int var9 = -var7; var9 <= var7; ++var9)
++                    {
++                        field_4311_a.add(new ChunkCoordIntPair(var8 + var5, var9 + var6));
++                    }
+                 }
+-
+             }
+ 
+-        }
++            var3 = 0;
++            EnumCreatureType[] var32 = EnumCreatureType.values();
++            var5 = var32.length;
+ 
+-        j = 0;
+-        aenumcreaturetype = EnumCreatureType.values();
+-        l = aenumcreaturetype.length;
+-        j1 = 0;
+-_L10:
+-        if(j1 >= l) goto _L2; else goto _L1
+-_L1:
+-        EnumCreatureType enumcreaturetype;
+-        Iterator iterator;
+-        enumcreaturetype = aenumcreaturetype[j1];
+-        if(enumcreaturetype.func_21103_d() && !flag1 || !enumcreaturetype.func_21103_d() && !flag || world.func_487_a(enumcreaturetype.func_21105_a()) > (enumcreaturetype.func_21104_b() * field_4311_a.size()) / 256)
+-        {
+-            continue; /* Loop/switch isn't completed */
+-        }
+-        iterator = field_4311_a.iterator();
+-_L4:
+-        Class aclass[];
+-        int i2;
+-        int j2;
+-        int k2;
+-        int l2;
+-        int i3;
+-        int j3;
+-        do
+-        {
+-            ChunkCoordIntPair chunkcoordintpair;
+-            do
++            for (var6 = 0; var6 < var5; ++var6)
+             {
+-                if(!iterator.hasNext())
++                EnumCreatureType var33 = var32[var6];
++                if ((!var33.func_21103_d() || var2) && (var33.func_21103_d() || var1) && var0.func_487_a(var33.func_21105_a()) <= var33.func_21104_b() * field_4311_a.size() / 256)
+                 {
+-                    continue; /* Loop/switch isn't completed */
++                    Iterator var34 = field_4311_a.iterator();
++
++                    label91:
++                    while (var34.hasNext())
++                    {
++                        ChunkCoordIntPair var35 = (ChunkCoordIntPair)var34.next();
++                        MobSpawnerBase var10 = var0.func_4077_a().func_4066_a(var35);
++                        Class[] var11 = var10.func_4081_a(var33);
++                        if (var11 != null && var11.length != 0)
++                        {
++                            int var12 = var0.field_803_m.nextInt(var11.length);
++                            ChunkPosition var13 = func_4112_a(var0, var35.field_152_a * 16, var35.field_151_b * 16);
++                            int var14 = var13.field_846_a;
++                            int var15 = var13.field_845_b;
++                            int var16 = var13.field_847_c;
++                            if (!var0.func_445_d(var14, var15, var16) && var0.func_443_c(var14, var15, var16) == var33.func_21102_c())
++                            {
++                                int var17 = 0;
++
++                                for (int var18 = 0; var18 < 3; ++var18)
++                                {
++                                    int var19 = var14;
++                                    int var20 = var15;
++                                    int var21 = var16;
++                                    byte var22 = 6;
++
++                                    for (int var23 = 0; var23 < 4; ++var23)
++                                    {
++                                        var19 += var0.field_803_m.nextInt(var22) - var0.field_803_m.nextInt(var22);
++                                        var20 += var0.field_803_m.nextInt(1) - var0.field_803_m.nextInt(1);
++                                        var21 += var0.field_803_m.nextInt(var22) - var0.field_803_m.nextInt(var22);
++                                        if (func_21167_a(var33, var0, var19, var20, var21))
++                                        {
++                                            float var24 = (float)var19 + 0.5F;
++                                            float var25 = (float)var20;
++                                            float var26 = (float)var21 + 0.5F;
++                                            if (var0.func_456_a((double)var24, (double)var25, (double)var26, 24.0D) == null)
++                                            {
++                                                float var27 = var24 - (float)var0.field_4276_m;
++                                                float var28 = var25 - (float)var0.field_4275_n;
++                                                float var29 = var26 - (float)var0.field_4274_o;
++                                                float var30 = var27 * var27 + var28 * var28 + var29 * var29;
++                                                if (var30 >= 576.0F)
++                                                {
++                                                    EntityLiving var36;
++                                                    try
++                                                    {
++                                                        var36 = (EntityLiving)var11[var12].getConstructor(new Class[]
++                                                        {
++                                                            World.class
++                                                        }).newInstance(new Object[]
++                                                        {
++                                                            var0
++                                                        });
++                                                    }
++                                                    catch (Exception var31)
++                                                    {
++                                                        var31.printStackTrace();
++                                                        return var3;
++                                                    }
++
++                                                    var36.func_107_c((double)var24, (double)var25, (double)var26, var0.field_803_m.nextFloat() * 360.0F, 0.0F);
++                                                    if (var36.func_155_a())
++                                                    {
++                                                        ++var17;
++                                                        var0.func_526_a(var36);
++                                                        func_21166_a(var36, var0, var24, var25, var26);
++                                                        if (var17 >= var36.func_4045_i())
++                                                        {
++                                                            continue label91;
++                                                        }
++                                                    }
++
++                                                    var3 += var17;
++                                                }
++                                            }
++                                        }
++                                    }
++                                }
++                            }
++                        }
++                    }
+                 }
+-                chunkcoordintpair = (ChunkCoordIntPair)iterator.next();
+-                MobSpawnerBase mobspawnerbase = world.func_4077_a().func_4066_a(chunkcoordintpair);
+-                aclass = mobspawnerbase.func_4081_a(enumcreaturetype);
+-            } while(aclass == null || aclass.length == 0);
+-            i2 = world.field_803_m.nextInt(aclass.length);
+-            ChunkPosition chunkposition = func_4112_a(world, chunkcoordintpair.field_152_a * 16, chunkcoordintpair.field_151_b * 16);
+-            j2 = chunkposition.field_846_a;
+-            k2 = chunkposition.field_845_b;
+-            l2 = chunkposition.field_847_c;
+-        } while(world.func_445_d(j2, k2, l2) || world.func_443_c(j2, k2, l2) != enumcreaturetype.func_21102_c());
+-        i3 = 0;
+-        j3 = 0;
+-_L9:
+-        if(j3 >= 3) goto _L4; else goto _L3
+-_L3:
+-        int k3;
+-        int l3;
+-        int i4;
+-        byte byte1;
+-        int j4;
+-        k3 = j2;
+-        l3 = k2;
+-        i4 = l2;
+-        byte1 = 6;
+-        j4 = 0;
+-_L8:
+-        if(j4 >= 4) goto _L6; else goto _L5
+-_L5:
+-        EntityLiving entityliving;
+-        k3 += world.field_803_m.nextInt(byte1) - world.field_803_m.nextInt(byte1);
+-        l3 += world.field_803_m.nextInt(1) - world.field_803_m.nextInt(1);
+-        i4 += world.field_803_m.nextInt(byte1) - world.field_803_m.nextInt(byte1);
+-        if(!func_21167_a(enumcreaturetype, world, k3, l3, i4))
+-        {
+-            continue; /* Loop/switch isn't completed */
+-        }
+-        float f = (float)k3 + 0.5F;
+-        float f1 = l3;
+-        float f2 = (float)i4 + 0.5F;
+-        if(world.func_456_a(f, f1, f2, 24D) != null)
+-        {
+-            continue; /* Loop/switch isn't completed */
+-        }
+-        float f3 = f - (float)world.field_4276_m;
+-        float f4 = f1 - (float)world.field_4275_n;
+-        float f5 = f2 - (float)world.field_4274_o;
+-        float f6 = f3 * f3 + f4 * f4 + f5 * f5;
+-        if(f6 < 576F)
+-        {
+-            continue; /* Loop/switch isn't completed */
+-        }
+-        try
+-        {
+-            entityliving = (EntityLiving)aclass[i2].getConstructor(new Class[] {
+-                World.class
+-            }).newInstance(new Object[] {
+-                world
+-            });
+-        }
+-        catch(Exception exception)
+-        {
+-            exception.printStackTrace();
+-            return j;
+-        }
+-        entityliving.func_107_c(f, f1, f2, world.field_803_m.nextFloat() * 360F, 0.0F);
+-        if(!entityliving.func_155_a())
+-        {
+-            break; /* Loop/switch isn't completed */
++            }
++
++            return var3;
+         }
+-        i3++;
+-        world.func_526_a(entityliving);
+-        func_21166_a(entityliving, world, f, f1, f2);
+-        if(i3 < entityliving.func_4045_i()) goto _L7; else goto _L4
+-_L7:
+-        j += i3;
+-        j4++;
+-          goto _L8
+-_L6:
+-        j3++;
+-          goto _L9
+-        j1++;
+-          goto _L10
+-_L2:
+-        return j;
+     }
+ 
+     private static boolean func_21167_a(EnumCreatureType enumcreaturetype, World world, int i, int j, int k)
+diff -r -U 3 minecraft_server\net\minecraft\src\ThreadCommandReader.java minecraft_server_patched\net\minecraft\src\ThreadCommandReader.java
+--- minecraft_server\net\minecraft\src\ThreadCommandReader.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ThreadCommandReader.java	Sun Jan 23 21:02:24 2011
+@@ -12,7 +12,6 @@
+     public ThreadCommandReader(MinecraftServer minecraftserver)
+     {
+         field_1032_a = minecraftserver;
+-        super();
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\ThreadLoginVerifier.java minecraft_server_patched\net\minecraft\src\ThreadLoginVerifier.java
+--- minecraft_server\net\minecraft\src\ThreadLoginVerifier.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ThreadLoginVerifier.java	Sun Jan 23 21:02:24 2011
+@@ -14,7 +14,6 @@
+     {
+         field_971_b = netloginhandler;
+         field_972_a = packet1login;
+-        super();
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\ThreadMonitorConnection.java minecraft_server_patched\net\minecraft\src\ThreadMonitorConnection.java
+--- minecraft_server\net\minecraft\src\ThreadMonitorConnection.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ThreadMonitorConnection.java	Sun Jan 23 21:02:24 2011
+@@ -10,7 +10,6 @@
+     ThreadMonitorConnection(NetworkManager networkmanager)
+     {
+         field_828_a = networkmanager;
+-        super();
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\ThreadServerApplication.java minecraft_server_patched\net\minecraft\src\ThreadServerApplication.java
+--- minecraft_server\net\minecraft\src\ThreadServerApplication.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ThreadServerApplication.java	Sun Jan 23 21:02:24 2011
+@@ -10,8 +10,8 @@
+ 
+     public ThreadServerApplication(String s, MinecraftServer minecraftserver)
+     {
+-        field_1033_a = minecraftserver;
+         super(s);
++        field_1033_a = minecraftserver;
+     }
+ 
+     public void run()
+diff -r -U 3 minecraft_server\net\minecraft\src\ThreadSleepForever.java minecraft_server_patched\net\minecraft\src\ThreadSleepForever.java
+--- minecraft_server\net\minecraft\src\ThreadSleepForever.java	Sun Jan 23 20:34:02 2011
++++ minecraft_server_patched\net\minecraft\src\ThreadSleepForever.java	Sun Jan 23 21:02:24 2011
+@@ -11,7 +11,6 @@
+     public ThreadSleepForever(MinecraftServer minecraftserver)
+     {
+         field_1031_a = minecraftserver;
+-        super();
+         setDaemon(true);
+         start();
+     }
